@@ -624,7 +624,7 @@ body {
 }
 @media only screen and (max-width: 1024px) {
     .play-btn{
-        left: 5% !important;
+        left: -2% !important;
     }
 }
 
