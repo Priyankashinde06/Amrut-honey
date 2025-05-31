@@ -10,6 +10,43 @@
     <meta name='robots' content='max-image-preview:large' />
     <link rel="stylesheet" href="style.css">
 
+    <link rel='stylesheet' id='sbi_styles-css' href='wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=6.0.8'
+        type='text/css' media='all'>
+    <link rel='stylesheet' id='dripicons-css'
+        href='wp-content/plugins/mellifera-core/inc/icons/dripicons/assets/css/dripicons.min.css?ver=6.0.9'
+        type='text/css' media='all'>
+    <link rel='stylesheet' id='elegant-icons-css'
+        href='wp-content/plugins/mellifera-core/inc/icons/elegant-icons/assets/css/elegant-icons.min.css?ver=6.0.9'
+        type='text/css' media='all'>
+    <link rel='stylesheet' id='font-awesome-css'
+        href='wp-content/plugins/mellifera-core/inc/icons/font-awesome/assets/css/all.min.css?ver=6.0.9' type='text/css'
+        media='all'>
+    <link rel='stylesheet' id='fontkiko-css'
+        href='wp-content/plugins/mellifera-core/inc/icons/fontkiko/assets/css/fontkiko.min.css?ver=6.0.9'
+        type='text/css' media='all'>
+    <link rel='stylesheet' id='ionicons-css'
+        href='wp-content/plugins/mellifera-core/inc/icons/ionicons/assets/css/ionicons.min.css?ver=6.0.9'
+        type='text/css' media='all'>
+    <link rel='stylesheet' id='linea-icons-css'
+        href='wp-content/plugins/mellifera-core/inc/icons/linea-icons/assets/css/linea-icons.min.css?ver=6.0.9'
+        type='text/css' media='all'>
+    <link rel='stylesheet' id='linear-icons-css'
+        href='wp-content/plugins/mellifera-core/inc/icons/linear-icons/assets/css/linear-icons.min.css?ver=6.0.9'
+        type='text/css' media='all'>
+    <link rel='stylesheet' id='material-icons-css' href='icon?family=Material+Icons&#038;ver=6.0.9' type='text/css'
+        media='all'>
+    <link rel='stylesheet' id='simple-line-icons-css'
+        href='wp-content/plugins/mellifera-core/inc/icons/simple-line-icons/assets/css/simple-line-icons.min.css?ver=6.0.9'
+        type='text/css' media='all'>
+    <link rel='stylesheet' id='wp-block-library-css' href='wp-includes/css/dist/block-library/style.min.css?ver=6.0.9'
+        type='text/css' media='all'>
+    <link rel='stylesheet' id='wc-blocks-vendors-style-css'
+        href='wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css?ver=8.5.1'
+        type='text/css' media='all'>
+    <link rel='stylesheet' id='wc-blocks-style-css'
+        href='wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style.css?ver=8.5.1'
+        type='text/css' media='all'>
+
     <!-- Google Tag Manager for WordPress by gtm4wp.com -->
     <script data-cfasync="false" data-pagespeed-no-defer>
         var gtm4wp_datalayer_name = "dataLayer";
@@ -235,6 +272,7 @@
     <link rel='stylesheet' id='mellifera-style-css'
         href='https://mellifera.qodeinteractive.com/wp-content/themes/mellifera/style.css?ver=6.0.9' type='text/css'
         media='all' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style id='mellifera-style-inline-css' type='text/css'>
         #qodef-page-outer {
             margin-top: -117px;
@@ -305,6 +343,7 @@
             }
         }
     </style>
+
     <link rel='stylesheet' id='mellifera-core-elementor-css'
         href='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/plugins/elementor/assets/css/elementor.min.css?ver=6.0.9'
         type='text/css' media='all' />
@@ -365,15 +404,13 @@
     <link rel="alternate" type="text/xml+oembed"
         href="https://mellifera.qodeinteractive.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmellifera.qodeinteractive.com%2F&#038;format=xml" />
 
-        <style>
-.elementor-element-1b36237 {
-        padding-top: 60px !important;
-    background-color: white;
-    padding-bottom: 60px !important;
-}
-
-</style>
-
+    <style>
+        .elementor-element-1b36237 {
+            padding-top: 60px !important;
+            background-color: white;
+            padding-bottom: 60px !important;
+        }
+    </style>
 </head>
 
 <body
@@ -381,68 +418,85 @@
     itemscope itemtype="https://schema.org/WebPage">
     <div id="qodef-page-wrapper" class="">
         <header id="qodef-page-header">
-            <div id="qodef-page-header-inner" class="qodef-content-grid">
+            <div id="qodef-page-header-inner" class="container">
                 <div class="header-logo">
                     <a href="index.html">
-                        <img src="image/Amrut Honey.png" alt="Amrut Honey Logo" width="145" height="90">
+                        <img src="image/Amrut Honey.png" alt="Amrut Honey Logo">
                     </a>
                 </div>
-                <nav class="qodef-header-navigation" role="navigation" aria-label="Top Menu">
-                    <ul id="menu-main-menu-1" class="menu">
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-91 qodef-menu-item--narrow">
-                            <a href="#" style="font-size: 22px;"><span class="qodef-menu-item-text">Home</span></a>
+                <nav class="header-navigation">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Shop</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item-has-children">
+                                    <a href="#">Products</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
+                                        <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
+                                        <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
+                                        <li><a href="raw-honey.html?type=tulsi">Tulsi Honey</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="gifting.html">Gifting</a></li>
+                            </ul>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-92 qodef-menu-item--narrow">
-                            <a href="#" style="font-size: 22px;"><span class="qodef-menu-item-text">About</span></a>
-                        </li>
-                        <li
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-366 qodef-menu-item--narrow">
-                            <a href="#" style="font-size: 22px;"><span
-                                    class="qodef-menu-item-text">Honey Shop</span></a>
-                        </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-661 qodef-menu-item--narrow">
-                            <a href="#" style="font-size: 22px;"><span class="qodef-menu-item-text">Gallery</span></a>
-                        </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-661 qodef-menu-item--narrow">
-                            <a href="#" style="font-size: 22px;">Contact</a>
-                        </li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
+                <div class="header-cart">
+                    <a href="#" class="cart-contents">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
             </div>
         </header>
-        <header id="qodef-page-mobile-header" style="   height: 97px;">
+
+        <header id="qodef-page-mobile-header" style="height: 97px;">
             <div id="qodef-page-mobile-header-inner">
-                <a itemprop="url" class="qodef-mobile-header-logo-link" href="https://mellifera.qodeinteractive.com/"
-                    style="height:34px" rel="home">
+                <a itemprop="url" class="qodef-mobile-header-logo-link" href="index.html" style="height:34px"
+                    rel="home">
                     <img width="150" height="80" src="image/Amrut Honey.png" class="qodef-header-logo-image qodef--main"
                         alt="logo main" itemprop="image" />
-                </a><a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                </a>
+                <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
                 <nav class="qodef-mobile-header-navigation" role="navigation" aria-label="Mobile Menu">
                     <ul id="menu-main-menu-4" class="qodef-content-grid">
                         <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-91 qodef-menu-item--narrow">
-                            <a href="#">Home</a>
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-91 qodef-menu-item--narrow">
+                            <a href="index.html">Home</a>
                         </li>
                         <li
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
-                            <a href="#">About</a>
+                            <a href="about.html">About</a>
+                        </li>
+                        <li
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-93 qodef-menu-item--narrow">
+                            <a href="#">Shop</a>
+                            <ul class="menu">
+                                <li class="menu-item-has-children">
+                                    <a href="#">Products</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
+                                        <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
+                                        <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
+                                        <li><a href="raw-honey.html?type=tulsi">Tulsi Honey</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="gifting.html">Gifting</a></li>
+                            </ul>
                         </li>
                         <li
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
-                            <a href="https://mellifera.qodeinteractive.com/shop/">Products</a>
-                        </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
-                            <a href="#">Gallery</a>
-
+                            <a href="index.html#gallery">Gallery</a>
                         </li>
                         <li
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-661 qodef-menu-item--narrow">
-                            <a href="#">Contact</a>
+                            <a href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -456,6 +510,7 @@
                             <div data-elementor-type="wp-page" data-elementor-id="23" class="elementor elementor-23">
                                 <div class="elementor-inner">
                                     <div class="elementor-section-wrap">
+
                                         <section
                                             class="hero-section-mobile elementor-top-section elementor-element elementor-element-5649146 elementor-section-full_width qodef-bees-holder-yes qodef-custom-bees elementor-section-height-default elementor-section-height-default qodef-elementor-content-no qodef-section-backgrounds-animation-no"
                                             data-id="5649146" data-element_type="section">
@@ -822,10 +877,11 @@
                                                 </div>
                                             </div>
                                         </section>
-                                        <section
+
+                                        <section id="about"
                                             class=" elementor-section  elementor-top-section elementor-element elementor-element-1b36237 qodef-elementor-content-grid elementor-section-boxed elementor-section-height-default elementor-section-height-default qodef-bees-holder-no qodef-section-backgrounds-animation-no"
                                             data-id="1b36237" data-element_type="section">
-                                            <div class="elementor-container elementor-column-gap-default" >
+                                            <div class="elementor-container elementor-column-gap-default">
                                                 <div class="elementor-row">
                                                     <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-416bd4d"
                                                         data-id="416bd4d" data-element_type="column">
@@ -839,7 +895,7 @@
                                                                             class="qodef-shortcode qodef-m  qodef-video-button qodef--has-img">
                                                                             <div class="qodef-m-image">
                                                                                 <img width="800" height="490"
-                                                                                    src="https://mellifera.qodeinteractive.com/wp-content/uploads/2020/04/h1-img1.jpg"
+                                                                                    src="./image/videos/video1.mp4"
                                                                                     class="attachment-full size-full about-img"
                                                                                     alt="yh" loading="lazy"
                                                                                     srcset="https://mellifera.qodeinteractive.com/wp-content/uploads/2020/04/h1-img1.jpg 800w, https://mellifera.qodeinteractive.com/wp-content/uploads/2020/04/h1-img1-600x368.jpg 600w, https://mellifera.qodeinteractive.com/wp-content/uploads/2020/04/h1-img1-300x184.jpg 300w, https://mellifera.qodeinteractive.com/wp-content/uploads/2020/04/h1-img1-768x470.jpg 768w"
@@ -848,7 +904,7 @@
                                                                             <a itemprop="url"
                                                                                 class="qodef-m-play qodef-magnific-popup qodef-popup-item play-btn"
                                                                                 style="color: #FFFFFF"
-                                                                                href="https://vimeo.com/44384072"
+                                                                                href="./image/videos/video1.mp4"
                                                                                 data-type="iframe">
                                                                                 <span class="qodef-m-play-holder">
                                                                                     <span class="qodef-m-play-inner">
@@ -906,7 +962,7 @@
                                         </section>
 
                                         <section
-                                            class="elementor-section feature-section elementor-top-section elementor-element elementor-element-70d3f5e ws-intro elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" 
+                                            class="elementor-section feature-section elementor-top-section elementor-element elementor-element-70d3f5e ws-intro elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                             data-id="70d3f5e" data-element_type="section" id="ws-intro"
                                             data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom&quot;:&quot;drops&quot;}">
                                             <div class="elementor-shape elementor-shape-bottom" data-negative="false">
@@ -987,7 +1043,10 @@
                                                                                         </h3>
                                                                                         <p
                                                                                             class="elementor-image-description">
-                                                                                            Pure, natural honey harvested with care for the highest quality and rich flavors.
+                                                                                            Pure, natural honey
+                                                                                            harvested with care for the
+                                                                                            highest quality and rich
+                                                                                            flavors.
                                                                                             <span
                                                                                                 class="ltx-hex-wrapper">
                                                                                                 <span
@@ -1037,7 +1096,9 @@
                                                                                         </h3>
                                                                                         <p
                                                                                             class="elementor-image-description">
-                                                                                            Unique honey varieties with distinct tastes, perfect for gourmet lovers.
+                                                                                            Unique honey varieties with
+                                                                                            distinct tastes, perfect for
+                                                                                            gourmet lovers.
                                                                                             <span
                                                                                                 class="ltx-hex-wrapper">
                                                                                                 <span
@@ -1088,7 +1149,9 @@
                                                                                         </h3>
                                                                                         <p
                                                                                             class="elementor-image-description">
-                                                                                           Premium honey sourced from the finest global regions for authentic flavors.
+                                                                                            Premium honey sourced from
+                                                                                            the finest global regions
+                                                                                            for authentic flavors.
                                                                                             <span
                                                                                                 class="ltx-hex-wrapper">
                                                                                                 <span
@@ -1139,7 +1202,9 @@
                                                                                         </h3>
                                                                                         <p
                                                                                             class="elementor-image-description">
-                                                                                            Nutrient-rich honey to boost wellness and vitality naturally.
+                                                                                            Nutrient-rich honey to boost
+                                                                                            wellness and vitality
+                                                                                            naturally.
                                                                                             <span
                                                                                                 class="ltx-hex-wrapper">
                                                                                                 <span
@@ -1165,25 +1230,654 @@
                                                 </div>
                                             </div>
                                         </section>
+
+                                        <section>
+                                            <div class="et_pb_section et_pb_section_2 et_section_regular">
+                                                <div class="et_pb_row et_pb_row_1 et_pb_equal_columns et_pb_gutters2">
+                                                    <div
+                                                        class="et_pb_column et_pb_column_4_4 et_pb_column_3  et_pb_css_mix_blend_mode_passthrough et-last-child">
+                                                        <div
+                                                            class="et_pb_module et_pb_text et_pb_text_0 dct_title  et_pb_text_align_center et_pb_bg_layout_light">
+                                                            <div class="et_pb_text_inner" id="product">
+                                                                <h2>Our Products</h2>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center et_pb_bg_layout_light">
+                                                            <div class="et_pb_text_inner">Treat yourself to one of our
+                                                                products
+                                                                and taste true honey heaven</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="et_pb_row et_pb_row_2 et_pb_equal_columns et_pb_gutters2">
+                                                    <div
+                                                        class="et_pb_column et_pb_column_4_4 et_pb_column_4  et_pb_css_mix_blend_mode_passthrough et-last-child">
+                                                        <div class="et_pb_module et_pb_shop et_pb_shop_0 dct_shop_v1  et_pb_shop_grid"
+                                                            data-shortcode_index="0">
+                                                            <div class="woocommerce columns-4 ">
+                                                                <ul class="products columns-4">
+                                                                    <li
+                                                                        class="product type-product post-313 status-publish first instock product_cat-honey-powder has-post-thumbnail sale downloadable virtual purchasable product-type-simple">
+                                                                        <div class="tinv-wraper woocommerce tinv-wishlist tinvwl-above_thumb-add-to-cart tinvwl-loop-button-wrapper tinvwl-woocommerce_before_shop_loop_item"
+                                                                            data-tinvwl_product_id="313">
+                                                                            <a role="button" tabindex="0"
+                                                                                name="add-to-wishlist"
+                                                                                aria-label="Add to Wishlist"
+                                                                                class="tinvwl_add_to_wishlist_button tinvwl-icon-heart no-txt  tinvwl-position-above_thumb tinvwl-loop"
+                                                                                data-tinv-wl-list="[]"
+                                                                                data-tinv-wl-product="313"
+                                                                                data-tinv-wl-productvariation="0"
+                                                                                data-tinv-wl-productvariations="[]"
+                                                                                data-tinv-wl-producttype="simple"
+                                                                                data-tinv-wl-action="add"></a>
+                                                                        </div>
+                                                                        <a href="#"
+                                                                            class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                                                                            <span class="et_shop_image"><img
+                                                                                    loading="lazy" decoding="async"
+                                                                                    width="300" height="300"
+                                                                                    src="image/BOTTELS PHOTOS/multiflora-500g.png"
+                                                                                    class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                                                                    alt=" Multiflora Honey"><span
+                                                                                    class="et_overlay"></span></span>
+                                                                            <div class="title-price">
+                                                                                <h2
+                                                                                    class="woocommerce-loop-product__title">
+                                                                                    Multiflora Honey
+                                                                                </h2>
+                                                                                <span class="price"><span
+                                                                                        class="woocommerce-Price-amount amount"><bdi><span
+                                                                                                class="woocommerce-Price-currencySymbol">From
+                                                                                                &#8377;</span>90</bdi></span>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="product-buttons">
+                                                                                <a href="index-2.htm?add-to-cart=313"
+                                                                                    aria-describedby="woocommerce_loop_add_to_cart_link_describedby_313"
+                                                                                    data-quantity="1"
+                                                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                                                    data-product_id="313"
+                                                                                    data-product_sku="woo-single"
+                                                                                    aria-label="Add to cart: &ldquo; Multiflora Honey&rdquo;"
+                                                                                    rel="nofollow"
+                                                                                    data-success_message="&ldquo; Multiflora Honey&rdquo; has been added to your cart">Add
+                                                                                    to cart</a>
+                                                                            </div>
+                                                                    </li>
+                                                                    <li
+                                                                        class="product type-product post-300 status-publish instock product_cat-organic-honey has-post-thumbnail sale featured shipping-taxable purchasable product-type-variable">
+                                                                        <div class="tinv-wraper woocommerce tinv-wishlist tinvwl-above_thumb-add-to-cart tinvwl-loop-button-wrapper tinvwl-woocommerce_before_shop_loop_item"
+                                                                            data-tinvwl_product_id="300">
+                                                                            <a role="button" tabindex="0"
+                                                                                name="add-to-wishlist"
+                                                                                aria-label="Add to Wishlist"
+                                                                                class="tinvwl_add_to_wishlist_button tinvwl-icon-heart no-txt  tinvwl-position-above_thumb tinvwl-loop"
+                                                                                data-tinv-wl-list="[]"
+                                                                                data-tinv-wl-product="300"
+                                                                                data-tinv-wl-productvariation="0"
+                                                                                data-tinv-wl-productvariations="[314,315,316,0]"
+                                                                                data-tinv-wl-producttype="variable"
+                                                                                data-tinv-wl-action="add"></a>
+                                                                        </div>
+                                                                        <a href="#"
+                                                                            class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                                                                            <span class="et_shop_image"><img
+                                                                                    loading="lazy" decoding="async"
+                                                                                    width="300" height="300"
+                                                                                    src="image/BOTTELS PHOTOS/Jamun-500g.png"
+                                                                                    class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                                                                    alt="Jamun Honey"><span
+                                                                                    class="et_overlay"></span></span>
+                                                                            <div class="title-price">
+                                                                                <h2
+                                                                                    class="woocommerce-loop-product__title">
+                                                                                    Jamun Honey
+                                                                                </h2>
+                                                                                <span class="price"><span
+                                                                                        class="woocommerce-Price-amount amount"><bdi><span
+                                                                                                class="woocommerce-Price-currencySymbol">From
+                                                                                                &#8377;</span>120</bdi></span>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="product-buttons">
+                                                                                <a href="index-2.htm?add-to-cart=300"
+                                                                                    aria-describedby="woocommerce_loop_add_to_cart_link_describedby_313"
+                                                                                    data-quantity="1"
+                                                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                                                    data-product_id="300"
+                                                                                    data-product_sku="woo-single"
+                                                                                    aria-label="Add to cart: &ldquo;  Jamun Honey&rdquo;"
+                                                                                    rel="nofollow"
+                                                                                    data-success_message="&ldquo;  Jamun Honey&rdquo; has been added to your cart">Add
+                                                                                    to cart</a>
+                                                                            </div>
+                                                                    </li>
+                                                                    <li
+                                                                        class="product type-product post-312 status-publish instock product_cat-honey-powder has-post-thumbnail downloadable virtual purchasable product-type-simple">
+                                                                        <div class="tinv-wraper woocommerce tinv-wishlist tinvwl-above_thumb-add-to-cart tinvwl-loop-button-wrapper tinvwl-woocommerce_before_shop_loop_item"
+                                                                            data-tinvwl_product_id="312">
+                                                                            <a role="button" tabindex="0"
+                                                                                name="add-to-wishlist"
+                                                                                aria-label="Add to Wishlist"
+                                                                                class="tinvwl_add_to_wishlist_button tinvwl-icon-heart no-txt  tinvwl-position-above_thumb tinvwl-loop"
+                                                                                data-tinv-wl-list="[]"
+                                                                                data-tinv-wl-product="312"
+                                                                                data-tinv-wl-productvariation="0"
+                                                                                data-tinv-wl-productvariations="[]"
+                                                                                data-tinv-wl-producttype="simple"
+                                                                                data-tinv-wl-action="add"></a>
+                                                                        </div>
+                                                                        <a href="#"
+                                                                            class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><span
+                                                                                class="et_shop_image"><img
+                                                                                    loading="lazy" decoding="async"
+                                                                                    width="200" height="200"
+                                                                                    src="image/BOTTELS PHOTOS/Azwain-500g.png"
+                                                                                    class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                                                                    alt="Ajwain Honey"
+                                                                                    style="height: 162%  !important;"><span
+                                                                                    class="et_overlay"></span></span>
+                                                                            <div class="title-price">
+                                                                                <h2
+                                                                                    class="woocommerce-loop-product__title">
+                                                                                    Ajwain Honey
+                                                                                </h2>
+                                                                                <span class="price"><span
+                                                                                        class="woocommerce-Price-amount amount"><bdi><span
+                                                                                                class="woocommerce-Price-currencySymbol">From
+                                                                                                &#8377;</span>120</bdi></span>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="product-buttons">
+                                                                                <a href="index-2.htm?add-to-cart=312"
+                                                                                    aria-describedby="woocommerce_loop_add_to_cart_link_describedby_313"
+                                                                                    data-quantity="1"
+                                                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                                                    data-product_id="312"
+                                                                                    data-product_sku="woo-single"
+                                                                                    aria-label="Add to cart: &ldquo; Ajwain Honey&rdquo;"
+                                                                                    rel="nofollow"
+                                                                                    data-success_message="&ldquo; Ajwain Honey&rdquo; has been added to your cart">Add
+                                                                                    to cart</a>
+                                                                            </div>
+                                                                    </li>
+                                                                    <li
+                                                                        class="product type-product post-307 status-publish last instock product_cat-raw-honey product_tag-clover product_tag-honey product_tag-organic product_tag-perga product_tag-pollen product_tag-sweet has-post-thumbnail featured shipping-taxable purchasable product-type-simple">
+                                                                        <div class="tinv-wraper woocommerce tinv-wishlist tinvwl-above_thumb-add-to-cart tinvwl-loop-button-wrapper tinvwl-woocommerce_before_shop_loop_item"
+                                                                            data-tinvwl_product_id="307">
+                                                                            <a role="button" tabindex="0"
+                                                                                name="add-to-wishlist"
+                                                                                aria-label="Add to Wishlist"
+                                                                                class="tinvwl_add_to_wishlist_button tinvwl-icon-heart no-txt  tinvwl-position-above_thumb tinvwl-loop"
+                                                                                data-tinv-wl-list="[]"
+                                                                                data-tinv-wl-product="307"
+                                                                                data-tinv-wl-productvariation="0"
+                                                                                data-tinv-wl-productvariations="[]"
+                                                                                data-tinv-wl-producttype="simple"
+                                                                                data-tinv-wl-action="add"></a>
+                                                                        </div>
+                                                                        <a href="#"
+                                                                            class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><span
+                                                                                class="et_shop_image"><img
+                                                                                    loading="lazy" decoding="async"
+                                                                                    width="300" height="300"
+                                                                                    src="image/BOTTELS PHOTOS/Tulsi-500g.png"
+                                                                                    class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                                                                    alt="Tulsi Honey"><span
+                                                                                    class="et_overlay"></span></span>
+                                                                            <div class="title-price">
+                                                                                <h2
+                                                                                    class="woocommerce-loop-product__title">
+                                                                                    Tulsi Honey
+                                                                                </h2>
+                                                                                <span class="price"><span
+                                                                                        class="woocommerce-Price-amount amount"><bdi><span
+                                                                                                class="woocommerce-Price-currencySymbol">From
+                                                                                                &#8377;</span>140</bdi></span>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="product-buttons">
+                                                                                <a href="index-2.htm?add-to-cart=307"
+                                                                                    aria-describedby="woocommerce_loop_add_to_cart_link_describedby_313"
+                                                                                    data-quantity="1"
+                                                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                                                    data-product_id="307"
+                                                                                    data-product_sku="woo-single"
+                                                                                    aria-label="Add to cart: &ldquo; Tulsi Honey&rdquo;"
+                                                                                    rel="nofollow"
+                                                                                    data-success_message="&ldquo; Tulsi Honey&rdquo; has been added to your cart">Add
+                                                                                    to cart</a>
+                                                                            </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <section
+                                            class="elementor-section elementor-top-section elementor-element elementor-element-a091737 elementor-section-full_width qodef-section-backgrounds-animation-yes elementor-section-height-default elementor-section-height-default qodef-elementor-content-no qodef-bees-holder-no"
+                                            data-id="a091737" data-element_type="section"
+                                            data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                                            <div class="elementor-container elementor-column-gap-default">
+                                                <div class="elementor-row">
+                                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-03ef6de"
+                                                        data-id="03ef6de" data-element_type="column">
+                                                        <div class="elementor-column-wrap elementor-element-populated">
+                                                            <div class="elementor-widget-wrap">
+                                                                <section
+                                                                    class="elementor-section elementor-inner-section elementor-element elementor-element-1e6fd17 qodef-elementor-content-grid qodef-section-backgrounds-animation-yes elementor-section-boxed elementor-section-height-default elementor-section-height-default qodef-bees-holder-no"
+                                                                    data-id="1e6fd17" data-element_type="section">
+                                                                    <div
+                                                                        class="elementor-container elementor-column-gap-default">
+                                                                        <div class="elementor-row">
+                                                                            <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-e358d73"
+                                                                                data-id="e358d73"
+                                                                                data-element_type="column">
+                                                                                <div
+                                                                                    class="elementor-column-wrap elementor-element-populated">
+                                                                                    <div class="elementor-widget-wrap">
+                                                                                        <div class="elementor-element elementor-element-3b231b9 elementor-widget elementor-widget-mellifera_core_testimonials_list"
+                                                                                            data-id="3b231b9"
+                                                                                            data-element_type="widget"
+                                                                                            data-widget_type="mellifera_core_testimonials_list.default">
+                                                                                            <div
+                                                                                                class="elementor-widget-container">
+                                                                                                <div class="qodef-shortcode qodef-m  qodef-testimonials-list  qodef-grid qodef-swiper-container  qodef-gutter--normal qodef-col-num--1 qodef-item-layout--info-below qodef-responsive--predefined"
+                                                                                                    data-options="{&quot;slidesPerView&quot;:&quot;1&quot;,&quot;spaceBetween&quot;:15,&quot;loop&quot;:true,&quot;autoplay&quot;:true,&quot;speed&quot;:&quot;2500&quot;,&quot;speedAnimation&quot;:&quot;&quot;,&quot;unique&quot;:&quot;1&quot;,&quot;outsideNavigation&quot;:&quot;yes&quot;}">
+                                                                                                    <div
+                                                                                                        class="swiper-wrapper">
+                                                                                                        <div
+                                                                                                            class="qodef-e swiper-slide">
+                                                                                                            <div
+                                                                                                                class="qodef-e-inner">
+                                                                                                                <div
+                                                                                                                    class="qodef-e-media-image">
+                                                                                                                    <img loading="lazy"
+                                                                                                                        width="600"
+                                                                                                                        height="642"
+                                                                                                                        src="wp-content/uploads/2020/04/home-1-testimonial-1.png"
+                                                                                                                        class="attachment-full size-full wp-post-image"
+                                                                                                                        alt="a"
+                                                                                                                        srcset="wp-content/uploads/2020/04/home-1-testimonial-1.png 600w, wp-content/uploads/2020/04/home-1-testimonial-1-280x300.png 280w"
+                                                                                                                        sizes="(max-width: 600px) 100vw, 600px">
+                                                                                                                    <span
+                                                                                                                        class="qodef-testimonials-mark qodef-icon-holder qodef-size--default qodef-layout--circle">
+                                                                                                                        <span
+                                                                                                                            class="qodef-icon-fontkiko kikol kiko-quote-right qodef-icon qodef-e"></span>
+                                                                                                                    </span>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                    class="qodef-e-content">
+                                                                                                                    <span
+                                                                                                                        itemprop="description"
+                                                                                                                        class="qodef-e-text">
+                                                                                                                        “The
+                                                                                                                        first
+                                                                                                                        step
+                                                                                                                        to
+                                                                                                                        becoming
+                                                                                                                        a
+                                                                                                                        successful
+                                                                                                                        beekeeper
+                                                                                                                        is
+                                                                                                                        to
+                                                                                                                        learn
+                                                                                                                        as
+                                                                                                                        much
+                                                                                                                        as
+                                                                                                                        you
+                                                                                                                        can
+                                                                                                                        about
+                                                                                                                        the
+                                                                                                                        bees
+                                                                                                                        themselves.
+                                                                                                                        Beehives
+                                                                                                                        require
+                                                                                                                        management
+                                                                                                                        and
+                                                                                                                        good
+                                                                                                                        stewardship,
+                                                                                                                        which
+                                                                                                                        take
+                                                                                                                        time.”
+                                                                                                                    </span>
+                                                                                                                    <h5
+                                                                                                                        class="qodef-e-author">
+                                                                                                                        <span
+                                                                                                                            class="qodef-e-author-name">
+                                                                                                                            Anna
+                                                                                                                            Moribaldi
+                                                                                                                        </span>
+                                                                                                                        <span
+                                                                                                                            class="qodef-e-author-job">
+                                                                                                                            honey
+                                                                                                                            lover
+                                                                                                                        </span>
+                                                                                                                    </h5>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                            class="qodef-e swiper-slide">
+                                                                                                            <div
+                                                                                                                class="qodef-e-inner">
+                                                                                                                <div
+                                                                                                                    class="qodef-e-media-image">
+                                                                                                                    <img width="600"
+                                                                                                                        height="642"
+                                                                                                                        src="wp-content/uploads/2020/06/home-1-testimonial-2.png"
+                                                                                                                        class="attachment-full size-full wp-post-image"
+                                                                                                                        alt="h"
+                                                                                                                        loading="lazy"
+                                                                                                                        srcset="wp-content/uploads/2020/06/home-1-testimonial-2.png 600w, wp-content/uploads/2020/06/home-1-testimonial-2-280x300.png 280w"
+                                                                                                                        sizes="(max-width: 600px) 100vw, 600px">
+                                                                                                                    <span
+                                                                                                                        class="qodef-testimonials-mark qodef-icon-holder qodef-size--default qodef-layout--circle">
+                                                                                                                        <span
+                                                                                                                            class="qodef-icon-fontkiko kikol kiko-quote-right qodef-icon qodef-e"></span>
+                                                                                                                    </span>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                    class="qodef-e-content">
+                                                                                                                    <span
+                                                                                                                        itemprop="description"
+                                                                                                                        class="qodef-e-text">
+                                                                                                                        &quot;Sed
+                                                                                                                        ut
+                                                                                                                        perspiciatis
+                                                                                                                        unde
+                                                                                                                        omnis
+                                                                                                                        iste
+                                                                                                                        natus
+                                                                                                                        error
+                                                                                                                        sit
+                                                                                                                        voluptatem
+                                                                                                                        accusantium
+                                                                                                                        doloremque
+                                                                                                                        laudantium,
+                                                                                                                        totam
+                                                                                                                        rem
+                                                                                                                        aperiam,
+                                                                                                                        eaque
+                                                                                                                        ipsa
+                                                                                                                        quae
+                                                                                                                        ab
+                                                                                                                        illo
+                                                                                                                        inventore
+                                                                                                                        veritatis
+                                                                                                                        et
+                                                                                                                        quasi.&quot;
+                                                                                                                    </span>
+                                                                                                                    <h5
+                                                                                                                        class="qodef-e-author">
+                                                                                                                        <span
+                                                                                                                            class="qodef-e-author-name">
+                                                                                                                            Julia
+                                                                                                                            Klein
+                                                                                                                        </span>
+                                                                                                                        <span
+                                                                                                                            class="qodef-e-author-job">
+                                                                                                                            Biologist
+                                                                                                                        </span>
+                                                                                                                    </h5>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div id="gallery"
+                                                                                            class="elementor-element elementor-element-3d006e8 elementor-widget elementor-widget-mellifera_core_section_title"
+                                                                                            data-id="3d006e8"
+                                                                                            data-element_type="widget"
+                                                                                            data-widget_type="mellifera_core_section_title.default">
+                                                                                            <div
+                                                                                                class="elementor-widget-container">
+                                                                                                <div
+                                                                                                    class="qodef-shortcode qodef-m  qodef-section-title qodef-alignment--center ">
+                                                                                                    <h2
+                                                                                                        class="qodef-m-title">
+                                                                                                        Our Gallery
+                                                                                                    </h2>
+                                                                                                    <p class="qodef-m-text"
+                                                                                                        style="margin-top: 19px">
+                                                                                                        Mellifera is a
+                                                                                                        true beehive of
+                                                                                                        activity! Check
+                                                                                                        out the latest
+                                                                                                        news and events
+                                                                                                        in our image
+                                                                                                        gallery and see
+                                                                                                        for yourself.
+                                                                                                    </p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <section
+                                            class="elementor-section elementor-top-section elementor-element elementor-element-c0136da qodef-elementor-content-grid elementor-section-boxed elementor-section-height-default elementor-section-height-default qodef-bees-holder-no qodef-section-backgrounds-animation-no"
+                                            data-id="c0136da" data-element_type="section">
+                                            <div class="elementor-container elementor-column-gap-default">
+                                                <div class="elementor-row">
+                                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9891da5"
+                                                        data-id="9891da5" data-element_type="column">
+                                                        <div class="elementor-column-wrap elementor-element-populated">
+                                                            <div class="elementor-widget-wrap">
+                                                                <div class="elementor-element elementor-element-976ed19 elementor-widget elementor-widget-mellifera_core_image_gallery"
+                                                                    data-id="976ed19" data-element_type="widget"
+                                                                    data-widget_type="mellifera_core_image_gallery.default">
+                                                                    <div class="elementor-widget-container">
+                                                                        <div
+                                                                            class="qodef-shortcode qodef-m  qodef-image-gallery qodef-magnific-popup qodef-popup-gallery qodef--has-hover qodef-grid qodef-layout--columns  qodef-gutter--small qodef-col-num--3  qodef-responsive--predefined">
+                                                                            <div class="qodef-grid-inner clear">
+                                                                                <div
+                                                                                    class="qodef-e qodef-image-wrapper qodef-grid-item">
+                                                                                    <div
+                                                                                        class="qodef-image-zoom-holder">
+                                                                                        <a class="qodef-popup-item"
+                                                                                            itemprop="image"
+                                                                                            href="image/photos/IMG_2519.jpg"
+                                                                                            data-type="image" title="">
+                                                                                            <img width="800"
+                                                                                                height="512"
+                                                                                                src="image/photos/IMG_2519.jpg"
+                                                                                                class="attachment-full size-full gallery"
+                                                                                                alt="a" loading="lazy"
+                                                                                                srcset="image/photos/IMG_2519.jpg 800w, image/photos/IMG_2519.jpg 600w, image/photos/IMG_2519.jpg 300w, image/photos/IMG_2519.jpg 768w"
+                                                                                                sizes="(max-width: 800px) 100vw, 800px">
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="qodef-e qodef-image-wrapper qodef-grid-item">
+                                                                                    <div
+                                                                                        class="qodef-image-zoom-holder">
+                                                                                        <a class="qodef-popup-item"
+                                                                                            itemprop="image"
+                                                                                            href="image/photos/DSC09814.JPG "
+                                                                                            data-type="image" title="">
+                                                                                            <img width="800"
+                                                                                                height="512"
+                                                                                                src="image/photos/DSC09814.JPG"
+                                                                                                class="attachment-full size-full gallery"
+                                                                                                alt="a" loading="lazy"
+                                                                                                srcset="image/photos/DSC09814.JPG image/photos/DSC09814.JPG 800w, image/photos/DSC09814.JPG image/photos/DSC09814.JPG 600w, image/photos/DSC09814.JPG image/photos/DSC09814.JPG 300w, image/photos/DSC09814.JPG image/photos/DSC09814.JPG 768w"
+                                                                                                sizes="(max-width: 800px) 100vw, 800px">
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="qodef-e qodef-image-wrapper qodef-grid-item">
+                                                                                    <div
+                                                                                        class="qodef-image-zoom-holder">
+                                                                                        <a class="qodef-popup-item"
+                                                                                            itemprop="image"
+                                                                                            href="image/photos/image1.jpg"
+                                                                                            data-type="image" title="">
+                                                                                            <img width="800"
+                                                                                                height="512"
+                                                                                                src="image/photos/image1.jpg "
+                                                                                                class="attachment-full size-full gallery"
+                                                                                                alt="a" loading="lazy"
+                                                                                                srcset="image/photos/image1.jpg 800w, image/photos/image1.jpg 600w, image/photos/image1.jpg 300w, image/photos/image1.jpg 768w"
+                                                                                                sizes="(max-width: 800px) 100vw, 800px">
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="qodef-e qodef-image-wrapper qodef-grid-item">
+                                                                                    <div
+                                                                                        class="qodef-image-zoom-holder">
+                                                                                        <a class="qodef-popup-item"
+                                                                                            itemprop="image"
+                                                                                            href="image/photos/IMG_2585.jpg "
+                                                                                            data-type="image" title="">
+                                                                                            <img width="800"
+                                                                                                height="512"
+                                                                                                src="image/photos/IMG_2585.jpg"
+                                                                                                class="attachment-full size-full gallery"
+                                                                                                alt="a" loading="lazy"
+                                                                                                srcset="image/photos/IMG_2585.jpg 800w, image/photos/IMG_2585.jpg 600w, image/photos/IMG_2585.jpg 300w, image/photos/IMG_2585.jpg 768w"
+                                                                                                sizes="(max-width: 800px) 100vw, 800px">
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="qodef-e qodef-image-wrapper qodef-grid-item">
+                                                                                    <div
+                                                                                        class="qodef-image-zoom-holder">
+                                                                                        <a class="qodef-popup-item"
+                                                                                            itemprop="image"
+                                                                                            href="image/photos/image1.jpg "
+                                                                                            data-type="image" title="">
+                                                                                            <img width="800"
+                                                                                                height="512"
+                                                                                                src="image/photos/image1.jpg"
+                                                                                                class="attachment-full size-full gallery"
+                                                                                                alt="a" loading="lazy"
+                                                                                                srcset="image/photos/image1.jpg 800w, image/photos/image1.jpg 600w, image/photos/image1.jpg 300w, image/photos/image1.jpg 768w"
+                                                                                                sizes="(max-width: 800px) 100vw, 800px">
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="qodef-e qodef-image-wrapper qodef-grid-item">
+                                                                                    <div
+                                                                                        class="qodef-image-zoom-holder">
+                                                                                        <a class="qodef-popup-item"
+                                                                                            itemprop="image"
+                                                                                            href="image/photos/image1.jpg "
+                                                                                            data-type="image" title="">
+                                                                                            <img width="800"
+                                                                                                height="512"
+                                                                                                src="image/photos/image1.jpg"
+                                                                                                class="attachment-full size-full gallery"
+                                                                                                alt="a" loading="lazy"
+                                                                                                srcset="image/photos/image1.jpg 800w, image/photos/image1.jpg 600w, image/photos/image1.jpg 300w, image/photos/image1.jpg 768w"
+                                                                                                sizes="(max-width: 800px) 100vw, 800px">
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </main>
-            </div><!-- close #qodef-page-inner div from header.php -->
+            </div>
         </div>
+        <footer id="qodef-page-footer">
+            <div id="qodef-page-footer-inner" class="container">
+                <div class="footer-content">
+                    <div class="footer-columns">
+                        <!-- Column 1: Logo and Info -->
+                        <div class="footer-column">
+                            <div class="footer-logo">
+                                <a href="index.html">
+                                    <img src="image/Amrut Honey.png" alt="Amrut Honey Logo">
+                                </a>
+                            </div>
+                            <div class="footer-info">
+                                <p>Pure, natural honey harvested with care for the highest quality and rich flavors.</p>
+                            </div>
+                            <div class="footer-social">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/amruthoney/" class="social-icon"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
 
+                        <!-- Column 2: Quick Links -->
+                        <div class="footer-column">
+                            <h4 class="footer-title">Quick Links</h4>
+                            <ul class="footer-links">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#product">Our Products</a></li>
+                                <li><a href="#gallery">Gallery</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3: Products -->
+                        <div class="footer-column">
+                            <h4 class="footer-title">Our Products</h4>
+                            <ul class="footer-links">
+                                <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
+                                <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
+                                <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
+                                <li><a href="raw-honey.html?type=tulsi">Tulsi Honey</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 4: Contact Info -->
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contact Us</h4>
+                            <ul class="footer-contact">
+                                <li><i class="fas fa-map-marker-alt"></i>Amrut Honey, Koragaon, Satararoad road,
+                                    Khed,Maharashtra 415010</li>
+                                <li><i class="fas fa-phone"></i> +91 96659 66577</li>
+                                <li><i class="fas fa-envelope"></i> info@amruthoney.com</li>
+                                <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom">
+                        <p>&copy; 2023 Amrut Honey. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-
-    <script>
-        window.RS_MODULES = window.RS_MODULES || {};
-        window.RS_MODULES.modules = window.RS_MODULES.modules || {};
-        window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
-        window.RS_MODULES.defered = false;
-        window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
-        window.RS_MODULES.type = 'compiled';
-    </script>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400%7COpen+Sans:400&display=swap" rel="stylesheet"
         property="stylesheet" media="all" type="text/css">
@@ -1285,7 +1979,6 @@
     <script type="text/javascript"
         src="https://static.zdassets.com/ekr/snippet.js?key=af3078fd-a5ae-40da-bee0-e589b98c8603&#038;ver=6.0.9"
         id="ze-snippet"></script>
-
     <script type='text/javascript' id='mediaelement-core-js-before'>
         var mejsL10n = { "language": "en", "strings": { "mejs.download-file": "Download File", "mejs.install-flash": "You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/", "mejs.fullscreen": "Fullscreen", "mejs.play": "Play", "mejs.pause": "Pause", "mejs.time-slider": "Time Slider", "mejs.time-help-text": "Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.", "mejs.live-broadcast": "Live Broadcast", "mejs.volume-help-text": "Use Up\/Down Arrow keys to increase or decrease volume.", "mejs.unmute": "Unmute", "mejs.mute": "Mute", "mejs.volume-slider": "Volume Slider", "mejs.video-player": "Video Player", "mejs.audio-player": "Audio Player", "mejs.captions-subtitles": "Captions\/Subtitles", "mejs.captions-chapters": "Chapters", "mejs.none": "None", "mejs.afrikaans": "Afrikaans", "mejs.albanian": "Albanian", "mejs.arabic": "Arabic", "mejs.belarusian": "Belarusian", "mejs.bulgarian": "Bulgarian", "mejs.catalan": "Catalan", "mejs.chinese": "Chinese", "mejs.chinese-simplified": "Chinese (Simplified)", "mejs.chinese-traditional": "Chinese (Traditional)", "mejs.croatian": "Croatian", "mejs.czech": "Czech", "mejs.danish": "Danish", "mejs.dutch": "Dutch", "mejs.english": "English", "mejs.estonian": "Estonian", "mejs.filipino": "Filipino", "mejs.finnish": "Finnish", "mejs.french": "French", "mejs.galician": "Galician", "mejs.german": "German", "mejs.greek": "Greek", "mejs.haitian-creole": "Haitian Creole", "mejs.hebrew": "Hebrew", "mejs.hindi": "Hindi", "mejs.hungarian": "Hungarian", "mejs.icelandic": "Icelandic", "mejs.indonesian": "Indonesian", "mejs.irish": "Irish", "mejs.italian": "Italian", "mejs.japanese": "Japanese", "mejs.korean": "Korean", "mejs.latvian": "Latvian", "mejs.lithuanian": "Lithuanian", "mejs.macedonian": "Macedonian", "mejs.malay": "Malay", "mejs.maltese": "Maltese", "mejs.norwegian": "Norwegian", "mejs.persian": "Persian", "mejs.polish": "Polish", "mejs.portuguese": "Portuguese", "mejs.romanian": "Romanian", "mejs.russian": "Russian", "mejs.serbian": "Serbian", "mejs.slovak": "Slovak", "mejs.slovenian": "Slovenian", "mejs.spanish": "Spanish", "mejs.swahili": "Swahili", "mejs.swedish": "Swedish", "mejs.tagalog": "Tagalog", "mejs.thai": "Thai", "mejs.turkish": "Turkish", "mejs.ukrainian": "Ukrainian", "mejs.vietnamese": "Vietnamese", "mejs.welsh": "Welsh", "mejs.yiddish": "Yiddish" } };
     </script>
@@ -1326,50 +2019,7 @@
     <script type='text/javascript'
         src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/plugins/elementor/assets/js/elementor.js?ver=6.0.9'
         id='mellifera-core-elementor-js'></script>
-
-    <script id="rs-initialisation-scripts">
-        var tpj = jQuery;
-
-        var revapi1;
-
-        if (window.RS_MODULES === undefined) window.RS_MODULES = {};
-        if (RS_MODULES.modules === undefined) RS_MODULES.modules = {};
-        RS_MODULES.modules["revslider11"] = {
-            once: RS_MODULES.modules["revslider11"] !== undefined ? RS_MODULES.modules["revslider11"].once : undefined, init: function () {
-                window.revapi1 = window.revapi1 === undefined || window.revapi1 === null || window.revapi1.length === 0 ? document.getElementById("rev_slider_1_1") : window.revapi1;
-                if (window.revapi1 === null || window.revapi1 === undefined || window.revapi1.length == 0) { window.revapi1initTry = window.revapi1initTry === undefined ? 0 : window.revapi1initTry + 1; if (window.revapi1initTry < 20) requestAnimationFrame(function () { RS_MODULES.modules["revslider11"].init() }); return; }
-                window.revapi1 = jQuery(window.revapi1);
-                if (window.revapi1.revolution == undefined) { revslider_showDoubleJqueryError("rev_slider_1_1"); return; }
-                revapi1.revolutionInit({
-                    revapi: "revapi1",
-                    sliderType: "hero",
-                    sliderLayout: "fullscreen",
-                    visibilityLevels: "1920,1710,1025,760",
-                    gridwidth: "1300,1100,768,300",
-                    gridheight: "900,640,700,560",
-                    lazyType: "smart",
-                    perspective: 600,
-                    perspectiveType: "local",
-                    editorheight: "900,640,700,560",
-                    responsiveLevels: "1920,1710,1025,760",
-                    progressBar: { disableProgressBar: true },
-                    navigation: {
-                        onHoverStop: false
-                    },
-                    viewPort: {
-                        global: true,
-                        globalDist: "-200px",
-                        enable: false
-                    },
-                    fallbacks: {
-                        allowHTML5AutoPlayOnAndroid: true
-                    },
-                });
-            }
-        } // End of RevInitScript
-        if (window.RS_MODULES.checkMinimal !== undefined) { window.RS_MODULES.checkMinimal(); };
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
