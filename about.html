@@ -9,6 +9,7 @@
     <title>Amrut Honey</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <style>
         :root {
             --honey-gold: #FFC439;
@@ -570,6 +571,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel='stylesheet' id='sbi_styles-css' href='wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=6.0.8'
         type='text/css' media='all'>
     <link rel='stylesheet' id='dripicons-css'
@@ -1207,94 +1209,63 @@
                                                 </div>
                                             </div>
                                         </section>
-                                        <section>
-                                            <div class="choose-area py-120">
-                                                <div class="container">
-                                                    <div class="row align-items-center">
-                                                        <div class="col-lg-6">
-                                                            <div class="choose-content wow fadeInUp"
-                                                                data-wow-duration="1s" data-wow-delay=".25s"
-                                                                style="visibility: visible; animation-duration: 1s; animation-delay: 0.25s; animation-name: fadeInUp;">
-                                                                <div class="site-heading mb-3">
-                                                                    <span class="site-title-tagline">Why Choose
-                                                                        Us</span>
-                                                                    <h2 class="site-title">
-                                                                        Why Customers Choose <span>Our Fresh
-                                                                            Organic</span> Honey
-                                                                    </h2>
-                                                                </div>
-                                                                <p>
-                                                                    There are many variations of passages of Lorem Ipsum
-                                                                    available, but the majority have
-                                                                    suffered alteration in some form, by injected
-                                                                    humour, or randomised words which don't
-                                                                    look even slightly believable.
-                                                                </p>
-                                                                <div class="choose-wrapper mt-2">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-6">
-                                                                            <div class="choose-item">
-                                                                                <div class="choose-icon">
-                                                                                    <img src="assets/img/icon/honey-2.svg"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="choose-item-content">
-                                                                                    <h4>Made With Love</h4>
-                                                                                    <p>There are many the majority have
-                                                                                        suffered.</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-lg-6">
-                                                                            <div class="choose-item">
-                                                                                <div class="choose-icon">
-                                                                                    <img src="assets/img/icon/bee-hive-2.svg"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="choose-item-content">
-                                                                                    <h4>Forest Honey</h4>
-                                                                                    <p>There are many the majority have
-                                                                                        suffered.</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-lg-6">
-                                                                            <div class="choose-item">
-                                                                                <div class="choose-icon">
-                                                                                    <img src="assets/img/icon/bee-hive-3.svg"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="choose-item-content">
-                                                                                    <h4>Original Honey</h4>
-                                                                                    <p>There are many the majority have
-                                                                                        suffered.</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-lg-6">
-                                                                            <div class="choose-item">
-                                                                                <div class="choose-icon">
-                                                                                    <img src="assets/img/icon/honey-3.svg"
-                                                                                        alt="">
-                                                                                </div>
-                                                                                <div class="choose-item-content">
-                                                                                    <h4>Raw Honey</h4>
-                                                                                    <p>There are many the majority have
-                                                                                        suffered.</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                        <section class="organic-honey-choose">
+                                            <div class="container">
+                                                <div class="choose-header">
+                                                    <span class="subtitle">WHY CHOOSE US</span>
+                                                    <h2>Why Customers Choose <span>Our Fresh Organic</span> Honey</h2>
+                                                    <p class="intro-text">There are many variations of passages of Lorem
+                                                        Ipsum available, but the majority have suffered alteration in
+                                                        some form, by injected humour, or randomised words which don't
+                                                        look even slightly believable.</p>
+                                                </div>
+
+                                                <div class="choose-features">
+                                                    <div class="feature-column">
+                                                        <div class="feature-card">
+                                                            <div class="feature-icon">
+                                                                <img src="image/honey-2.svg" alt="Made With Love">
+                                                            </div>
+                                                            <div class="feature-content">
+                                                                <h3>100% Pure and Natural</h3>
+                                                                <p>Amrut Honey is free from additives, preservatives, or
+                                                                    artificial sweeteners.</p>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-6">
-                                                            <div class="choose-right wow fadeInRight"
-                                                                data-wow-duration="1s" data-wow-delay=".25s"
-                                                                style="visibility: visible; animation-duration: 1s; animation-delay: 0.25s; animation-name: fadeInRight;">
-                                                                <div class="choose-img">
-                                                                    <img src="image/01.png" alt="">
-                                                                </div>
+
+                                                        <div class="feature-card">
+                                                            <div class="feature-icon">
+                                                                <img src="image/bee-hive-3.svg" alt="Original Honey">
+                                                            </div>
+                                                            <div class="feature-content">
+                                                                <h3>Ethical Beekeeping</h3>
+                                                                <p>Bee-friendly and cruelty-free methods.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="honey-image">
+                                                        <img src="image/Service_1.png" alt="Fresh Organic Honey">
+                                                    </div>
+
+                                                    <div class="feature-column">
+                                                        <div class="feature-card">
+                                                            <div class="feature-icon">
+                                                                <img src="image/bee-hive-2.svg" alt="Forest Honey">
+                                                            </div>
+                                                            <div class="feature-content">
+                                                                <h3>Delicious Taste</h3>
+                                                                <p>Smooth, floral flavor perfect for everyday use.</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="feature-card">
+                                                            <div class="feature-icon">
+                                                                <img src="image/honey-3.svg" alt="Raw Honey">
+                                                            </div>
+                                                            <div class="feature-content">
+                                                                <h3>Lab-Tested Purity</h3>
+                                                                <p>Free from sugar syrups and contaminants.</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1346,6 +1317,39 @@
                                                             type="video/mp4">
                                                         Your browser does not support the video tag.
                                                     </video>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <section class="book-table slider-section bg-light">
+                                            <div class="row" id="gallery">
+                                                <div class="col-lg-10 m-auto">
+                                                    <div class="book-table-img-slider" id="icon">
+                                                        <div class="swiper-wrapper">
+                                                            <a href="image/about-slide/1.jpg"
+                                                                data-fancybox="table-slider"
+                                                                class="book-table-img back-img swiper-slide"
+                                                                style="background-image: url(image/about-slide/1.jpg)"></a>
+                                                            <a href="image/about-slide/3.jpg" data-fancybox="table-slider"
+                                                                class="book-table-img back-img swiper-slide"
+                                                                style="background-image: url(image/about-slide/3.jpg)"></a>
+                                                            <a href="image/about-slide/4.jpg" data-fancybox="table-slider"
+                                                                class="book-table-img back-img swiper-slide"
+                                                                style="background-image: url(image/about-slide/4.jpg)"></a>
+                                                            <a href="image/about-slide/5.jpg" data-fancybox="table-slider"
+                                                                class="book-table-img back-img swiper-slide"
+                                                                style="background-image: url(image/about-slide/5.jpg)"></a>
+                                                            <a href="image/about-slide/6.jpg" data-fancybox="table-slider"
+                                                                class="book-table-img back-img swiper-slide"
+                                                                style="background-image: url(image/about-slide/6.jpg)"></a>
+                                                            <a href="image/about-slide/7.jpg" data-fancybox="table-slider"
+                                                                class="book-table-img back-img swiper-slide"
+                                                                style="background-image: url(image/about-slide/7.jpg)"></a>
+                                                            <a href="image/about-slide/8.jpg" data-fancybox="table-slider"
+                                                                class="book-table-img back-img swiper-slide"
+                                                                style="background-image: url(image/about-slide/8.jpg)"></a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </section>
@@ -1574,6 +1578,8 @@
         src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/plugins/elementor/assets/js/elementor.js?ver=6.0.9'
         id='mellifera-core-elementor-js'></script>
     <script src="script.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
 </body>
 
 </html>

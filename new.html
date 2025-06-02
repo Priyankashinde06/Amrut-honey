@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honeycomb Honey Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --honey-yellow: #f9a825;
+            --honey-dark: #d18a1a;
+            --honey-light: #ffd54f;
+            --honey-comb: #fbc02d;
+            --bg-color: #fff9e6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .honeycomb-slider {
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        
+        .slider-title {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--honey-yellow), var(--honey-dark));
+            color: white;
+            position: relative;
+        }
+        
+        .slider-title h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .slider-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: white;
+            border-radius: 3px;
+        }
+        
+        .honeycomb-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            padding: 40px 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(249, 168, 37, 0.05) 20px,
+                rgba(249, 168, 37, 0.05) 40px
+            );
+        }
+        
+        .honeycomb-slide {
+            min-width: 100%;
+            padding: 0 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .honeycomb-slide img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: 5px solid white;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .honeycomb-slide::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23f9a825" d="M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            z-index: -1;
+        }
+        
+        .slider-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 10;
+        }
+        
+        .slider-control {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--honey-yellow), var(--honey-dark));
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slider-control i {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .slider-control:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .slider-control:hover i {
+            transform: scale(1.2);
+        }
+        
+        .slider-control::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .slider-control:hover::before {
+            opacity: 1;
+        }
+        
+        /* Honeycomb indicators */
+        .honeycomb-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .honeycomb-indicator {
+            width: 30px;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23f9a825" d="M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z"/></svg>');
+            background-size: contain;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+        
+        .honeycomb-indicator.active {
+            opacity: 1;
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 5px rgba(249, 168, 37, 0.7));
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slider-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .honeycomb-slide img {
+                max-height: 300px;
+            }
+            
+            .slider-control {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="honeycomb-slider">
+        <div class="slider-container">
+            <div class="slider-title">
+                <h2>Our Honey Collection</h2>
+            </div>
+            <div class="honeycomb-slides">
+                <div class="honeycomb-slide">
+                    <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Multiflora Honey">
+                </div>
+                <div class="honeycomb-slide">
+                    <img src="https://images.unsplash.com/photo-1558645836-e44122a743ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Jamun Honey">
+                </div>
+                <div class="honeycomb-slide">
+                    <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ajwain Honey">
+                </div>
+                <div class="honeycomb-slide">
+                    <img src="https://images.unsplash.com/photo-1558645836-e44122a743ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tulsi Honey">
+                </div>
+                <div class="honeycomb-slide">
+                    <img src="https://images.unsplash.com/photo-1587049648355-5f5fbea8ec57?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Honey Comb">
+                </div>
+            </div>
+            <div class="slider-controls">
+                <div class="slider-control prev-slide"><i class="fas fa-chevron-left"></i></div>
+                <div class="slider-control next-slide"><i class="fas fa-chevron-right"></i></div>
+            </div>
+            <div class="honeycomb-indicators">
+                <div class="honeycomb-indicator active" data-index="0"></div>
+                <div class="honeycomb-indicator" data-index="1"></div>
+                <div class="honeycomb-indicator" data-index="2"></div>
+                <div class="honeycomb-indicator" data-index="3"></div>
+                <div class="honeycomb-indicator" data-index="4"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelector('.honeycomb-slides');
+            const slideItems = document.querySelectorAll('.honeycomb-slide');
+            const prevBtn = document.querySelector('.prev-slide');
+            const nextBtn = document.querySelector('.next-slide');
+            const indicators = document.querySelectorAll('.honeycomb-indicator');
+            
+            let currentIndex = 0;
+            const slideCount = slideItems.length;
+            
+            // Set initial position
+            updateSlider();
+            
+            // Next slide
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateSlider();
+            });
+            
+            // Previous slide
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                updateSlider();
+            });
+            
+            // Indicator clicks
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', () => {
+                    currentIndex = parseInt(indicator.getAttribute('data-index'));
+                    updateSlider();
+                });
+            });
+            
+            // Auto slide
+            let slideInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateSlider();
+            }, 5000);
+            
+            // Pause on hover
+            const sliderContainer = document.querySelector('.slider-container');
+            sliderContainer.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            sliderContainer.addEventListener('mouseleave', () => {
+                slideInterval = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % slideCount;
+                    updateSlider();
+                }, 5000);
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    currentIndex = (currentIndex + 1) % slideCount;
+                    updateSlider();
+                } else if (e.key === 'ArrowLeft') {
+                    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                    updateSlider();
+                }
+            });
+            
+            function updateSlider() {
+                // Update slide position
+                slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+                
+                // Add active class to current slide
+                slideItems.forEach((slide, index) => {
+                    if (index === currentIndex) {
+                        slide.querySelector('img').style.transform = 'scale(1)';
+                    } else {
+                        slide.querySelector('img').style.transform = 'scale(0.9)';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

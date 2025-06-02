@@ -3055,137 +3055,268 @@ body {
         font-size: 20px;
     }
 }
-/* Add these CSS styles to your existing stylesheet */
 
-.choose-area {
-    background: linear-gradient(135deg, #fff9e6 0%, #ffeb99 100%);
+.organic-honey-choose {
+    padding: 80px 0;
+    background-color: #fff9f0;
     position: relative;
-    overflow: hidden;
 }
 
-.choose-area::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff22"><polygon points="50,0 93,25 93,75 50,100 7,75 7,25"/></svg>');
-    background-size: 80px;
-    opacity: 0.3;
+.organic-honey-choose .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.choose-content {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    position: relative;
-    z-index: 2;
+.choose-header {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-.site-title-tagline {
-    display: inline-block;
-    background: #ffc107;
-    color: #7a4b01;
-    padding: 5px 15px;
-    border-radius: 50px;
+.choose-header .subtitle {
+    display: block;
+    font-size: 18px;
+    color: #e8a838;
     font-weight: 600;
+    letter-spacing: 2px;
     margin-bottom: 15px;
+    text-transform: uppercase;
 }
 
-.choose-item {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 15px;
-    transition: all 0.3s ease;
-    border: 1px solid #ffeeb5;
+.choose-header h2 {
+    font-size: 36px;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.choose-header h2 span {
+    color: #e8a838;
+    font-weight: 700;
+}
+
+.choose-header .intro-text {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.choose-features {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.choose-item:hover {
+.feature-column {
+    flex: 1;
+    min-width: 250px;
+    padding: 0 15px;
+}
+
+.honey-image {
+    flex: 1;
+    text-align: center;
+    padding: 0 30px;
+}
+
+.honey-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    animation: imgfloat 3s ease-in-out infinite;
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 23rem;
+}
+
+.feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-color: #ffc107;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
-.choose-icon {
-    width: 60px;
-    height: 60px;
-    background: #fff5d6;
+.feature-icon {
+    margin-right: 13px;
+    min-width: 87px;
+    height: 88px;
+    /* background: #fdefd8; */
     border-radius: 50%;
     display: flex;
+    border: 3px solid;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
-    flex-shrink: 0;
 }
 
-.choose-icon img {
-    width: 30px;
-    height: 30px;
+.feature-icon img {
+    width: 54px;
+    height: 105px !important;
 }
 
-.choose-img {
-    position: relative;
-    border-radius: 20px;
+.feature-content {
+    margin-top: -14px;
+}
+
+.feature-content h3 {
+    font-size: 20px;
+    color: #2c2c2c;
+    margin-bottom: 10px;
+}
+
+.feature-content p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@keyframes imgfloat {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 992px) {
+    .choose-features {
+        flex-direction: column;
+    }
+
+    .feature-column {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .honey-image {
+        order: -1;
+        margin-bottom: 40px;
+    }
+}
+
+.book-table-img {
+    height: 50vh;
+    min-height: 500px;
+    border-radius: 30px;
+}
+
+.back-img {
+    background-position: center;
+    background-size: cover;
+}
+
+.book-table-shape.book-table-shape2 img {
+    left: 74%;
+    transform: scale(-1, 1);
+}
+
+.book-table-info {
+    margin: 30px 0 20px;
+}
+
+.book-table {
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.choose-img img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.choose-img::before {
-    content: "";
+.book-table-shape img {
     position: absolute;
     top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border: 2px dashed #ffc107;
-    border-radius: 30px;
-    z-index: -1;
-    opacity: 0.5;
+    right: 73%;
+    width: 20px;
 }
 
-.choose-img:hover img {
-    transform: scale(1.05);
+/* Add this CSS to your existing styles */
+.book-table-img-slider {
+    width: 60% !important;
+    height: 600px;
+    /* Adjust this value as needed */
+    overflow: hidden;
+    margin-left: 20%;
 }
 
-.site-title {
-    position: relative;
-    padding-bottom: 15px;
+.book-table-img-slider .swiper-wrapper {
+    height: 100% !important;
 }
 
-.site-title::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: #ffc107;
-    border-radius: 3px;
+.book-table-img-slider .swiper-slide {
+    height: 100%;
 }
 
-.site-title span {
-    position: relative;
+.book-table-img {
+    width: 100% !important;
+    height: 50% !important;
+    background-size: cover;
+    background-position: center;
 }
 
-.site-title span::after {
-    content: "";
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 100%;
-    height: 8px;
-    background: rgba(255, 193, 7, 0.3);
-    z-index: -1;
+/* Optional: Add some spacing around the slider */
+.slider-section {
+    padding: 40px 0;
+}
+
+/* Ensure the container is properly centered */
+.col-lg-10.m-auto {
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .book-table-img-slider {
+        width: 100% !important;
+        height: 400px;
+        /* Adjust height for smaller screens */
+    }
+
+    .book-table-img {
+        height: 100% !important;
+    }
+
+    .book-table-shape img {
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .feature-section {
+        padding: 80px 0 !important;
+        height: 102rem !important;
+    }
+    .elementor-heading-title {
+        font-size: 18px !important;
+        color: #eb6d2f !important;
+        text-transform: capitalize !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .elementor-widget-image-box .elementor-image-box-wrapper{
+        height: 100% !important;
+        margin-bottom: 18% !important;
+    }
+    .elementor-image-box-title{
+        margin-top: -11px !important;
+    }
+       .footer-content {
+        padding: 20px !important;
+        right: 57px;
+        top: -55px;
+    }
+    .footer-columns{
+        gap: 0px !important;
+    }
 }
