@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
                 <div class="cart-actions">
                     <button class="close-cart">Continue Shopping</button>
-                    <a href="#" class="checkout">Checkout</a>
+                    <a href="cart.html" class="checkout">Checkout</a>
                 </div>
             `;
     }
@@ -611,7 +611,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
                 <div class="cart-actions">
                     <button class="close-cart">Continue Shopping</button>
-                    <a href="#" class="checkout">Proceed to Checkout</a>
+                    <a href="cart.html" class="checkout">Proceed to Checkout</a>
                 </div>
             `;
     }
@@ -646,7 +646,7 @@ document.addEventListener("DOMContentLoaded", function () {
       popup.querySelector(".checkout").addEventListener("click", function (e) {
         e.preventDefault();
         // Redirect to checkout page
-        window.location.href = "checkout.html";
+        window.location.href = "cart.html";
       });
     }
   }
@@ -1242,7 +1242,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const playBtn = document.getElementById("play-video-btn");
   const modal = document.getElementById("honey-video-modal");
   const modalVideo = document.getElementById("modal-video");
-  const closeModal = document.querySelector(".close-modal");
+  const closeModal = document.querySelector(".close-modals");
 
   // Open modal when play button is clicked
   playBtn.addEventListener("click", function (e) {
@@ -1279,30 +1279,97 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-var book_table = new Swiper(".book-table-img-slider", {
+document.addEventListener("DOMContentLoaded", function () {
+  var book_table = new Swiper(".book-table-img-slider", {
     slidesPerView: 1,
     spaceBetween: 20,
     loop: true,
     autoplay: {
-        delay: 4000,
-        disableOnInteraction: false
+      delay: 4000,
+      disableOnInteraction: false,
     },
     speed: 2000,
     effect: "coverflow",
     coverflowEffect: {
-        rotate: 3,
-        stretch: 2,
-        depth: 100,
-        modifier: 5,
-        slideShadows: false
+      rotate: 1,
+      stretch: 0,
+      depth: 100,
+      modifier: 5,
+      slideShadows: false,
     },
-    loopAdditionSlides: true,
+    loopAdditionalSlides: true, // Fixed typo: was loopAdditionSlides
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
     pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-    }
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  // Initialize Fancybox
+  Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+  });
 });
+// Back to Top Button Functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTopButton = document.querySelector(".back-to-top");
+
+  window.addEventListener("scroll", function () {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add("active");
+    } else {
+      backToTopButton.classList.remove("active");
+    }
+  });
+
+  backToTopButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});
+ // Modal functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('giftModal');
+        const closeBtn = document.querySelector('.gift-modal-close');
+        const giftItems = document.querySelectorAll('.gift-item');
+        
+        // Close modal when clicking X
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // Open modal when clicking on gift image
+        giftItems.forEach(item => {
+            const image = item.querySelector('.gift-image img');
+            const title = item.querySelector('.gift-title').textContent;
+            const description = item.querySelector('.gift-description').textContent;
+            const price = item.querySelector('.gift-price').textContent;
+            
+            image.addEventListener('click', function() {
+                document.getElementById('modalGiftImage').src = this.src;
+                document.getElementById('modalGiftTitle').textContent = title;
+                document.getElementById('modalGiftDescription').textContent = description;
+                document.getElementById('modalGiftPrice').textContent = price;
+                modal.style.display = 'block';
+            });
+        });
+        
+        // Quantity controls
+        const quantityInput = document.getElementById('quantity');
+        quantityInput.addEventListener('change', function() {
+            if (this.value < 1) this.value = 1;
+        });
+    });

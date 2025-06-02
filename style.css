@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Signika:wght@300..700&display=swap');
 
 :root {
     --primary-color: #d4a017;
@@ -631,12 +632,20 @@ body {
 }
 
 .heading {
-    font-family: 'Playfair Display', serif;
+    font-family: "Berkshire Swash", serif !important;
+    font-weight: 400;
+    font-style: normal;
     font-size: 6rem !important;
-    font-weight: 700 !important;
+    margin-top: 20px;
+    text-transform: capitalize !important;
+}
+
+.hero-heading {
+    font-family: "Lucida Handwriting", cursive !important;
     color: var(--dark-color);
     text-align: center !important;
-    margin-top: 20px;
+    margin-top: 30px;
+    left: 10%;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -896,14 +905,15 @@ body {
 
 /* Section Title */
 .dct_title h2 {
-    font-size: 42px;
+    font-size: 47px;
     color: #2a2a2a;
     margin-bottom: 15px;
     text-align: center;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: "Signika", sans-serif !important;
     font-weight: 700;
     letter-spacing: 1px;
     position: relative;
+    text-transform: capitalize;
     padding-bottom: 20px;
 }
 
@@ -2694,12 +2704,19 @@ body {
 }
 
 .elementor-heading-title {
-    font-size: 18px !important;
-    color: #eb6d2f !important;
+    font-size: 18px;
+    color: #eb6d2f;
     text-transform: capitalize !important;
     line-height: 1;
     margin: 0;
     padding: 0;
+}
+
+.qodef-m-title {
+    font-family: "Signika", sans-serif !important;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 2.5rem;
 }
 
 .about-section::before {
@@ -3020,6 +3037,21 @@ body {
 }
 
 .close-modal {
+    color: white !important;
+    font-size: 30px !important;
+    cursor: pointer !important;
+    background: #000 !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 2px solid #fff !important;
+    z-index: 100 !important;
+}
+
+.close-modals {
     position: absolute !important;
     top: -15px !important;
     right: -15px !important;
@@ -3211,15 +3243,16 @@ body {
     }
 }
 
-.book-table-img {
-    height: 50vh;
-    min-height: 500px;
-    border-radius: 30px;
+.book-table {
+    overflow: hidden;
+    padding: 80px 0;
 }
 
-.back-img {
-    background-position: center;
-    background-size: cover;
+.book-table-shape img {
+    position: absolute;
+    top: -10px;
+    right: 73%;
+    width: 540px;
 }
 
 .book-table-shape.book-table-shape2 img {
@@ -3227,64 +3260,134 @@ body {
     transform: scale(-1, 1);
 }
 
-.book-table-info {
-    margin: 30px 0 20px;
-}
-
-.book-table {
-    overflow: hidden;
-}
-
-.book-table-shape img {
-    position: absolute;
-    top: -10px;
-    right: 73%;
-    width: 20px;
-}
-
-/* Add this CSS to your existing styles */
 .book-table-img-slider {
-    width: 60% !important;
-    height: 600px;
-    /* Adjust this value as needed */
-    overflow: hidden;
-    margin-left: 20%;
-}
-
-.book-table-img-slider .swiper-wrapper {
-    height: 100% !important;
-}
-
-.book-table-img-slider .swiper-slide {
-    height: 100%;
+    width: 34%;
+    height: auto;
+    margin-left: 32%;
 }
 
 .book-table-img {
-    width: 100% !important;
-    height: 50% !important;
-    background-size: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
     background-position: center;
 }
 
-/* Optional: Add some spacing around the slider */
-.slider-section {
-    padding: 40px 0;
+.swiper-button {
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Ensure the container is properly centered */
-.col-lg-10.m-auto {
-    margin: 0 auto;
+
+.book-table-img {
+    height: 70vh;
+    min-height: 500px;
+    /* border-radius: 50px; */
+}
+
+.back-img {
+    background-position: center;
+    background-size: fill;
+    background-repeat: repeat-y;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none;
+}
+
+.swiper-button-wp {
+    position: relative;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: unset;
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    font-size: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0;
+    color: #0d0d25;
+    background: #ffffff;
+    box-shadow: -20px 20px 60px #d4d4d4, 20px -20px 60px #ffffff;
+    padding-top: 1px;
+    padding-right: 2px;
+    transition: 0.3s;
+}
+
+.swiper-button-next {
+    box-shadow: 20px 20px 60px #d4d4d4, -20px -20px 60px #ffffff;
+    padding-left: 3px;
+}
+
+.swiper-button-prev:hover {
+    box-shadow: inset 5px 5px 20px #d4d4d4, inset -5px -5px 20px #ffffff;
+    color: #fcbc30;
+}
+
+.swiper-button-next:hover {
+    box-shadow: inset -5px 5px 20px #d4d4d4, inset 5px -5px 20px #ffffff;
+    color: #fcbc30;
+}
+
+.swiper-pagination {
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 60px;
+    background: linear-gradient(145deg, #ececec, #ffffff);
+    box-shadow: 25px 28px 55px #d4d4d4, -28px -28px 55px #ffffff;
+    max-width: fit-content;
+    left: 50% !important;
+    transform: translate(-50%, 0);
+    bottom: 0 !important;
+    color: #000;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    margin: 0px 10px !important;
+    border-radius: 10px;
+    transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);
+}
+
+.swiper-pagination-bullet-active {
+    background: #fcbc30;
+    width: 30px;
 }
 
 @media (max-width: 768px) {
     .book-table-img-slider {
-        width: 100% !important;
+        width: 81%;
         height: 400px;
-        /* Adjust height for smaller screens */
+        margin-left: 12% !important;
+
     }
 
     .book-table-img {
         height: 100% !important;
+        background-repeat: no-repeat;
+    }
+
+    .book-table {
+        padding: 60px 0 !important;
+        margin-top: -41%;
+        margin-bottom: 6%;
     }
 
     .book-table-shape img {
@@ -3324,8 +3427,409 @@ body {
     .footer-columns {
         gap: 0px !important;
     }
+}
 
-    .container {
-        margin-bottom: -14% !important;
+/* Back to Top Button Styles */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--honey-dark);
+    transform: translateY(-3px);
+}
+
+/* New Gifting Section Styles */
+.gifting-section {
+    background-color: #fff9f0;
+    padding: 8% 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.gifting-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('image/honeycomb-pattern.png');
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.gifting-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.gifting-header h2 {
+    font-size: 42px;
+    color: #d4a017;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.gifting-header p {
+    font-size: 18px;
+    color: #5a4a42;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.gifting-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gift-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 350px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.gift-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.gift-ribbon {
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background: #d4a017;
+    color: white;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.gift-image {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gift-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gift-item:hover .gift-image img {
+    transform: scale(1.05);
+}
+
+.gift-details {
+    padding: 25px;
+    text-align: center;
+}
+
+.gift-title {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.gift-description {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.gift-price {
+    font-size: 24px;
+    color: #d4a017;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.gift-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gift-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.add-to-cart {
+    background: #d4a017;
+    color: white;
+}
+
+.add-to-cart:hover {
+    background: #b88c14;
+}
+
+.wishlist {
+    background: white;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.wishlist:hover {
+    background: #f5f5f5;
+}
+
+.gift-icon {
+    font-size: 16px;
+}
+
+/* Custom Gift Box Styles */
+.premium-gift {
+    border: 2px solid #d4a017;
+}
+
+.premium-gift .gift-ribbon {
+    background: #8b4513;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .gifting-products {
+        gap: 20px;
+    }
+
+    .gift-item {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gifting-header h2 {
+        font-size: 32px;
+    }
+
+    .gift-item {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Modal Styles */
+.gift-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.gift-modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.gift-modal-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.gift-modal-body {
+    display: flex;
+    gap: 30px;
+}
+
+.gift-modal-image {
+    flex: 1;
+}
+
+.gift-modal-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.gift-modal-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.gift-modal-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 600;
+}
+
+.gift-modal-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d4a017;
+    margin-bottom: 20px;
+}
+
+.gift-modal-description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.gift-modal-quantity {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gift-modal-quantity label {
+    font-weight: 500;
+    color: #333;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.quantity-input {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.gift-modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.gift-modal-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+.gift-modal-button.add-to-cart {
+    background-color: #d4a017;
+    color: white;
+    flex: 2;
+}
+
+.gift-modal-button.add-to-cart:hover {
+    background-color: #c19115;
+}
+
+.gift-modal-button.buy-now {
+    background-color: #333;
+    color: white;
+    flex: 1;
+}
+
+.gift-modal-button.buy-now:hover {
+    background-color: #222;
+}
+
+.shipping-note {
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .gift-modal-body {
+        flex-direction: column;
+    }
+
+    .gift-modal-content {
+        width: 90%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+
+    .gift-modal-actions {
+        flex-direction: column;
     }
 }

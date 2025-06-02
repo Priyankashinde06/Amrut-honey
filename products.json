@@ -8,12 +8,12 @@
       {
         "size": "125g",
         "price": 90,
-        "image": "image/BOTTELS PHOTOS/multiflora-250g.png"
+        "image": "image/BOTTELS PHOTOS/multiflora-500g.png"
       },
       {
         "size": "250g",
         "price": 160,
-        "image": "image/BOTTELS PHOTOS/multiflora-250g.png"
+        "image": "image/BOTTELS PHOTOS/multiflora-500g.png"
       },
       {
         "size": "500g",
@@ -23,7 +23,7 @@
       {
         "size": "1kg",
         "price": 570,
-        "image": "image/BOTTELS PHOTOS/multiflora-1kg.png"
+        "image": "image/BOTTELS PHOTOS/multiflora-500g.png"
       }
     ]
   },
@@ -36,12 +36,12 @@
       {
         "size": "125g",
         "price": 120,
-        "image": "image/BOTTELS PHOTOS/jamun-125g.png"
+        "image": "image/BOTTELS PHOTOS/jamun-500g.png"
       },
       {
         "size": "250g",
         "price": 220,
-        "image": "image/BOTTELS PHOTOS/jamun-250g.png"
+        "image": "image/BOTTELS PHOTOS/jamun-500g.png"
       },
       {
         "size": "500g",
@@ -51,7 +51,7 @@
       {
         "size": "1kg",
         "price": 680,
-        "image": "image/BOTTELS PHOTOS/jamun-1kg.png"
+        "image": "image/BOTTELS PHOTOS/jamun-500g.png"
       }
     ]
   },
@@ -64,12 +64,12 @@
       {
         "size": "125g",
         "price": 120,
-        "image": "image/BOTTELS PHOTOS/ajwain-125g.png"
+        "image": "./image/BOTTELS PHOTOS/Azwain-500g.png"
       },
       {
         "size": "250g",
         "price": 220,
-        "image": "./image/BOTTELS PHOTOS/Azwain-250gm.png"
+        "image": "./image/BOTTELS PHOTOS/Azwain-500g.png"
       },
       {
         "size": "500g",
@@ -79,7 +79,7 @@
       {
         "size": "1kg",
         "price": 680,
-        "image": "image/BOTTELS PHOTOS/ajwain-1kg.png"
+        "image": "./image/BOTTELS PHOTOS/Azwain-500g.png"
       }
     ]
   },
@@ -92,12 +92,12 @@
       {
         "size": "125g",
         "price": 140,
-        "image": "image/BOTTELS PHOTOS/tulsi-125g.png"
+        "image": "image/BOTTELS PHOTOS/tulsi-500g.png"
       },
       {
         "size": "250g",
         "price": 260,
-        "image": "image/BOTTELS PHOTOS/Tulsi-250gm.png"
+        "image": "image/BOTTELS PHOTOS/tulsi-500g.png"
       },
       {
         "size": "500g",
@@ -107,7 +107,7 @@
       {
         "size": "1kg",
         "price": 720,
-        "image": "image/BOTTELS PHOTOS/tulsi-1kg.png"
+        "image": "image/BOTTELS PHOTOS/tulsi-500g.png"
       }
     ]
   }
