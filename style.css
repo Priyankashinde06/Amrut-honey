@@ -3296,6 +3296,7 @@ body {
         padding: 80px 0 !important;
         height: 102rem !important;
     }
+
     .elementor-heading-title {
         font-size: 18px !important;
         color: #eb6d2f !important;
@@ -3304,19 +3305,27 @@ body {
         margin: 0 !important;
         padding: 0 !important;
     }
-    .elementor-widget-image-box .elementor-image-box-wrapper{
+
+    .elementor-widget-image-box .elementor-image-box-wrapper {
         height: 100% !important;
         margin-bottom: 18% !important;
     }
-    .elementor-image-box-title{
+
+    .elementor-image-box-title {
         margin-top: -11px !important;
     }
-       .footer-content {
+
+    .footer-content {
         padding: 20px !important;
         right: 57px;
         top: -55px;
     }
-    .footer-columns{
+
+    .footer-columns {
         gap: 0px !important;
+    }
+
+    .container {
+        margin-bottom: -14% !important;
     }
 }
