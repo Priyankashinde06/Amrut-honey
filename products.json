@@ -36,22 +36,22 @@
       {
         "size": "125g",
         "price": 120,
-        "image": "image/BOTTELS PHOTOS/jamun-500g.png"
+        "image": "image/BOTTELS PHOTOS/jamun.png"
       },
       {
         "size": "250g",
         "price": 220,
-        "image": "image/BOTTELS PHOTOS/jamun-500g.png"
+        "image": "image/BOTTELS PHOTOS/jamun.png"
       },
       {
         "size": "500g",
         "price": 400,
-        "image": "image/BOTTELS PHOTOS/jamun-500g.png"
+        "image": "image/BOTTELS PHOTOS/jamun.png"
       },
       {
         "size": "1kg",
         "price": 680,
-        "image": "image/BOTTELS PHOTOS/jamun-500g.png"
+        "image": "image/BOTTELS PHOTOS/jamun.png"
       }
     ]
   },

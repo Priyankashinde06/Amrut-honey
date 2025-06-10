@@ -411,6 +411,147 @@
             padding-bottom: 60px !important;
         }
     </style>
+    <style>
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Search Styles */
+        .search-container {
+            position: relative;
+        }
+
+        .search-icon {
+            color: #333;
+            font-size: 18px;
+        }
+
+        .search-form {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 300px;
+            background: #fff;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .search-form input {
+            width: 100%;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+        }
+
+        .search-form button {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-results {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+
+        /* Account Dropdown */
+        .account-container {
+            position: relative;
+        }
+
+        .account-icon {
+            color: #333;
+            font-size: 18px;
+        }
+
+        .account-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 200px;
+            background: #fff;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .account-dropdown ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .account-dropdown li a {
+            display: block;
+            padding: 5px 0;
+            color: #333;
+        }
+
+        /* Mobile Header Styles */
+        .mobile-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .mobile-search-form {
+            display: none;
+            padding: 15px;
+            background: #f5f5f5;
+        }
+
+        .mobile-search-form input {
+            width: 100%;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+        }
+
+        /* Mobile Menu Dropdown Fix */
+        .qodef-mobile-header-navigation .menu-item-has-children>.sub-menu {
+            display: none;
+        }
+
+        .qodef-mobile-header-navigation .menu-item-has-children.active>.sub-menu {
+            display: block;
+        }
+
+        .mobile-menu-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .mobile-menu-toggle i {
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item-has-children.active .mobile-menu-toggle i {
+            transform: rotate(180deg);
+        }
+
+        /* Show/hide elements when needed */
+        .search-container.active .search-form {
+            display: block;
+        }
+
+        .account-container.active .account-dropdown {
+            display: block;
+        }
+
+        .mobile-search-active .mobile-search-form {
+            display: block;
+        }
+    </style>
     <link rel="stylesheet" href="https://use.typekit.net/XXXXXX.css">
 </head>
 
@@ -448,11 +589,24 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
-                <div class="header-cart">
-                    <a href="cart.html" class="cart-contents">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </a>
+                <div class="header-actions">
+                    <!-- Search Icon and Form -->
+                    <div class="search-container">
+                        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                        <div class="search-form">
+                            <form action="search.html" method="get">
+                                <input type="text" name="q" placeholder="Search products...">
+                                <button type="submit"><i class="fas fa-search"></i></button>
+                            </form>
+                            <div class="search-results"></div>
+                        </div>
+                    </div>
+                    <div class="header-cart">
+                        <a href="cart.html" class="cart-contents">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -464,7 +618,24 @@
                     <img width="150" height="80" src="image/Amrut Honey.png" class="qodef-header-logo-image qodef--main"
                         alt="logo main" itemprop="image" />
                 </a>
-                <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                <div class="mobile-header-actions">
+                    <a href="#" class="mobile-search-icon"><i class="fas fa-search"></i></a>
+                    <a href="cart.html" class="mobile-cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                </div>
+
+                <!-- Mobile Search Form -->
+                <div class="mobile-search-form">
+                    <form action="search.html" method="get">
+                        <input type="text" name="q" placeholder="Search products...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+
+                <!-- Mobile Menu -->
                 <nav class="qodef-mobile-header-navigation" role="navigation" aria-label="Mobile Menu">
                     <ul id="menu-main-menu-4" class="qodef-content-grid">
                         <li
@@ -477,10 +648,11 @@
                         </li>
                         <li
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-93 qodef-menu-item--narrow">
-                            <a href="#">Shop</a>
-                            <ul class="menu">
+                            <a href="#" class="mobile-menu-toggle">Shop <i class="fas fa-chevron-down"></i></a>
+                            <ul class="sub-menu">
                                 <li class="menu-item-has-children">
-                                    <a href="#">Products</a>
+                                    <a href="#" class="mobile-menu-toggle">Products <i
+                                            class="fas fa-chevron-down"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
                                         <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
@@ -1336,7 +1508,7 @@
                                                                                 </span>
                                                                             </div>
                                                                             <div class="product-buttons">
-                                                                                <a href="index-2.htm?add-to-cart=313"
+                                                                                <a href="raw-honey.html?type=multiflora"
                                                                                     aria-describedby="woocommerce_loop_add_to_cart_link_describedby_313"
                                                                                     data-quantity="1"
                                                                                     class="button product_type_simple add_to_cart_button ajax_add_to_cart"
@@ -1384,7 +1556,7 @@
                                                                                 </span>
                                                                             </div>
                                                                             <div class="product-buttons">
-                                                                                <a href="index-2.htm?add-to-cart=300"
+                                                                                <a href="raw-honey.html?type=jamun"
                                                                                     aria-describedby="woocommerce_loop_add_to_cart_link_describedby_313"
                                                                                     data-quantity="1"
                                                                                     class="button product_type_simple add_to_cart_button ajax_add_to_cart"
@@ -1433,7 +1605,7 @@
                                                                                 </span>
                                                                             </div>
                                                                             <div class="product-buttons">
-                                                                                <a href="index-2.htm?add-to-cart=312"
+                                                                                <a href="raw-honey.html?type=ajwain"
                                                                                     aria-describedby="woocommerce_loop_add_to_cart_link_describedby_313"
                                                                                     data-quantity="1"
                                                                                     class="button product_type_simple add_to_cart_button ajax_add_to_cart"
@@ -1481,7 +1653,7 @@
                                                                                 </span>
                                                                             </div>
                                                                             <div class="product-buttons">
-                                                                                <a href="index-2.htm?add-to-cart=307"
+                                                                                <a href="raw-honey.html?type=tulsi"
                                                                                     aria-describedby="woocommerce_loop_add_to_cart_link_describedby_313"
                                                                                     data-quantity="1"
                                                                                     class="button product_type_simple add_to_cart_button ajax_add_to_cart"
@@ -1709,6 +1881,9 @@
 
             </div>
         </div>
+        <div class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </div>
         <footer id="qodef-page-footer">
             <div id="qodef-page-footer-inner" class="container">
                 <div class="footer-content">
@@ -1915,6 +2090,285 @@
     <script type='text/javascript'
         src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/plugins/elementor/assets/js/elementor.js?ver=6.0.9'
         id='mellifera-core-elementor-js'></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const playBtn = document.getElementById("play-video-btn");
+            const modal = document.getElementById("honey-video-modal");
+            const modalVideo = document.getElementById("modal-video");
+            const closeModal = document.querySelector(".close-modals");
+
+            // Open modal when play button is clicked
+            playBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                modal.style.display = "flex";
+                modalVideo.play();
+                document.body.style.overflow = "hidden"; // Prevent scrolling
+            });
+
+            // Close modal when X is clicked
+            closeModal.addEventListener("click", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                modal.style.display = "none";
+                modalVideo.pause();
+                document.body.style.overflow = ""; // Restore scrolling
+            });
+
+            // Close modal when clicking outside the video
+            modal.addEventListener("click", function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                    modalVideo.pause();
+                    document.body.style.overflow = ""; // Restore scrolling
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape" && modal.style.display === "flex") {
+                    modal.style.display = "none";
+                    modalVideo.pause();
+                    document.body.style.overflow = ""; // Restore scrolling
+                }
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            var book_table = new Swiper(".book-table-img-slider", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                speed: 2000,
+                effect: "coverflow",
+                coverflowEffect: {
+                    rotate: 1,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 5,
+                    slideShadows: false,
+                },
+                loopAdditionalSlides: true, // Fixed typo: was loopAdditionSlides
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            });
+
+            // Initialize Fancybox
+            Fancybox.bind("[data-fancybox]", {
+                // Your custom options
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            // Desktop Search Toggle
+            const searchIcon = document.querySelector('.search-icon');
+            const searchContainer = document.querySelector('.search-container');
+
+            if (searchIcon) {
+                searchIcon.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    searchContainer.classList.toggle('active');
+                    document.querySelector('.account-container').classList.remove('active');
+                });
+            }
+
+            // Account Dropdown Toggle
+            const accountIcon = document.querySelector('.account-icon');
+            const accountContainer = document.querySelector('.account-container');
+
+            if (accountIcon) {
+                accountIcon.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    accountContainer.classList.toggle('active');
+                    searchContainer.classList.remove('active');
+                });
+            }
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!searchContainer.contains(e.target) && !searchIcon.contains(e.target)) {
+                    searchContainer.classList.remove('active');
+                }
+                if (!accountContainer.contains(e.target) && !accountIcon.contains(e.target)) {
+                    accountContainer.classList.remove('active');
+                }
+            });
+
+            // Mobile Search Toggle
+            const mobileSearchIcon = document.querySelector('.mobile-search-icon');
+            const mobileHeader = document.querySelector('#qodef-page-mobile-header');
+
+            if (mobileSearchIcon) {
+                mobileSearchIcon.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    mobileHeader.classList.toggle('mobile-search-active');
+                });
+            }
+
+            // Mobile Menu Dropdown Toggle
+            const mobileMenuToggles = document.querySelectorAll('.mobile-menu-toggle');
+
+            mobileMenuToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const parentItem = this.closest('.menu-item-has-children');
+                    parentItem.classList.toggle('active');
+                });
+            });
+
+            // Update cart count
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                document.querySelectorAll('.cart-count').forEach(el => {
+                    el.textContent = totalItems;
+                });
+            }
+
+            // Initialize cart count
+            updateCartCount();
+        });
+
+        // Search functionality
+        function performSearch(query) {
+            // This would be replaced with actual search logic
+            const products = [
+                { name: 'Multiflora Honey', url: 'raw-honey.html?type=multiflora' },
+                { name: 'Jamun Honey', url: 'raw-honey.html?type=jamun' },
+                { name: 'Ajwain Honey', url: 'raw-honey.html?type=ajwain' },
+                { name: 'Tulsi Honey', url: 'raw-honey.html?type=tulsi' }
+            ];
+
+            const results = products.filter(product =>
+                product.name.toLowerCase().includes(query.toLowerCase())
+            );
+
+            return results;
+        }
+
+        // Handle search form submission
+        document.querySelectorAll('form').forEach(form => {
+            if (form.action.includes('search.html')) {
+                form.addEventListener('submit', function (e) {
+                    const input = this.querySelector('input[name="q"]');
+                    if (input.value.trim() === '') {
+                        e.preventDefault();
+                        return false;
+                    }
+                });
+            }
+        });
+
+        // Live search for desktop
+        const searchInput = document.querySelector('.search-form input');
+        if (searchInput) {
+            searchInput.addEventListener('input', function () {
+                const query = this.value.trim();
+                const resultsContainer = this.closest('.search-form').querySelector('.search-results');
+
+                if (query.length > 2) {
+                    const results = performSearch(query);
+                    showSearchResults(results, resultsContainer);
+                } else {
+                    resultsContainer.innerHTML = '';
+                }
+            });
+        }
+
+        function showSearchResults(results, container) {
+            container.innerHTML = '';
+
+            if (results.length === 0) {
+                container.innerHTML = '<p>No products found</p>';
+                return;
+            }
+
+            const ul = document.createElement('ul');
+            results.forEach(result => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = result.url;
+                a.textContent = result.name;
+                li.appendChild(a);
+                ul.appendChild(li);
+            });
+
+            container.appendChild(ul);
+        }
+        var tpj = jQuery;
+
+        var revapi1;
+
+        if (window.RS_MODULES === undefined) window.RS_MODULES = {};
+        if (RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+        RS_MODULES.modules["revslider11"] = {
+            once:
+                RS_MODULES.modules["revslider11"] !== undefined
+                    ? RS_MODULES.modules["revslider11"].once
+                    : undefined,
+            init: function () {
+                window.revapi1 =
+                    window.revapi1 === undefined ||
+                        window.revapi1 === null ||
+                        window.revapi1.length === 0
+                        ? document.getElementById("rev_slider_1_1")
+                        : window.revapi1;
+                if (
+                    window.revapi1 === null ||
+                    window.revapi1 === undefined ||
+                    window.revapi1.length == 0
+                ) {
+                    window.revapi1initTry =
+                        window.revapi1initTry === undefined ? 0 : window.revapi1initTry + 1;
+                    if (window.revapi1initTry < 20)
+                        requestAnimationFrame(function () {
+                            RS_MODULES.modules["revslider11"].init();
+                        });
+                    return;
+                }
+                window.revapi1 = jQuery(window.revapi1);
+                if (window.revapi1.revolution == undefined) {
+                    revslider_showDoubleJqueryError("rev_slider_1_1");
+                    return;
+                }
+                revapi1.revolutionInit({
+                    revapi: "revapi1",
+                    sliderType: "hero",
+                    sliderLayout: "fullscreen",
+                    visibilityLevels: "1920,1710,1025,760",
+                    gridwidth: "1300,1100,768,300",
+                    gridheight: "900,640,700,560",
+                    lazyType: "smart",
+                    perspective: 600,
+                    perspectiveType: "local",
+                    editorheight: "900,640,700,560",
+                    responsiveLevels: "1920,1710,1025,760",
+                    progressBar: { disableProgressBar: true },
+                    navigation: {
+                        onHoverStop: false,
+                    },
+                    viewPort: {
+                        global: true,
+                        globalDist: "-200px",
+                        enable: false,
+                    },
+                    fallbacks: {
+                        allowHTML5AutoPlayOnAndroid: true,
+                    },
+                });
+            },
+        }; // End of RevInitScript
+        if (window.RS_MODULES.checkMinimal !== undefined) {
+            window.RS_MODULES.checkMinimal();
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 

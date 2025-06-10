@@ -411,7 +411,266 @@
             padding-bottom: 60px !important;
         }
     </style>
-    <link rel="stylesheet" href="https://use.typekit.net/XXXXXX.css">
+    <style>
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Search Styles */
+        .search-container {
+            position: relative;
+        }
+
+        .search-icon {
+            color: #333;
+            font-size: 18px;
+        }
+
+        .search-form {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 300px;
+            background: #fff;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .search-form input {
+            width: 100%;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+        }
+
+        .search-form button {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-results {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+
+        /* Account Dropdown */
+        .account-container {
+            position: relative;
+        }
+
+        .account-icon {
+            color: #333;
+            font-size: 18px;
+        }
+
+        .account-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 200px;
+            background: #fff;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .account-dropdown ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .account-dropdown li a {
+            display: block;
+            padding: 5px 0;
+            color: #333;
+        }
+
+        /* Mobile Header Styles */
+        .mobile-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .mobile-search-form {
+            display: none;
+            padding: 15px;
+            background: #f5f5f5;
+        }
+
+        .mobile-search-form input {
+            width: 100%;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+        }
+
+        /* Mobile Menu Dropdown Fix */
+        .qodef-mobile-header-navigation .menu-item-has-children>.sub-menu {
+            display: none;
+        }
+
+        .qodef-mobile-header-navigation .menu-item-has-children.active>.sub-menu {
+            display: block;
+        }
+
+        .mobile-menu-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .mobile-menu-toggle i {
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item-has-children.active .mobile-menu-toggle i {
+            transform: rotate(180deg);
+        }
+
+        /* Show/hide elements when needed */
+        .search-container.active .search-form {
+            display: block;
+        }
+
+        .account-container.active .account-dropdown {
+            display: block;
+        }
+
+        .mobile-search-active .mobile-search-form {
+            display: block;
+        }
+    </style>
+    <style>
+    /* Gift Modal Styles */
+    .gift-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .gift-modal-content {
+        background-color: #fff;
+        margin: 5% auto;
+        padding: 30px;
+        width: 80%;
+        max-width: 800px;
+        border-radius: 5px;
+        position: relative;
+    }
+    
+    .gift-modal-close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .gift-modal-body {
+        display: flex;
+        gap: 30px;
+    }
+    
+    .gift-modal-image {
+        flex: 1;
+    }
+    
+    .gift-modal-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+    
+    .gift-modal-details {
+        flex: 1;
+    }
+    
+    .gift-modal-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    
+    .gift-modal-price {
+        font-size: 20px;
+        font-weight: bold;
+        color: #8b7355;
+        margin-bottom: 15px;
+    }
+    
+    .gift-modal-description {
+        margin-bottom: 20px;
+        color: #666;
+    }
+    
+    .gift-modal-quantity {
+        margin-bottom: 20px;
+    }
+    
+    .gift-modal-quantity input {
+        width: 60px;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    
+    .gift-modal-actions {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .gift-modal-button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    
+    .gift-modal-button.add-to-cart {
+        background-color: #8b7355;
+        color: white;
+    }
+    
+    .gift-modal-button.buy-now {
+        background-color: #333;
+        color: white;
+    }
+    
+    .gift-modal-button:hover {
+        opacity: 0.9;
+    }
+    
+    @media (max-width: 768px) {
+        .gift-modal-content {
+            width: 90%;
+            margin: 10% auto;
+        }
+        
+        .gift-modal-body {
+            flex-direction: column;
+        }
+    }
+</style>
 </head>
 
 <body
@@ -448,11 +707,24 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
-                <div class="header-cart">
-                    <a href="#" class="cart-contents">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </a>
+                <div class="header-actions">
+                    <!-- Search Icon and Form -->
+                    <div class="search-container">
+                        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                        <div class="search-form">
+                            <form action="search.html" method="get">
+                                <input type="text" name="q" placeholder="Search products...">
+                                <button type="submit"><i class="fas fa-search"></i></button>
+                            </form>
+                            <div class="search-results"></div>
+                        </div>
+                    </div>
+                    <div class="header-cart">
+                        <a href="cart.html" class="cart-contents">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -464,7 +736,24 @@
                     <img width="150" height="80" src="image/Amrut Honey.png" class="qodef-header-logo-image qodef--main"
                         alt="logo main" itemprop="image" />
                 </a>
-                <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                <div class="mobile-header-actions">
+                    <a href="#" class="mobile-search-icon"><i class="fas fa-search"></i></a>
+                    <a href="cart.html" class="mobile-cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                </div>
+
+                <!-- Mobile Search Form -->
+                <div class="mobile-search-form">
+                    <form action="search.html" method="get">
+                        <input type="text" name="q" placeholder="Search products...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+
+                <!-- Mobile Menu -->
                 <nav class="qodef-mobile-header-navigation" role="navigation" aria-label="Mobile Menu">
                     <ul id="menu-main-menu-4" class="qodef-content-grid">
                         <li
@@ -477,10 +766,11 @@
                         </li>
                         <li
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-93 qodef-menu-item--narrow">
-                            <a href="#">Shop</a>
-                            <ul class="menu">
+                            <a href="#" class="mobile-menu-toggle">Shop <i class="fas fa-chevron-down"></i></a>
+                            <ul class="sub-menu">
                                 <li class="menu-item-has-children">
-                                    <a href="#">Products</a>
+                                    <a href="#" class="mobile-menu-toggle">Products <i
+                                            class="fas fa-chevron-down"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
                                         <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
@@ -833,6 +1123,154 @@
     <script type='text/javascript'
         src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/plugins/elementor/assets/js/elementor.js?ver=6.0.9'
         id='mellifera-core-elementor-js'></script>
+
+<script>
+    // Gift Modal Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize modal elements
+        const modal = document.getElementById('giftModal');
+        const modalClose = document.querySelector('.gift-modal-close');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const buyNowButtons = document.querySelectorAll('.buy-now');
+        
+        // Function to extract price number from string (e.g. "₹1,200" → 1200)
+        function extractPrice(priceStr) {
+            return parseInt(priceStr.replace(/[^0-9]/g, '')) || 0;
+        }
+        
+        // Function to format price with currency symbol
+        function formatPrice(price) {
+            return '₹' + price.toLocaleString('en-IN');
+        }
+        
+        // Function to open modal with product details
+        function openModal(productElement) {
+            const productImg = productElement.querySelector('.gift-image img').src;
+            const productTitle = productElement.querySelector('.gift-title').textContent;
+            const productPrice = productElement.querySelector('.gift-price').textContent;
+            const productDesc = productElement.querySelector('.gift-description').textContent;
+            
+            document.getElementById('modalGiftImage').src = productImg;
+            document.getElementById('modalGiftTitle').textContent = productTitle;
+            document.getElementById('modalGiftPrice').textContent = productPrice;
+            document.getElementById('modalGiftDescription').textContent = productDesc;
+            
+            // Reset quantity to 1 when opening modal
+            document.getElementById('quantity').value = 1;
+            
+            modal.style.display = 'block';
+        }
+        
+        // Close modal when clicking X
+        modalClose.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // Handle Add to Cart button clicks on product cards
+        addToCartButtons.forEach(button => {
+            if (!button.closest('.gift-modal-actions')) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productElement = this.closest('.gift-item');
+                    openModal(productElement);
+                });
+            }
+        });
+        
+        // Handle Add to Cart button in modal
+        const modalAddToCart = document.querySelector('.gift-modal-actions .add-to-cart');
+        if (modalAddToCart) {
+            modalAddToCart.addEventListener('click', function() {
+                // Get product details from modal
+                const priceText = document.getElementById('modalGiftPrice').textContent;
+                const product = {
+                    name: document.getElementById('modalGiftTitle').textContent,
+                    price: extractPrice(priceText),
+                    priceText: priceText, // Store the formatted price text
+                    image: document.getElementById('modalGiftImage').src,
+                    quantity: parseInt(document.getElementById('quantity').value) || 1
+                };
+                
+                // Add to cart
+                addToCart(product);
+                
+                // Close modal
+                modal.style.display = 'none';
+                
+                // Show confirmation (you can customize this)
+                alert(`${product.quantity} ${product.name} has been added to your cart!`);
+            });
+        }
+        
+        // Handle Buy Now button in modal
+        const modalBuyNow = document.querySelector('.gift-modal-actions .buy-now');
+        if (modalBuyNow) {
+            modalBuyNow.addEventListener('click', function() {
+                // Get product details from modal
+                const priceText = document.getElementById('modalGiftPrice').textContent;
+                const product = {
+                    name: document.getElementById('modalGiftTitle').textContent,
+                    price: extractPrice(priceText),
+                    priceText: priceText, // Store the formatted price text
+                    image: document.getElementById('modalGiftImage').src,
+                    quantity: parseInt(document.getElementById('quantity').value) || 1
+                };
+                
+                // Add to cart
+                addToCart(product);
+                
+                // Redirect to checkout page
+                window.location.href = 'cart.html?checkout=true';
+            });
+        }
+        
+        // Cart functionality
+        function addToCart(product) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Check if product already exists in cart
+            const existingProductIndex = cart.findIndex(item => item.name === product.name);
+            
+            if (existingProductIndex >= 0) {
+                // Update quantity if product exists
+                cart[existingProductIndex].quantity += product.quantity;
+            } else {
+                // Add new product to cart
+                cart.push({
+                    name: product.name,
+                    price: product.price,
+                    priceText: product.priceText, // Make sure to store the formatted price
+                    image: product.image,
+                    quantity: product.quantity
+                });
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Update cart count
+            updateCartCount();
+        }
+        
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            document.querySelectorAll('.cart-count').forEach(el => {
+                el.textContent = totalItems;
+            });
+        }
+        
+        // Initialize cart count on page load
+        updateCartCount();
+    });
+</script>
     <script src="script.js"></script>
 </body>
 
