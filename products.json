@@ -72,22 +72,22 @@
       {
         "size": "125g",
         "price": 120,
-        "image": "image/BOTTELS PHOTOS/jamun.png"
+        "image": "image/BOTTELS PHOTOS/Jamun.png"
       },
       {
         "size": "250g",
         "price": 220,
-        "image": "image/BOTTELS PHOTOS/jamun.png"
+        "image": "image/BOTTELS PHOTOS/Jamun.png"
       },
       {
         "size": "500g",
         "price": 400,
-        "image": "image/BOTTELS PHOTOS/jamun.png"
+        "image": "image/BOTTELS PHOTOS/Jamun.png"
       },
       {
         "size": "1kg",
         "price": 680,
-        "image": "image/BOTTELS PHOTOS/jamun.png"
+        "image": "image/BOTTELS PHOTOS/Jamun.png"
       }
     ]
   },
@@ -166,22 +166,22 @@
       {
         "size": "125g",
         "price": 140,
-        "image": "image/BOTTELS PHOTOS/tulsi-500g.png"
+        "image": "image/BOTTELS PHOTOS/Tulsi-500g.png"
       },
       {
         "size": "250g",
         "price": 260,
-        "image": "image/BOTTELS PHOTOS/tulsi-500g.png"
+        "image": "image/BOTTELS PHOTOS/Tulsi-500g.png"
       },
       {
         "size": "500g",
         "price": 440,
-        "image": "image/BOTTELS PHOTOS/tulsi-500g.png"
+        "image": "image/BOTTELS PHOTOS/Tulsi-500g.png"
       },
       {
         "size": "1kg",
         "price": 720,
-        "image": "image/BOTTELS PHOTOS/tulsi-500g.png"
+        "image": "image/BOTTELS PHOTOS/Tulsi-500g.png"
       }
     ]
   }
