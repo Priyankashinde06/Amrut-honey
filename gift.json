@@ -1,0 +1,77 @@
+{
+    "gifts": [
+        {
+            "id": 1,
+            "name": "Premium Honey Gift Box",
+            "price": "₹380",
+            "image": "./image/Gifting/Gift-1.jpg",
+            "description": "Premium honey gift box with three pure, raw honey varieties in elegant glass jars perfect for gifting.",
+            "features": [
+                {
+                    "icon": "fas fa-weight",
+                    "text": "250g each of three premium honey varieties"
+                },
+                {
+                    "icon": "fas fa-box-open",
+                    "text": "Elegant wooden gift box"
+                },
+                {
+                    "icon": "fas fa-hand-holding-heart",
+                    "text": "Handcrafted with care"
+                },
+                {
+                    "icon": "fas fa-leaf",
+                    "text": "100% natural with no additives"
+                }
+            ],
+            "ribbon": "Best Seller"
+        },
+        {
+            "id": 2,
+            "name": "Honey & Beeswax Candle Set",
+            "price": "₹400",
+            "image": "./image/Gifting/Gift-2.jpg",
+            "description": "A beautiful set of pure beeswax candles made from our own hives, paired with a jar of our signature multiflora honey.",
+            "features": [
+                {
+                    "icon": "fas fa-jar",
+                    "text": "Includes 250g jar of multiflora honey"
+                },
+                {
+                    "icon": "fas fa-clock",
+                    "text": "Long burning time"
+                },
+                {
+                    "icon": "fas fa-recycle",
+                    "text": "Eco-friendly packaging"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Deluxe Honey Hamper",
+            "price": "₹600",
+            "image": "./image/Gifting/Gift-3.jpg",
+            "description": "Our ultimate honey gift basket with four premium honeys, beeswax products, and honey-based skincare pure luxury.",
+            "features": [
+                {
+                    "icon": "fas fa-jar",
+                    "text": "Four 250g jars of different honey varieties"
+                },
+                {
+                    "icon": "fas fa-utensil-spoon",
+                    "text": "Wooden honey dipper"
+                },
+                {
+                    "icon": "fas fa-basket-shopping",
+                    "text": "Premium wicker gift basket"
+                },
+                {
+                    "icon": "fas fa-basket-shopping",
+                    "text": "Honey Chocolate"
+                }
+            ],
+            "ribbon": "New"
+        }
+    ]
+}

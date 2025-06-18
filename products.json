@@ -2,8 +2,26 @@
   {
     "id": "313",
     "name": "Multiflora Honey",
-    "description": "A delightful blend of nectar from multiple flowers, creating a rich and complex flavor profile perfect for all culinary uses.",
+    "description": "A delightful blend of nectar from multiple flowers,creating </br> a rich  and complex flavor profile perfect for all culinary uses.",
     "category": "Natural Honey",
+    "features": [
+        {
+            "icon": "fas fa-shield-alt",
+            "text": "Boosts Immunity"
+        },
+        {
+            "icon": "fas fa-heartbeat",
+            "text": "Improves Heart Health"
+        },
+        {
+            "icon": "fas fa-allergies",
+            "text": "Helps with Allergies"
+        },
+        {
+            "icon": "fas fa-brain",
+            "text": "Enhances Memory"
+        }
+    ],
     "variations": [
       {
         "size": "125g",
@@ -32,6 +50,24 @@
     "name": "Jamun Honey",
     "description": "Unique honey made from Jamun (Indian blackberry) flowers, known for its distinctive flavor and health benefits.",
     "category": "Organic Honey",
+    "features": [
+        {
+            "icon": "fas fa-apple-alt",
+            "text": "Rich in vitamins and pollens"
+        },
+        {
+            "icon": "fas fa-utensils",
+            "text": "Helps in better nutrient absorption"
+        },
+        {
+            "icon": "fas fa-tooth",
+            "text": "Good for teeth and gums"
+        },
+        {
+            "icon": "fas fa-glass-whiskey",
+            "text": "Refreshing jamun flavour"
+        }
+    ],
     "variations": [
       {
         "size": "125g",
@@ -60,6 +96,26 @@
     "name": "Ajwain Honey",
     "description": "Infused with the essence of Ajwain (carom seeds), this honey aids digestion and has a distinctive herbal aroma.",
     "category": "Medicinal Honey",
+    "features": [
+        {
+            "icon": "fas fa-digging",
+            "text": "Aids digestion naturally"
+        },
+        {
+            "icon": "fas fa-fire-alt",
+            "text": "Boosts metabolism"
+        },
+        {
+            "icon": "fas fa-bacteria",
+            "text": "Natural antiseptic properties"
+        },
+        {
+            "icon": "fas fa-weight",
+            "text": "Supports weight management",
+            "isSpecial": true
+        }
+    ],
+
     "variations": [
       {
         "size": "125g",
@@ -88,6 +144,24 @@
     "name": "Tulsi Honey",
     "description": "Infused with sacred Tulsi (Holy Basil), this honey combines sweetness with Tulsi's immunity-boosting properties.",
     "category": "Medicinal Honey",
+        "features": [
+        {
+            "icon": "fas fa-shield-virus",
+            "text": "Helps to boost immunity"
+        },
+        {
+            "icon": "fas fa-lungs",
+            "text": "Good for respiratory health"
+        },
+        {
+            "icon": "fas fa-bolt",
+            "text": "Natural energy booster"
+        },
+        {
+            "icon": "fas fa-spa",
+            "text": "Helps relieve stress"
+        }
+    ],
     "variations": [
       {
         "size": "125g",

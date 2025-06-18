@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Include PHPMailer - adjust these paths as needed
+// Include PHPMailer
 require 'C:/xampp/htdocs/priyanka/PHPMailer-master/src/Exception.php';
 require 'C:/xampp/htdocs/priyanka/PHPMailer-master/src/PHPMailer.php';
 require 'C:/xampp/htdocs/priyanka/PHPMailer-master/src/SMTP.php';
@@ -16,19 +16,36 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-// Get the raw POST data
-$json = file_get_contents('php://input');
-$data = json_decode($json, true);
+// Get the form data
+$transaction_id = $_POST['transaction_id'] ?? '';
+$payment_method = $_POST['payment_method'] ?? 'online';
+$order_details = json_decode($_POST['order_details'], true);
 
 // Validate required fields
-if (empty($data['customer']) || empty($data['order'])) {
+if (empty($order_details['customer']) || empty($order_details['order'])) {
     echo json_encode(['success' => false, 'message' => 'Missing required data']);
     exit;
 }
 
 // Extract data
-$customer = $data['customer'];
-$order = $data['order'];
+$customer = $order_details['customer'];
+$order = $order_details['order'];
+
+// Handle file upload for online payments
+$payment_proof_path = '';
+if ($payment_method === 'online' && !empty($_FILES['payment_proof'])) {
+    $upload_dir = 'payment_proofs/';
+    if (!is_dir($upload_dir)) {
+        mkdir($upload_dir, 0755, true);
+    }
+    
+    $file_name = uniqid() . '_' . basename($_FILES['payment_proof']['name']);
+    $target_file = $upload_dir . $file_name;
+    
+    if (move_uploaded_file($_FILES['payment_proof']['tmp_name'], $target_file)) {
+        $payment_proof_path = $target_file;
+    }
+}
 
 // Email configuration
 $admin_email = 'priyanka.jijausoftwares@gmail.com';
@@ -36,7 +53,41 @@ $subject = 'Order Confirmation - Amrut Honey';
 $order_id = 'AMRUT-' . uniqid();
 $subject_admin = 'New Order Received - ' . $order_id;
 
-// Prepare email content for customer (same as before)
+// Prepare payment details section based on payment method
+if ($payment_method === 'online') {
+    $payment_details = "
+    <div class='payment-details'>
+        <h3>Payment Details</h3>
+        <p><strong>Payment Method:</strong> Online Payment (UPI)</p>
+        <p><strong>Transaction ID:</strong> $transaction_id</p>
+        <p><strong>Payment Amount:</strong> {$order['total']}</p>
+    </div>";
+    
+    $admin_payment_details = "
+    <div class='payment-details'>
+        <h3>Payment Details</h3>
+        <p><strong>Payment Method:</strong> Online Payment (UPI)</p>
+        <p><strong>Transaction ID:</strong> $transaction_id</p>
+        <p><strong>Payment Amount:</strong> {$order['total']}</p>
+        <p><strong>Payment Date:</strong> " . date('Y-m-d H:i:s') . "</p>
+    </div>";
+} else {
+    $payment_details = "
+    <div class='payment-details'>
+        <h3>Payment Details</h3>
+        <p><strong>Payment Method:</strong> Cash on Delivery</p>
+        <p><strong>Amount to Collect:</strong> {$order['total']}</p>
+    </div>";
+    
+    $admin_payment_details = "
+    <div class='payment-details'>
+        <h3>Payment Details</h3>
+        <p><strong>Payment Method:</strong> Cash on Delivery</p>
+        <p><strong>Amount to Collect:</strong> {$order['total']}</p>
+    </div>";
+}
+
+// Prepare email content for customer
 $customer_message = "
 <!DOCTYPE html>
 <html>
@@ -50,6 +101,7 @@ $customer_message = "
         .footer { text-align: center; padding: 10px; font-size: 12px; }
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+        .payment-details { background-color: #fff8e1; padding: 15px; margin: 15px 0; border-radius: 5px; }
     </style>
 </head>
 <body>
@@ -67,11 +119,16 @@ $customer_message = "
                 <tr><th>Product</th><th>Quantity</th><th>Price</th></tr>";
                 
                 foreach ($order['items'] as $item) {
+                    $productName = htmlspecialchars($item['name'] ?? 'Product');
+                    $size = htmlspecialchars($item['size'] ?? '');
+                    $quantity = htmlspecialchars($item['quantity'] ?? 1);
+                    $price = number_format(($item['price'] ?? 0) * $quantity, 2);
+                    
                     $customer_message .= "
                     <tr>
-                        <td>{$item['name']} ({$item['size']})</td>
-                        <td>{$item['quantity']}</td>
-                        <td>₹" . number_format($item['price'] * $item['quantity'], 2) . "</td>
+                        <td>{$productName}" . ($size ? " ({$size})" : "") . "</td>
+                        <td>{$quantity}</td>
+                        <td>₹{$price}</td>
                     </tr>";
                 }
                 
@@ -82,6 +139,8 @@ $customer_message = "
                 <tr><td colspan='2'><strong>Total</strong></td><td>{$order['total']}</td></tr>
             </table>
             
+            {$payment_details}
+            
             <h3>Shipping Information</h3>
             <p>
                 {$customer['firstName']} {$customer['lastName']}<br>
@@ -90,7 +149,6 @@ $customer_message = "
                 Phone: {$customer['phone']}
             </p>
             
-            <p>Payment Method: " . ucfirst(str_replace('-', ' ', $order['paymentMethod'])) . "</p>
             <p>Shipping Method: " . ucfirst(str_replace('-', ' ', $order['shippingMethod'])) . "</p>
             
             <p>If you have any questions about your order, please contact us at info@amruthoney.com.</p>
@@ -117,6 +175,7 @@ $admin_message = "
         .content { padding: 20px; background-color: #f9f9f9; }
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+        .payment-details { background-color: #fff8e1; padding: 15px; margin: 15px 0; border-radius: 5px; }
     </style>
 </head>
 <body>
@@ -139,22 +198,28 @@ $admin_message = "
                 <tr><th>Product</th><th>Quantity</th><th>Price</th></tr>";
                 
                 foreach ($order['items'] as $item) {
+                    $productName = htmlspecialchars($item['name'] ?? 'Product');
+                    $size = htmlspecialchars($item['size'] ?? '');
+                    $quantity = htmlspecialchars($item['quantity'] ?? 1);
+                    $price = number_format(($item['price'] ?? 0) * $quantity, 2);
+                    
                     $admin_message .= "
                     <tr>
-                        <td>{$item['name']} ({$item['size']})</td>
-                        <td>{$item['quantity']}</td>
-                        <td>₹" . number_format($item['price'] * $item['quantity'], 2) . "</td>
+                        <td>{$productName}" . ($size ? " ({$size})" : "") . "</td>
+                        <td>{$quantity}</td>
+                        <td>₹{$price}</td>
                     </tr>";
                 }
                 
-$admin_message .= "
+    $admin_message .= "
                 <tr><td colspan='2'><strong>Subtotal</strong></td><td>{$order['subtotal']}</td></tr>
                 <tr><td colspan='2'><strong>Shipping</strong></td><td>{$order['shipping']}</td></tr>
                 <tr><td colspan='2'><strong>Tax</strong></td><td>{$order['tax']}</td></tr>
                 <tr><td colspan='2'><strong>Total</strong></td><td>{$order['total']}</td></tr>
             </table>
             
-            <p><strong>Payment Method:</strong> " . ucfirst(str_replace('-', ' ', $order['paymentMethod'])) . "</p>
+            {$admin_payment_details}
+            
             <p><strong>Shipping Method:</strong> " . ucfirst(str_replace('-', ' ', $order['shippingMethod'])) . "</p>
             
             <p>Please process this order promptly.</p>
@@ -167,16 +232,16 @@ $admin_message .= "
 $mail = new PHPMailer(true);
 
 try {
-    // Server settings - UPDATE THESE WITH YOUR SMTP CREDENTIALS
+    // Server settings
     $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com'; // For Gmail
+    $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'ps662001@gmail.com'; // Your Gmail
-    $mail->Password   = 'npcqieiamcjwavfp'; // Use App Password if 2FA enabled
-    $mail->SMTPSecure = "tls"; // Use TLS
-    $mail->Port       = 587; // For TLS
+    $mail->Username   = 'ps662001@gmail.com';
+    $mail->Password   = 'npcqieiamcjwavfp';
+    $mail->SMTPSecure = "tls";
+    $mail->Port       = 587;
 
-    // Enable debugging (0 = off, 1 = client messages, 2 = client and server messages)
+    // Enable debugging
     $mail->SMTPDebug = 2;
     $mail->Debugoutput = function($str, $level) {
         file_put_contents('php://stderr', "$level: $str\n");
@@ -191,7 +256,6 @@ try {
     $mail->Body    = $customer_message;
     
     $mail->send();
-    echo "Customer email sent!\n";
 
     // Clear all addresses and attachments for next email
     $mail->clearAddresses();
@@ -205,8 +269,12 @@ try {
     $mail->Subject = $subject_admin;
     $mail->Body    = $admin_message;
     
+    // Attach payment proof if available
+    if ($payment_proof_path) {
+        $mail->addAttachment($payment_proof_path);
+    }
+    
     $mail->send();
-    echo "Admin email sent!\n";
 
     echo json_encode(['success' => true, 'message' => 'Emails sent successfully']);
     

@@ -412,104 +412,7 @@
         }
     </style>
     <style>
-        /* Header Actions */
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Search Styles */
-        .search-container {
-            position: relative;
-        }
-
-        .search-icon {
-            color: #333;
-            font-size: 18px;
-        }
-
-        .search-form {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 300px;
-            background: #fff;
-            padding: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-
-        .search-form input {
-            width: 100%;
-            padding: 8px 15px;
-            border: 1px solid #ddd;
-        }
-
-        .search-form button {
-            position: absolute;
-            right: 15px;
-            top: 15px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .search-results {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-top: 10px;
-        }
-
-        /* Account Dropdown */
-        .account-container {
-            position: relative;
-        }
-
-        .account-icon {
-            color: #333;
-            font-size: 18px;
-        }
-
-        .account-dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 200px;
-            background: #fff;
-            padding: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-
-        .account-dropdown ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .account-dropdown li a {
-            display: block;
-            padding: 5px 0;
-            color: #333;
-        }
-
-        /* Mobile Header Styles */
-        .mobile-header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .mobile-search-form {
-            display: none;
-            padding: 15px;
-            background: #f5f5f5;
-        }
-
-        /* Mobile Menu Dropdown Fix */
+      /* Mobile Menu Dropdown Fix */
         .qodef-mobile-header-navigation .menu-item-has-children>.sub-menu {
             display: none;
         }
@@ -533,18 +436,6 @@
             transform: rotate(180deg);
         }
 
-        /* Show/hide elements when needed */
-        .search-container.active .search-form {
-            display: block;
-        }
-
-        .account-container.active .account-dropdown {
-            display: block;
-        }
-
-        .mobile-search-active .mobile-search-form {
-            display: block;
-        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -856,12 +747,20 @@
                 margin-bottom: 15px;
                 width: 100%;
                 height: auto;
-                max-height: 200px;
+                max-height: 285px;
+            }
+
+            .cart-item-details {
+                display: flex;
+                align-items: anchor-center;
+                flex-direction: column;
+                margin-left: 20% !important;
+                justify-content: space-around;
             }
 
             .cart-item-remove {
                 margin-left: 0;
-                margin-top: 15px;
+                margin-top: -18%;
                 align-self: flex-end;
             }
 
@@ -912,14 +811,12 @@
                     </ul>
                 </nav>
                 <div class="header-actions">
-                    <!-- Search Icon and Form -->
-                    <div class="search-container">
-                        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-                        <div class="search-form">
-                            <form action="search.html" method="get">
-                                <input type="text" name="q" placeholder="Search products...">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </form>
+                    <div class="header-search">
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Search honeys...">
+                            <button class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
                             <div class="search-results"></div>
                         </div>
                     </div>
@@ -933,7 +830,7 @@
             </div>
         </header>
 
-        <header id="qodef-page-mobile-header" style="height: 97px;">
+        <header id="qodef-page-mobile-header" style="height: 97px;" class="qodef-page-mobile-header">
             <div id="qodef-page-mobile-header-inner">
                 <a itemprop="url" class="qodef-mobile-header-logo-link" href="index.html" style="height:34px"
                     rel="home">
@@ -941,41 +838,39 @@
                         alt="logo main" itemprop="image" />
                 </a>
                 <div class="mobile-header-actions">
-                    <a href="#" class="mobile-search-icon"><i class="fas fa-search"></i></a>
-                    <a href="cart.html" class="mobile-cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                    <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                    <div class="mobile-search">
+                        <input type="text" class="search-input" placeholder="Search honeys...">
+                        <button class="search-button">
+                            <i class="fas fa-search search-icon"></i>
+                        </button>
+                        <!-- Search results will be added by JavaScript -->
+                        <a href="cart.html" class="mobile-cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                    </div>
                 </div>
-
-                <!-- Mobile Search Form -->
-                <div class="mobile-search-form">
-                    <form action="search.html" method="get">
-                        <input type="text" name="q" placeholder="Search products...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-
                 <!-- Mobile Menu -->
                 <nav class="qodef-mobile-header-navigation" role="navigation" aria-label="Mobile Menu">
                     <ul id="menu-main-menu-4" class="qodef-content-grid">
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-91 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="index.html">Home</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="about.html">About</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-93 qodef-menu-item--narrow">
-                            <a href="#" class="mobile-menu-toggle">Shop <i class="fas fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
-                                <li class="menu-item-has-children">
-                                    <a href="#" class="mobile-menu-toggle">Products <i
-                                            class="fas fa-chevron-down"></i></a>
-                                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#" class="mobile-menu-toggle">
+                                <span>Shop</span>
+
+                            </a>
+                            <ul class="sub-menu subb">
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#" class="mobile-menu-toggle">
+                                        <span>Products</span>
+                                    </a>
+                                    <ul class="sub-menu menus">
                                         <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
                                         <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
                                         <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
@@ -985,18 +880,17 @@
                                 <li><a href="gifting.html">Gifting</a></li>
                             </ul>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="index.html#gallery">Gallery</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-661 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </header>
+        <div id="blur-overlay"></div>
 
         <div id="qodef-page-inner">
             <main id="qodef-page-content">
@@ -1072,6 +966,7 @@
                                 <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
                                 <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
                                 <li><a href="raw-honey.html?type=tulsi">Tulsi Honey</a></li>
+                                <li><a href="gifting.html">Gitting</a></li>
                             </ul>
                         </div>
 
@@ -1089,65 +984,432 @@
                     </div>
 
                     <div class="footer-bottom">
-                        <p>&copy; 2023 Amrut Honey. All rights reserved.</p>
+                        <p>&copy; 2025 Amrut Honey. All rights reserved.</p>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
-   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Update cart count in header
-        function updateCartCount() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const totalItems = cart.reduce((total, item) => total + parseInt(item.quantity), 0);
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400%7COpen+Sans:400&display=swap" rel="stylesheet"
+        property="stylesheet" media="all" type="text/css">
 
-            // Update cart count in desktop header
-            const desktopCartCounts = document.querySelectorAll('.header-cart .cart-count');
-            desktopCartCounts.forEach(el => el.textContent = totalItems);
+    <script type="text/javascript">
+        (function () {
+            var c = document.body.className;
+            c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+            document.body.className = c;
+        })();
+    </script>
 
-            // Update cart count in mobile header
-            const mobileCartCounts = document.querySelectorAll('.mobile-cart-icon .cart-count');
-            mobileCartCounts.forEach(el => el.textContent = totalItems);
+    <link rel='stylesheet' id='e-animations-css'
+        href='https://mellifera.qodeinteractive.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.7.8'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='rs-plugin-settings-css'
+        href='https://mellifera.qodeinteractive.com/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.6.5'
+        type='text/css' media='all' />
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.6.4'
+        id='swv-js'></script>
+    <script type='text/javascript' src='https://export.qodethemes.com/_toolbar/assets/js/rbt-modules.js?ver=6.0.9'
+        id='rabbit_js-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.7.0.0'
+        id='jquery-blockui-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=7.0.0'
+        id='wc-add-to-cart-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.7.0.0'
+        id='js-cookie-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=7.0.0'
+        id='woocommerce-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=7.0.0'
+        id='wc-cart-fragments-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js?ver=4.3.0'
+        id='ppress-frontend-script-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.16.1'
+        id='gtm4wp-form-move-tracker-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1'
+        id='jquery-ui-core-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/qi-addons-for-elementor/assets/js/main.min.js?ver=6.0.9'
+        id='qi-addons-for-elementor-script-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-includes/js/hoverIntent.min.js?ver=1.10.2'
+        id='hoverIntent-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/assets/plugins/jquery/jquery.easing.1.3.js?ver=6.0.9'
+        id='jquery-easing-1.3-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/assets/plugins/modernizr/modernizr.js?ver=6.0.9'
+        id='modernizr-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/assets/plugins/tweenmax/tweenmax.min.js?ver=6.0.9'
+        id='tweenmax-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/themes/mellifera/assets/js/main.min.js?ver=6.0.9'
+        id='mellifera-main-js-js'></script>
+    <script type='text/javascript'
+        src='//maps.googleapis.com/maps/api/js?key=AIzaSyAnAl99IuIWlllvSLSFVuD9LFfEyTi5k5A&#038;ver=6.0.9'
+        id='google-map-api-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-includes/js/underscore.min.js?ver=1.13.3'
+        id='underscore-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/maps/assets/js/custom-marker.js?ver=6.0.9'
+        id='mellifera-core-map-custom-marker-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/maps/assets/js/markerclusterer.js?ver=6.0.9'
+        id='markerclusterer-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/maps/assets/js/google-map.js?ver=6.0.9'
+        id='mellifera-core-google-map-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/assets/js/mellifera-core.min.js?ver=6.0.9'
+        id='mellifera-core-script-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/themes/mellifera/assets/plugins/waitforimages/jquery.waitforimages.js?ver=6.0.9'
+        id='jquery-waitforimages-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/themes/mellifera/assets/plugins/appear/jquery.appear.js?ver=6.0.9'
+        id='jquery-appear-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6'
+        id='swiper-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/themes/mellifera/assets/plugins/magnific-popup/jquery.magnific-popup.min.js?ver=6.0.9'
+        id='jquery-magnific-popup-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/woocommerce/assets/js/select2/select2.full.min.js?ver=4.0.3-wc.7.0.0'
+        id='select2-js'></script>
+    <script type="text/javascript"
+        src="https://static.zdassets.com/ekr/snippet.js?key=af3078fd-a5ae-40da-bee0-e589b98c8603&#038;ver=6.0.9"
+        id="ze-snippet"></script>
+    <script type='text/javascript' id='mediaelement-core-js-before'>
+        var mejsL10n = { "language": "en", "strings": { "mejs.download-file": "Download File", "mejs.install-flash": "You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/", "mejs.fullscreen": "Fullscreen", "mejs.play": "Play", "mejs.pause": "Pause", "mejs.time-slider": "Time Slider", "mejs.time-help-text": "Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.", "mejs.live-broadcast": "Live Broadcast", "mejs.volume-help-text": "Use Up\/Down Arrow keys to increase or decrease volume.", "mejs.unmute": "Unmute", "mejs.mute": "Mute", "mejs.volume-slider": "Volume Slider", "mejs.video-player": "Video Player", "mejs.audio-player": "Audio Player", "mejs.captions-subtitles": "Captions\/Subtitles", "mejs.captions-chapters": "Chapters", "mejs.none": "None", "mejs.afrikaans": "Afrikaans", "mejs.albanian": "Albanian", "mejs.arabic": "Arabic", "mejs.belarusian": "Belarusian", "mejs.bulgarian": "Bulgarian", "mejs.catalan": "Catalan", "mejs.chinese": "Chinese", "mejs.chinese-simplified": "Chinese (Simplified)", "mejs.chinese-traditional": "Chinese (Traditional)", "mejs.croatian": "Croatian", "mejs.czech": "Czech", "mejs.danish": "Danish", "mejs.dutch": "Dutch", "mejs.english": "English", "mejs.estonian": "Estonian", "mejs.filipino": "Filipino", "mejs.finnish": "Finnish", "mejs.french": "French", "mejs.galician": "Galician", "mejs.german": "German", "mejs.greek": "Greek", "mejs.haitian-creole": "Haitian Creole", "mejs.hebrew": "Hebrew", "mejs.hindi": "Hindi", "mejs.hungarian": "Hungarian", "mejs.icelandic": "Icelandic", "mejs.indonesian": "Indonesian", "mejs.irish": "Irish", "mejs.italian": "Italian", "mejs.japanese": "Japanese", "mejs.korean": "Korean", "mejs.latvian": "Latvian", "mejs.lithuanian": "Lithuanian", "mejs.macedonian": "Macedonian", "mejs.malay": "Malay", "mejs.maltese": "Maltese", "mejs.norwegian": "Norwegian", "mejs.persian": "Persian", "mejs.polish": "Polish", "mejs.portuguese": "Portuguese", "mejs.romanian": "Romanian", "mejs.russian": "Russian", "mejs.serbian": "Serbian", "mejs.slovak": "Slovak", "mejs.slovenian": "Slovenian", "mejs.spanish": "Spanish", "mejs.swahili": "Swahili", "mejs.swedish": "Swedish", "mejs.tagalog": "Tagalog", "mejs.thai": "Thai", "mejs.turkish": "Turkish", "mejs.ukrainian": "Ukrainian", "mejs.vietnamese": "Vietnamese", "mejs.welsh": "Welsh", "mejs.yiddish": "Yiddish" } };
+    </script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.16'
+        id='mediaelement-core-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=6.0.9'
+        id='mediaelement-migrate-js'></script>
+    <script type='text/javascript' id='mediaelement-js-extra'>
+        /* <![CDATA[ */
+        var _wpmejsSettings = { "pluginPath": "\/wp-includes\/js\/mediaelement\/", "classPrefix": "mejs-", "stretching": "responsive" };
+        /* ]]> */
+    </script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-includes/js/mediaelement/renderers/vimeo.min.js?ver=4.2.16'
+        id='mediaelement-vimeo-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.7.8'
+        id='elementor-webpack-runtime-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.7.8'
+        id='elementor-frontend-modules-js'></script>
+    <script type='text/javascript' id='elementor-frontend-js-before'>
+        var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false, "isScriptDebug": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "download": "Download", "downloadImage": "Download image", "fullscreen": "Fullscreen", "zoom": "Zoom", "share": "Share", "playVideo": "Play Video", "previous": "Previous", "next": "Next", "close": "Close" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "responsive": { "breakpoints": { "mobile": { "label": "Mobile", "value": 767, "default_value": 767, "direction": "max", "is_enabled": true }, "mobile_extra": { "label": "Mobile Extra", "value": 880, "default_value": 880, "direction": "max", "is_enabled": false }, "tablet": { "label": "Tablet", "value": 1024, "default_value": 1024, "direction": "max", "is_enabled": true }, "tablet_extra": { "label": "Tablet Extra", "value": 1200, "default_value": 1200, "direction": "max", "is_enabled": false }, "laptop": { "label": "Laptop", "value": 1366, "default_value": 1366, "direction": "max", "is_enabled": false }, "widescreen": { "label": "Widescreen", "value": 2400, "default_value": 2400, "direction": "min", "is_enabled": false } } }, "version": "3.7.8", "is_static": false, "experimentalFeatures": { "e_import_export": true, "e_hidden_wordpress_widgets": true, "landing-pages": true, "elements-color-picker": true, "favorite-widgets": true, "admin-top-bar": true }, "urls": { "assets": "https:\/\/mellifera.qodeinteractive.com\/wp-content\/plugins\/elementor\/assets\/" }, "settings": { "page": [], "editorPreferences": [] }, "kit": { "active_breakpoints": ["viewport_mobile", "viewport_tablet"], "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description" }, "post": { "id": 23, "title": "Mellifera%20%E2%80%93%20Beekeping%20and%20Honey%20Shop%20Theme", "excerpt": "", "featuredImage": false } };
+    </script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.7.8'
+        id='elementor-frontend-js'></script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/qi-addons-for-elementor/inc/plugins/elementor/assets/js/elementor.js?ver=6.0.9'
+        id='qi-addons-for-elementor-elementor-js'></script>
+    <script type='text/javascript' id='mellifera-core-elementor-js-extra'>
+        /* <![CDATA[ */
+        var qodefElementorGlobal = { "vars": { "elementorSectionHandler": [], "elementorBeeAnimationSection": { "5649146": [] } } };
+        /* ]]> */
+    </script>
+    <script type='text/javascript'
+        src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/plugins/elementor/assets/js/elementor.js?ver=6.0.9'
+        id='mellifera-core-elementor-js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Desktop Search Toggle
+            const searchIcon = document.querySelector('.search-icon');
+            const searchContainer = document.querySelector('.search-container');
+
+            if (searchIcon) {
+                searchIcon.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    searchContainer.classList.toggle('active');
+                    document.querySelector('.account-container').classList.remove('active');
+                });
+            }
+
+            // Account Dropdown Toggle
+            const accountIcon = document.querySelector('.account-icon');
+            const accountContainer = document.querySelector('.account-container');
+
+            if (accountIcon) {
+                accountIcon.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    accountContainer.classList.toggle('active');
+                    searchContainer.classList.remove('active');
+                });
+            }
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!searchContainer.contains(e.target) && !searchIcon.contains(e.target)) {
+                    searchContainer.classList.remove('active');
+                }
+                if (!accountContainer.contains(e.target) && !accountIcon.contains(e.target)) {
+                    accountContainer.classList.remove('active');
+                }
+            });
+
+            // Mobile Search Toggle
+            const mobileSearchIcon = document.querySelector('.mobile-search-icon');
+            const mobileHeader = document.querySelector('#qodef-page-mobile-header');
+
+            if (mobileSearchIcon) {
+                mobileSearchIcon.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    mobileHeader.classList.toggle('mobile-search-active');
+                });
+            }
+
+            // Mobile Menu Dropdown Toggle
+            const mobileMenuToggles = document.querySelectorAll('.mobile-menu-toggle');
+
+            mobileMenuToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const parentItem = this.closest('.menu-item-has-children');
+                    parentItem.classList.toggle('active');
+                });
+            });
+
+            // Update cart count
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                document.querySelectorAll('.cart-count').forEach(el => {
+                    el.textContent = totalItems;
+                });
+            }
+
+            // Initialize cart count
+            updateCartCount();
+        });
+
+        // Search functionality
+        function performSearch(query) {
+            // This would be replaced with actual search logic
+            const products = [
+                { name: 'Multiflora Honey', url: 'raw-honey.html?type=multiflora' },
+                { name: 'Jamun Honey', url: 'raw-honey.html?type=jamun' },
+                { name: 'Ajwain Honey', url: 'raw-honey.html?type=ajwain' },
+                { name: 'Tulsi Honey', url: 'raw-honey.html?type=tulsi' }
+            ];
+
+            const results = products.filter(product =>
+                product.name.toLowerCase().includes(query.toLowerCase())
+            );
+
+            return results;
         }
 
-        // Load cart items from localStorage
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartItemsContainer = document.getElementById('cart-items-container');
-        const cartSummaryContainer = document.getElementById('cart-summary-container');
+        // Handle search form submission
+        document.querySelectorAll('form').forEach(form => {
+            if (form.action.includes('search.html')) {
+                form.addEventListener('submit', function (e) {
+                    const input = this.querySelector('input[name="q"]');
+                    if (input.value.trim() === '') {
+                        e.preventDefault();
+                        return false;
+                    }
+                });
+            }
+        });
 
-        // Update cart count initially
-        updateCartCount();
+        // Live search for desktop
+        const searchInput = document.querySelector('.search-form input');
+        if (searchInput) {
+            searchInput.addEventListener('input', function () {
+                const query = this.value.trim();
+                const resultsContainer = this.closest('.search-form').querySelector('.search-results');
 
-        if (cart.length === 0) {
-            cartItemsContainer.innerHTML = `
+                if (query.length > 2) {
+                    const results = performSearch(query);
+                    showSearchResults(results, resultsContainer);
+                } else {
+                    resultsContainer.innerHTML = '';
+                }
+            });
+        }
+
+        function showSearchResults(results, container) {
+            container.innerHTML = '';
+
+            if (results.length === 0) {
+                container.innerHTML = '<p>No products found</p>';
+                return;
+            }
+
+            const ul = document.createElement('ul');
+            results.forEach(result => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = result.url;
+                a.textContent = result.name;
+                li.appendChild(a);
+                ul.appendChild(li);
+            });
+
+            container.appendChild(ul);
+        }
+    </script>
+    <script id="rs-initialisation-scripts">
+        var tpj = jQuery;
+
+        var revapi1;
+
+        if (window.RS_MODULES === undefined) window.RS_MODULES = {};
+        if (RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+        RS_MODULES.modules["revslider11"] = {
+            once: RS_MODULES.modules["revslider11"] !== undefined ? RS_MODULES.modules["revslider11"].once : undefined, init: function () {
+                window.revapi1 = window.revapi1 === undefined || window.revapi1 === null || window.revapi1.length === 0 ? document.getElementById("rev_slider_1_1") : window.revapi1;
+                if (window.revapi1 === null || window.revapi1 === undefined || window.revapi1.length == 0) { window.revapi1initTry = window.revapi1initTry === undefined ? 0 : window.revapi1initTry + 1; if (window.revapi1initTry < 20) requestAnimationFrame(function () { RS_MODULES.modules["revslider11"].init() }); return; }
+                window.revapi1 = jQuery(window.revapi1);
+                if (window.revapi1.revolution == undefined) { revslider_showDoubleJqueryError("rev_slider_1_1"); return; }
+                revapi1.revolutionInit({
+                    revapi: "revapi1",
+                    sliderType: "hero",
+                    sliderLayout: "fullscreen",
+                    visibilityLevels: "1920,1710,1025,760",
+                    gridwidth: "1300,1100,768,300",
+                    gridheight: "900,640,700,560",
+                    lazyType: "smart",
+                    perspective: 600,
+                    perspectiveType: "local",
+                    editorheight: "900,640,700,560",
+                    responsiveLevels: "1920,1710,1025,760",
+                    progressBar: { disableProgressBar: true },
+                    navigation: {
+                        onHoverStop: false
+                    },
+                    viewPort: {
+                        global: true,
+                        globalDist: "-200px",
+                        enable: false
+                    },
+                    fallbacks: {
+                        allowHTML5AutoPlayOnAndroid: true
+                    },
+                });
+            }
+        } // End of RevInitScript
+        if (window.RS_MODULES.checkMinimal !== undefined) { window.RS_MODULES.checkMinimal(); };
+    </script>
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileClose = document.querySelector('.mobile-menu-close');
+            const headerNav = document.querySelector('.header-navigation');
+
+            mobileToggle.addEventListener('click', function () {
+                headerNav.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+
+            mobileClose.addEventListener('click', function () {
+                headerNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            // Close menu when clicking on a link (for single page applications)
+            document.querySelectorAll('.header-navigation a').forEach(link => {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth <= 992) {
+                        headerNav.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+
+            // Dropdown toggle for mobile
+            document.querySelectorAll('.menu-item-has-children > a').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        const subMenu = this.nextElementSibling;
+                        if (subMenu.style.display === 'block') {
+                            subMenu.style.display = 'none';
+                            this.querySelector('i').classList.remove('fa-chevron-up');
+                            this.querySelector('i').classList.add('fa-chevron-down');
+                        } else {
+                            subMenu.style.display = 'block';
+                            this.querySelector('i').classList.remove('fa-chevron-down');
+                            this.querySelector('i').classList.add('fa-chevron-up');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Update cart count in header
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const totalItems = cart.reduce((total, item) => total + parseInt(item.quantity), 0);
+
+                // Update cart count in desktop header
+                const desktopCartCounts = document.querySelectorAll('.header-cart .cart-count');
+                desktopCartCounts.forEach(el => el.textContent = totalItems);
+
+                // Update cart count in mobile header
+                const mobileCartCounts = document.querySelectorAll('.mobile-cart-icon .cart-count');
+                mobileCartCounts.forEach(el => el.textContent = totalItems);
+            }
+
+            // Load cart items from localStorage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items-container');
+            const cartSummaryContainer = document.getElementById('cart-summary-container');
+
+            // Update cart count initially
+            updateCartCount();
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
                 <div class="empty-cart">
                     <i class="fas fa-shopping-basket"></i>
                     <h3>Your Cart is Empty</h3>
                     <p>Looks like you haven't added any products to your cart yet. Start shopping to fill it with nature's goodness!</p>
                 </div>
             `;
-            cartSummaryContainer.style.display = 'none'; // Hide the summary container when cart is empty
-            return;
-        }
+                cartSummaryContainer.style.display = 'none'; // Hide the summary container when cart is empty
+                return;
+            }
 
-        // Display cart items
-        let cartItemsHTML = '';
-        let subtotal = 0;
+            // Display cart items
+            let cartItemsHTML = '';
+            let subtotal = 0;
 
-        cart.forEach((item, index) => {
-            // Ensure price is a number
-            const price = parseFloat(item.price);
-            const quantity = parseInt(item.quantity);
-            const itemTotal = price * quantity;
-            subtotal += itemTotal;
+            cart.forEach((item, index) => {
+                // Ensure price is a number
+                const price = parseFloat(item.price);
+                const quantity = parseInt(item.quantity);
+                const itemTotal = price * quantity;
+                subtotal += itemTotal;
 
-            cartItemsHTML += `
+                cartItemsHTML += `
                 <div class="cart-item" data-index="${index}">
                     <img src="${item.image}" alt="${item.name}" class="cart-item-image">
                     <div class="cart-item-details">
                         <h3 class="cart-item-name">${item.name}</h3>
-                        <p class="cart-item-size">Size: ${item.size}</p>
+                        <p class="cart-item-size"> ${item.size}</p>
                         <p class="cart-item-price">₹${price.toFixed(2)}</p>
                         <div class="cart-item-quantity">
                             <button class="quantity-btn minus" onclick="updateQuantity(${index}, -1)">-</button>
@@ -1160,16 +1422,16 @@
                     </div>
                 </div>
             `;
-        });
+            });
 
-        cartItemsContainer.innerHTML = cartItemsHTML;
-        cartSummaryContainer.style.display = 'block'; // Ensure summary is visible when cart has items
+            cartItemsContainer.innerHTML = cartItemsHTML;
+            cartSummaryContainer.style.display = 'block'; // Ensure summary is visible when cart has items
 
-        // Display cart summary
-        const tax = subtotal * 0.05; // 5% tax
-        const total = subtotal + tax;
+            // Display cart summary
+            const tax = subtotal * 0.05; // 5% tax
+            const total = subtotal + tax;
 
-        cartSummaryContainer.innerHTML = `
+            cartSummaryContainer.innerHTML = `
             <div class="summary-row">
                 <span>Subtotal:</span>
                 <span>₹${subtotal.toFixed(2)}</span>
@@ -1183,35 +1445,35 @@
                 <span>₹${total.toFixed(2)}</span>
             </div>
         `;
-    });
+        });
 
-    function updateQuantity(index, change, newValue = null) {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        function updateQuantity(index, change, newValue = null) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        if (index >= 0 && index < cart.length) {
-            if (newValue !== null) {
-                cart[index].quantity = parseInt(newValue) || 1;
-            } else {
-                cart[index].quantity += change;
-                if (cart[index].quantity < 1) cart[index].quantity = 1;
-                if (cart[index].quantity > 10) cart[index].quantity = 10;
+            if (index >= 0 && index < cart.length) {
+                if (newValue !== null) {
+                    cart[index].quantity = parseInt(newValue) || 1;
+                } else {
+                    cart[index].quantity += change;
+                    if (cart[index].quantity < 1) cart[index].quantity = 1;
+                    if (cart[index].quantity > 10) cart[index].quantity = 10;
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                location.reload(); // Refresh to update the display
             }
-
-            localStorage.setItem('cart', JSON.stringify(cart));
-            location.reload(); // Refresh to update the display
         }
-    }
 
-    function removeItem(index) {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        function removeItem(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        if (index >= 0 && index < cart.length) {
-            cart.splice(index, 1);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            location.reload(); // Refresh to update the display
+            if (index >= 0 && index < cart.length) {
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                location.reload(); // Refresh to update the display
+            }
         }
-    }
-</script>
+    </script>
     <script src="script.js"></script>
 </body>
 

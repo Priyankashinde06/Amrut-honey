@@ -297,7 +297,7 @@
         #qodef-page-footer {
             background-color: rgba(0, 0, 0, 0);
             background-size: contain;
-            background-position: center bottom;
+            background-position: center bottom !important;
             background-image: url(https://mellifera.qodeinteractive.com/wp-content/uploads/2020/05/Footer-home1-img1.jpg);
         }
 
@@ -412,110 +412,7 @@
         }
     </style>
     <style>
-        /* Header Actions */
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Search Styles */
-        .search-container {
-            position: relative;
-        }
-
-        .search-icon {
-            color: #333;
-            font-size: 18px;
-        }
-
-        .search-form {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 300px;
-            background: #fff;
-            padding: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-
-        .search-form input {
-            width: 100%;
-            padding: 8px 15px;
-            border: 1px solid #ddd;
-        }
-
-        .search-form button {
-            position: absolute;
-            right: 15px;
-            top: 15px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .search-results {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-top: 10px;
-        }
-
-        /* Account Dropdown */
-        .account-container {
-            position: relative;
-        }
-
-        .account-icon {
-            color: #333;
-            font-size: 18px;
-        }
-
-        .account-dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 200px;
-            background: #fff;
-            padding: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-
-        .account-dropdown ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .account-dropdown li a {
-            display: block;
-            padding: 5px 0;
-            color: #333;
-        }
-
-        /* Mobile Header Styles */
-        .mobile-header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .mobile-search-form {
-            display: none;
-            padding: 15px;
-            background: #f5f5f5;
-        }
-
-        .mobile-search-form input {
-            width: 100%;
-            padding: 8px 15px;
-            border: 1px solid #ddd;
-        }
-
-        /* Mobile Menu Dropdown Fix */
+      /* Mobile Menu Dropdown Fix */
         .qodef-mobile-header-navigation .menu-item-has-children>.sub-menu {
             display: none;
         }
@@ -539,21 +436,11 @@
             transform: rotate(180deg);
         }
 
-        /* Show/hide elements when needed */
-        .search-container.active .search-form {
-            display: block;
-        }
-
-        .account-container.active .account-dropdown {
-            display: block;
-        }
-
-        .mobile-search-active .mobile-search-form {
-            display: block;
-        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        :root {
+                :root {
             --honey-gold: #FFC439;
             --honey-dark: #D4A017;
             --honey-light: #FFF3D6;
@@ -562,24 +449,6 @@
             --honey-orange: #FFA500;
             --honey-yellow: #FFE45C;
             --honey-cream: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--honey-cream);
-            color: #333;
-            line-height: 1.6;
-            background-image:
-                radial-gradient(circle at 10% 20%, rgba(255, 244, 229, 0.8) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(255, 244, 229, 0.8) 0%, transparent 20%);
-            padding: 0;
-            overflow-x: hidden;
         }
 
         .honey-container {
@@ -1217,9 +1086,7 @@
     </style>
 </head>
 
-<body
-    class="home page-template page-template-page-full-width page-template-page-full-width-php page page-id-23 theme-mellifera qode-framework-1.1.3 woocommerce-no-js qodef-qi--no-touch qi-addons-for-elementor-1.5.4 qodef-back-to-top--enabled  qodef-content-grid-1300 qodef-content-behind-header qodef-main-home qodef-header--standard qodef-header-appearance--sticky qodef-mobile-header--standard qodef-drop-down-second--full-width qodef-drop-down-second--default mellifera-core-1.0.3 mellifera-1.0.4 qodef-header-standard--right qodef-search--covers-header elementor-default elementor-kit-17 elementor-page elementor-page-23"
-    itemscope itemtype="https://schema.org/WebPage">
+<body>
     <div id="qodef-page-wrapper" class="">
         <header id="qodef-page-header">
             <div id="qodef-page-header-inner" class="container">
@@ -1252,14 +1119,12 @@
                     </ul>
                 </nav>
                 <div class="header-actions">
-                    <!-- Search Icon and Form -->
-                    <div class="search-container">
-                        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-                        <div class="search-form">
-                            <form action="search.html" method="get">
-                                <input type="text" name="q" placeholder="Search products...">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </form>
+                    <div class="header-search">
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Search honeys...">
+                            <button class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
                             <div class="search-results"></div>
                         </div>
                     </div>
@@ -1273,7 +1138,7 @@
             </div>
         </header>
 
-        <header id="qodef-page-mobile-header" style="height: 97px;">
+        <header id="qodef-page-mobile-header" style="height: 97px;" class="qodef-page-mobile-header">
             <div id="qodef-page-mobile-header-inner">
                 <a itemprop="url" class="qodef-mobile-header-logo-link" href="index.html" style="height:34px"
                     rel="home">
@@ -1281,41 +1146,39 @@
                         alt="logo main" itemprop="image" />
                 </a>
                 <div class="mobile-header-actions">
-                    <a href="#" class="mobile-search-icon"><i class="fas fa-search"></i></a>
-                    <a href="cart.html" class="mobile-cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                    <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                    <div class="mobile-search">
+                        <input type="text" class="search-input" placeholder="Search honeys...">
+                        <button class="search-button">
+                            <i class="fas fa-search search-icon"></i>
+                        </button>
+                        <!-- Search results will be added by JavaScript -->
+                        <a href="cart.html" class="mobile-cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                    </div>
                 </div>
-
-                <!-- Mobile Search Form -->
-                <div class="mobile-search-form">
-                    <form action="search.html" method="get">
-                        <input type="text" name="q" placeholder="Search products...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-
                 <!-- Mobile Menu -->
                 <nav class="qodef-mobile-header-navigation" role="navigation" aria-label="Mobile Menu">
                     <ul id="menu-main-menu-4" class="qodef-content-grid">
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-91 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="index.html">Home</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="about.html">About</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-93 qodef-menu-item--narrow">
-                            <a href="#" class="mobile-menu-toggle">Shop <i class="fas fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
-                                <li class="menu-item-has-children">
-                                    <a href="#" class="mobile-menu-toggle">Products <i
-                                            class="fas fa-chevron-down"></i></a>
-                                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#" class="mobile-menu-toggle">
+                                <span>Shop</span>
+
+                            </a>
+                            <ul class="sub-menu subb">
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#" class="mobile-menu-toggle">
+                                        <span>Products</span>
+                                    </a>
+                                    <ul class="sub-menu menus">
                                         <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
                                         <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
                                         <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
@@ -1325,18 +1188,18 @@
                                 <li><a href="gifting.html">Gifting</a></li>
                             </ul>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="index.html#gallery">Gallery</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-661 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </header>
+        <div id="blur-overlay"></div>
+
         <div id="qodef-page-outer">
             <div id="qodef-page-inner" class="qodef-content-full-width">
                 <main id="qodef-page-content" class="qodef-grid qodef-layout--template ">
@@ -1346,7 +1209,7 @@
                                 <div class="elementor-inner">
                                     <div class="elementor-section-wrap">
                                         <section
-                                            class="hero-section-mobile elementor-top-section elementor-element elementor-element-5649146 elementor-section-full_width qodef-bees-holder-yes qodef-custom-bees elementor-section-height-default elementor-section-height-default qodef-elementor-content-no qodef-section-backgrounds-animation-no"
+                                            class="elementor-top-section elementor-element elementor-element-5649146 elementor-section-full_width qodef-bees-holder-yes qodef-custom-bees elementor-section-height-default elementor-section-height-default qodef-elementor-content-no qodef-section-backgrounds-animation-no"
                                             data-id="5649146" data-element_type="section">
                                             <div class="honey-container">
                                                 <!-- Hexagon Background Pattern -->
@@ -1497,86 +1360,74 @@
                     </div>
             </div>
         </div>
-        </main>
-    </div>
-    </div>
-    <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-    <footer id="qodef-page-footer">
-        <div id="qodef-page-footer-inner" class="container">
-            <div class="footer-content">
-                <div class="footer-columns">
-                    <!-- Column 1: Logo and Info -->
-                    <div class="footer-column">
-                        <div class="footer-logo">
-                            <a href="index.html">
-                                <img src="image/Amrut Honey.png" alt="Amrut Honey Logo">
-                            </a>
+        <div class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+        <footer id="qodef-page-footer">
+            <div id="qodef-page-footer-inner" class="container">
+                <div class="footer-content">
+                    <div class="footer-columns">
+                        <!-- Column 1: Logo and Info -->
+                        <div class="footer-column">
+                            <div class="footer-logo">
+                                <a href="index.html">
+                                    <img src="image/Amrut Honey.png" alt="Amrut Honey Logo">
+                                </a>
+                            </div>
+                            <div class="footer-info">
+                                <p>Pure, natural honey harvested with care for the highest quality and rich flavors.</p>
+                            </div>
+                            <div class="footer-social">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/amruthoney/" class="social-icon"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            </div>
                         </div>
-                        <div class="footer-info">
-                            <p>Pure, natural honey harvested with care for the highest quality and rich flavors.</p>
+
+                        <!-- Column 2: Quick Links -->
+                        <div class="footer-column">
+                            <h4 class="footer-title">Quick Links</h4>
+                            <ul class="footer-links">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="#product">Our Products</a></li>
+                                <li><a href="#gallery">Gallery</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
                         </div>
-                        <div class="footer-social">
-                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/amruthoney/" class="social-icon"><i
-                                    class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+
+                        <!-- Column 3: Products -->
+                        <div class="footer-column">
+                            <h4 class="footer-title">Our Products</h4>
+                            <ul class="footer-links">
+                                <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
+                                <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
+                                <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
+                                <li><a href="raw-honey.html?type=tulsi">Tulsi Honey</a></li>
+                                <li><a href="gifting.html">Gitting</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 4: Contact Info -->
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contact Us</h4>
+                            <ul class="footer-contact">
+                                <li><i class="fas fa-map-marker-alt"></i>Amrut Honey, Koragaon, Satararoad road,
+                                    Khed,Maharashtra 415010</li>
+                                <li><i class="fas fa-phone"></i> +91 96659 66577</li>
+                                <li><i class="fas fa-envelope"></i> info@amruthoney.com</li>
+                                <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <!-- Column 2: Quick Links -->
-                    <div class="footer-column">
-                        <h4 class="footer-title">Quick Links</h4>
-                        <ul class="footer-links">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="#product">Our Products</a></li>
-                            <li><a href="#gallery">Gallery</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 3: Products -->
-                    <div class="footer-column">
-                        <h4 class="footer-title">Our Products</h4>
-                        <ul class="footer-links">
-                            <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
-                            <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
-                            <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
-                            <li><a href="raw-honey.html?type=tulsi">Tulsi Honey</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 4: Contact Info -->
-                    <div class="footer-column">
-                        <h4 class="footer-title">Contact Us</h4>
-                        <ul class="footer-contact">
-                            <li><i class="fas fa-map-marker-alt"></i>Amrut Honey, Koragaon, Satararoad road,
-                                Khed,Maharashtra 415010</li>
-                            <li><i class="fas fa-phone"></i> +91 96659 66577</li>
-                            <li><i class="fas fa-envelope"></i> info@amruthoney.com</li>
-                            <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
-                        </ul>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Amrut Honey. All rights reserved.</p>
                     </div>
                 </div>
-
-                <div class="footer-bottom">
-                    <p>&copy; 2023 Amrut Honey. All rights reserved.</p>
-                </div>
             </div>
-        </div>
-    </footer>
-    </div>
-    <!-- Success Popup -->
-    <div id="successModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <h3>Thank You!</h3>
-            <p>Your message has been sent successfully. We'll get back to you soon.</p>
-        </div>
+        </footer>
     </div>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400%7COpen+Sans:400&display=swap" rel="stylesheet"
         property="stylesheet" media="all" type="text/css">
@@ -1718,7 +1569,6 @@
     <script type='text/javascript'
         src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/plugins/elementor/assets/js/elementor.js?ver=6.0.9'
         id='mellifera-core-elementor-js'></script>
-
     <script id="rs-initialisation-scripts">
         var tpj = jQuery;
 
@@ -1907,7 +1757,6 @@
         });
     </script>
     <script src="script.js"></script>
-    <script src="js/validate.js"></script>
 </body>
 
 </html>

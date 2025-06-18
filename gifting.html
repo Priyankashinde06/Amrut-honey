@@ -273,6 +273,7 @@
         href='https://mellifera.qodeinteractive.com/wp-content/themes/mellifera/style.css?ver=6.0.9' type='text/css'
         media='all' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style id='mellifera-style-inline-css' type='text/css'>
         #qodef-page-outer {
             margin-top: -117px;
@@ -553,131 +554,445 @@
         }
     </style>
     <style>
-    /* Gift Modal Styles */
-    .gift-modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-    
-    .gift-modal-content {
-        background-color: #fff;
-        margin: 5% auto;
-        padding: 30px;
-        width: 80%;
-        max-width: 800px;
-        border-radius: 5px;
-        position: relative;
-    }
-    
-    .gift-modal-close {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-    
-    .gift-modal-body {
-        display: flex;
-        gap: 30px;
-    }
-    
-    .gift-modal-image {
-        flex: 1;
-    }
-    
-    .gift-modal-image img {
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-    }
-    
-    .gift-modal-details {
-        flex: 1;
-    }
-    
-    .gift-modal-title {
-        font-size: 24px;
-        margin-bottom: 10px;
-        color: #333;
-    }
-    
-    .gift-modal-price {
-        font-size: 20px;
-        font-weight: bold;
-        color: #8b7355;
-        margin-bottom: 15px;
-    }
-    
-    .gift-modal-description {
-        margin-bottom: 20px;
-        color: #666;
-    }
-    
-    .gift-modal-quantity {
-        margin-bottom: 20px;
-    }
-    
-    .gift-modal-quantity input {
-        width: 60px;
-        padding: 8px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-    }
-    
-    .gift-modal-actions {
-        display: flex;
-        gap: 15px;
-    }
-    
-    .gift-modal-button {
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: bold;
-        transition: background-color 0.3s;
-    }
-    
-    .gift-modal-button.add-to-cart {
-        background-color: #8b7355;
-        color: white;
-    }
-    
-    .gift-modal-button.buy-now {
-        background-color: #333;
-        color: white;
-    }
-    
-    .gift-modal-button:hover {
-        opacity: 0.9;
-    }
-    
-    @media (max-width: 768px) {
+        /* Gift Modal Styles */
+        .gift-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
         .gift-modal-content {
-            width: 90%;
-            margin: 10% auto;
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 30px;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 5px;
+            position: relative;
         }
-        
+
+        .gift-modal-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
         .gift-modal-body {
-            flex-direction: column;
+            display: flex;
+            gap: 30px;
         }
-    }
-</style>
+
+        .gift-modal-image {
+            flex: 1;
+        }
+
+        .gift-modal-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .gift-modal-details {
+            flex: 1;
+        }
+
+        .gift-modal-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .gift-modal-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #8b7355;
+            margin-bottom: 15px;
+        }
+
+        .gift-modal-description {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .gift-modal-quantity {
+            margin-bottom: 20px;
+        }
+
+        .gift-modal-quantity input {
+            width: 60px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .gift-modal-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .gift-modal-button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .gift-modal-button.add-to-cart {
+            background-color: #8b7355;
+            color: white;
+        }
+
+        .gift-modal-button.buy-now {
+            background-color: #333;
+            color: white;
+        }
+
+        .gift-modal-button:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .gift-modal-content {
+                width: 90%;
+                margin: 10% auto;
+            }
+
+            .gift-modal-body {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <style>
+        /* Loading Spinner */
+        .loading-spinner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            margin-left: 30rem;
+        }
+
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #8b7355;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Gift Listing Grid */
+        .gifting-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .gift-item {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .gift-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .gift-ribbon {
+            position: absolute;
+            top: 10px;
+            right: -25px;
+            background: #8b7355;
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        .gift-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .gift-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gift-item:hover .gift-image img {
+            transform: scale(1.05);
+        }
+
+        .gift-details {
+            padding: 20px;
+        }
+
+        .gift-title {
+            font-size: 18px;
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .gift-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #8b7355;
+            margin-bottom: 15px;
+        }
+
+        .gift-actions {
+            display: flex;
+            justify-content: center;
+        }
+
+        .gift-button {
+            background: #8b7355;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+
+        .gift-button:hover {
+            background: #6d5a43;
+        }
+
+        /* Gift Details Page */
+        .gift-details-container {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .gift-details-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .gift-details-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .gift-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #8b7355;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .gift-details-content {
+            flex: 1;
+        }
+
+        .product-info {
+            margin-bottom: 20px;
+        }
+
+        .gift-details-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #8b7355;
+            margin-bottom: 15px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .stars {
+            color: #ffc107;
+        }
+
+
+
+        .gift-details-description {
+            margin-bottom: 25px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .quantity-selector {
+            margin-bottom: 25px;
+        }
+
+        .quantity-selector label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .quantity-selector input {
+            width: 60px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .quantity-selectors input {
+            width: 60px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .gift-details-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .gift-details-button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gift-details-button.add-to-cart {
+            background: #8b7355;
+            color: white;
+        }
+
+        .gift-details-button.buy-now {
+            background: #333;
+            color: white;
+        }
+
+        .gift-details-button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Related Gifts */
+
+        .related-gifts h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .related-gifts h3:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: #8b7355;
+        }
+
+        .related-gifts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .related-gift-item {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .related-gift-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .related-gift-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .related-gift-item h4 {
+            font-size: 16px;
+            margin: 15px;
+        }
+
+        .related-gift-item .price {
+            color: #8b7355;
+            font-weight: bold;
+            margin: 0 15px 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+         
+
+            .gifting-products {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
 </head>
 
 <body
     class="home page-template page-template-page-full-width page-template-page-full-width-php page page-id-23 theme-mellifera qode-framework-1.1.3 woocommerce-no-js qodef-qi--no-touch qi-addons-for-elementor-1.5.4 qodef-back-to-top--enabled  qodef-content-grid-1300 qodef-content-behind-header qodef-main-home qodef-header--standard qodef-header-appearance--sticky qodef-mobile-header--standard qodef-drop-down-second--full-width qodef-drop-down-second--default mellifera-core-1.0.3 mellifera-1.0.4 qodef-header-standard--right qodef-search--covers-header elementor-default elementor-kit-17 elementor-page elementor-page-23"
     itemscope itemtype="https://schema.org/WebPage">
     <div id="qodef-page-wrapper" class="">
-        <header id="qodef-page-header">
+               <header id="qodef-page-header">
             <div id="qodef-page-header-inner" class="container">
                 <div class="header-logo">
                     <a href="index.html">
@@ -708,14 +1023,12 @@
                     </ul>
                 </nav>
                 <div class="header-actions">
-                    <!-- Search Icon and Form -->
-                    <div class="search-container">
-                        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-                        <div class="search-form">
-                            <form action="search.html" method="get">
-                                <input type="text" name="q" placeholder="Search products...">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </form>
+                    <div class="header-search">
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Search honeys...">
+                            <button class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
                             <div class="search-results"></div>
                         </div>
                     </div>
@@ -729,7 +1042,7 @@
             </div>
         </header>
 
-        <header id="qodef-page-mobile-header" style="height: 97px;">
+        <header id="qodef-page-mobile-header" style="height: 97px;" class="qodef-page-mobile-header">
             <div id="qodef-page-mobile-header-inner">
                 <a itemprop="url" class="qodef-mobile-header-logo-link" href="index.html" style="height:34px"
                     rel="home">
@@ -737,41 +1050,39 @@
                         alt="logo main" itemprop="image" />
                 </a>
                 <div class="mobile-header-actions">
-                    <a href="#" class="mobile-search-icon"><i class="fas fa-search"></i></a>
-                    <a href="cart.html" class="mobile-cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                    <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                    <div class="mobile-search">
+                        <input type="text" class="search-input" placeholder="Search honeys...">
+                        <button class="search-button">
+                            <i class="fas fa-search search-icon"></i>
+                        </button>
+                        <!-- Search results will be added by JavaScript -->
+                        <a href="cart.html" class="mobile-cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                    </div>
                 </div>
-
-                <!-- Mobile Search Form -->
-                <div class="mobile-search-form">
-                    <form action="search.html" method="get">
-                        <input type="text" name="q" placeholder="Search products...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-
                 <!-- Mobile Menu -->
                 <nav class="qodef-mobile-header-navigation" role="navigation" aria-label="Mobile Menu">
                     <ul id="menu-main-menu-4" class="qodef-content-grid">
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-91 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="index.html">Home</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="about.html">About</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-93 qodef-menu-item--narrow">
-                            <a href="#" class="mobile-menu-toggle">Shop <i class="fas fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
-                                <li class="menu-item-has-children">
-                                    <a href="#" class="mobile-menu-toggle">Products <i
-                                            class="fas fa-chevron-down"></i></a>
-                                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#" class="mobile-menu-toggle">
+                                <span>Shop</span>
+
+                            </a>
+                            <ul class="sub-menu subb">
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#" class="mobile-menu-toggle">
+                                        <span>Products</span>
+                                    </a>
+                                    <ul class="sub-menu menus">
                                         <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
                                         <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
                                         <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
@@ -781,139 +1092,81 @@
                                 <li><a href="gifting.html">Gifting</a></li>
                             </ul>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="index.html#gallery">Gallery</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-661 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <div id="qodef-page-outer">
-            <div id="qodef-page-inner" class="qodef-content-full-width">
-                <main id="qodef-page-content" class="qodef-grid qodef-layout--template ">
-                    <div class="qodef-grid-inner clear">
-                        <div class="qodef-grid-item qodef-page-content-section qodef-col--12">
-                            <div data-elementor-type="wp-page" data-elementor-id="23" class="elementor elementor-23">
-                                <div class="elementor-inner">
-                                    <div class="elementor-section-wrap">
-                                        <section class="gifting-section">
-                                            <div class="gifting-header">
-                                                <h2>Thoughtful Honey Gifts</h2>
-                                                <p>Our beautifully packaged honey hampers make perfect gifts for any
-                                                    occasion. Each gift is carefully curated to bring the goodness of
-                                                    nature to your loved ones.</p>
-                                            </div>
+        <div id="blur-overlay"></div>
+        <div id="qodef-page-inner" class="qodef-content-full-width">
+            <main id="qodef-page-content" class="qodef-grid qodef-layout--template ">
+                <section class="gifting-section" id="gift-listing">
+                    <div class="gifting-header">
+                        <h2>Thoughtful Honey Gifts</h2>
+                        <p>Our beautifully packaged honey hampers make perfect gifts for any
+                            occasion. Each gift is carefully curated to bring the goodness of
+                            nature to your loved ones.</p>
+                    </div>
 
-                                            <div class="gifting-products">
-                                                <!-- Gift Item 1 -->
-                                                <div class="gift-item">
-                                                    <div class="gift-ribbon">BESTSELLER</div>
-                                                    <div class="gift-image">
-                                                        <img src="image/Gifting/Gift-1.jpg"
-                                                            alt="Multiflora Honey Gift Set">
-                                                    </div>
-                                                    <div class="gift-details">
-                                                        <h3 class="gift-title">Golden Nectar Gift Box</h3>
-                                                        <p class="gift-description">Pure multiflora honey in an elegant
-                                                            wooden box with a honey dipper and recipe cards.</p>
-                                                        <div class="gift-price">₹1,200</div>
-                                                        <div class="gift-actions">
-                                                            <button class="gift-button add-to-cart">
-                                                                <i class="fas fa-shopping-cart gift-icon"></i> Add to
-                                                                Cart
-                                                            </button>
-                                                            <button class="gift-button wishlist">
-                                                                <i class="far fa-heart gift-icon"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                    <div class="gifting-products" id="gifting-products">
+                        <!-- Loading spinner will appear here while data loads -->
+                        <div class="loading-spinner">
+                            <div class="spinner"></div>
+                            <p class="text-spin">Loading...</p>
+                        </div>
+                    </div>
+                </section>
 
-                                                <!-- Gift Item 2 -->
-                                                <div class="gift-item premium-gift">
-                                                    <div class="gift-ribbon">PREMIUM</div>
-                                                    <div class="gift-image">
-                                                        <img src="image/Gifting/Gift-2.jpg" alt="Jamun Honey Gift Set">
-                                                    </div>
-                                                    <div class="gift-details">
-                                                        <h3 class="gift-title">Royal Honey Collection</h3>
-                                                        <p class="gift-description">Three premium honey varieties
-                                                            (Jamun, Ajwain, Tulsi) in a luxurious gift hamper with
-                                                            tasting notes.</p>
-                                                        <div class="gift-price">₹2,500</div>
-                                                        <div class="gift-actions">
-                                                            <button class="gift-button add-to-cart">
-                                                                <i class="fas fa-shopping-cart gift-icon"></i> Add to
-                                                                Cart
-                                                            </button>
-                                                            <button class="gift-button wishlist">
-                                                                <i class="far fa-heart gift-icon"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                <!-- Gift Details Section -->
+                <section class="gift-details-page" id="gift-details" style="display: none;">
+                    <div class="containers">
+                        <div class="gift-details-container">
+                            <div class="gift-details-image">
+                                <img id="gift-detail-image" src="" alt="" loading="lazy">
+                                <div class="gift-badge" id="gift-badge"></div>
+                            </div>
+                            <div class="gift-details-content">
+                                <div class="product-info">
+                                    <h1 class="gift-details-title" id="gift-detail-name"></h1>
+                                    <div class="gift-details-price" id="gift-detail-price"></div>
+                                </div>
+                                <div class="gift-details-description" id="gift-detail-description"></div>
 
-                                                <!-- Gift Item 3 -->
-                                                <div class="gift-item">
-                                                    <div class="gift-image">
-                                                        <img src="image/Gifting/Gift-3.jpg" alt="Honey Wellness Set">
-                                                    </div>
-                                                    <div class="gift-details">
-                                                        <h3 class="gift-title">Wellness Honey Trio</h3>
-                                                        <p class="gift-description">Three therapeutic honey jars
-                                                            (Ajwain, Tulsi, Multiflora) with a custom ceramic honey
-                                                            spoon.</p>
-                                                        <div class="gift-price">₹1,800</div>
-                                                        <div class="gift-actions">
-                                                            <button class="gift-button add-to-cart">
-                                                                <i class="fas fa-shopping-cart gift-icon"></i> Add to
-                                                                Cart
-                                                            </button>
-                                                            <button class="gift-button wishlist">
-                                                                <i class="far fa-heart gift-icon"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </div>
+                                <div class="gift-details-features">
+                                    <h4>Product Highlights:</h4>
+                                    <div id="gift-detail-features"></div>
+                                </div>
+
+                                <div class="quantity-selectors">
+                                    <label for="gift-quantity">Quantity:</label>
+                                    <input type="text" id="gift-quantity" min="1" value="1">
+                                </div>
+
+                                <div class="gift-details-actions">
+                                    <button class="gift-details-button add-to-cart">
+                                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                                    </button>
+                                    <button class="gift-details-button buy-now">
+                                        <i class="fas fa-bolt"></i> Buy Now
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </main>
-            </div>
-        </div>
-        <!-- Gift Modal -->
-        <div id="giftModal" class="gift-modal">
-            <div class="gift-modal-content">
-                <span class="gift-modal-close">&times;</span>
-                <div class="gift-modal-body">
-                    <div class="gift-modal-image">
-                        <img id="modalGiftImage" src="" alt="">
-                    </div>
-                    <div class="gift-modal-details">
-                        <h2 id="modalGiftTitle" class="gift-modal-title"></h2>
-                        <div id="modalGiftPrice" class="gift-modal-price"></div>
-                        <p id="modalGiftDescription" class="gift-modal-description"></p>
-                        <div class="gift-modal-quantity">
-                            <label for="quantity">Quantity:</label>
-                            <input type="number" id="quantity" name="quantity" min="1" value="1">
-                        </div>
-                        <div class="gift-modal-actions">
-                            <button class="gift-modal-button add-to-cart">Add to cart</button>
-                            <button class="gift-modal-button buy-now">Buy it now</button>
+
+                        <div class="related-gifts">
+                            <h3>You May Also Like</h3>
+                            <div class="related-gifts-container" id="related-gifts"></div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </section>
+            </main>
         </div>
+
         <div class="back-to-top">
             <i class="fas fa-arrow-up"></i>
         </div>
@@ -959,6 +1212,7 @@
                                 <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
                                 <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
                                 <li><a href="raw-honey.html?type=tulsi">Tulsi Honey</a></li>
+                                <li><a href="gifting.html">Gitting</a></li>
                             </ul>
                         </div>
 
@@ -976,7 +1230,7 @@
                     </div>
 
                     <div class="footer-bottom">
-                        <p>&copy; 2023 Amrut Honey. All rights reserved.</p>
+                        <p>&copy; 2025 Amrut Honey. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -1123,154 +1377,368 @@
     <script type='text/javascript'
         src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/plugins/elementor/assets/js/elementor.js?ver=6.0.9'
         id='mellifera-core-elementor-js'></script>
+    <script>    
+    document.addEventListener('DOMContentLoaded', function () {
+        // DOM elements
+        const productsContainer = document.getElementById('gifting-products');
+        const giftListingSection = document.getElementById('gift-listing');
+        const giftDetailsSection = document.getElementById('gift-details');
+        let currentGift = null;
 
-<script>
-    // Gift Modal Functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize modal elements
-        const modal = document.getElementById('giftModal');
-        const modalClose = document.querySelector('.gift-modal-close');
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
-        const buyNowButtons = document.querySelectorAll('.buy-now');
-        
-        // Function to extract price number from string (e.g. "₹1,200" → 1200)
-        function extractPrice(priceStr) {
-            return parseInt(priceStr.replace(/[^0-9]/g, '')) || 0;
-        }
-        
-        // Function to format price with currency symbol
-        function formatPrice(price) {
-            return '₹' + price.toLocaleString('en-IN');
-        }
-        
-        // Function to open modal with product details
-        function openModal(productElement) {
-            const productImg = productElement.querySelector('.gift-image img').src;
-            const productTitle = productElement.querySelector('.gift-title').textContent;
-            const productPrice = productElement.querySelector('.gift-price').textContent;
-            const productDesc = productElement.querySelector('.gift-description').textContent;
-            
-            document.getElementById('modalGiftImage').src = productImg;
-            document.getElementById('modalGiftTitle').textContent = productTitle;
-            document.getElementById('modalGiftPrice').textContent = productPrice;
-            document.getElementById('modalGiftDescription').textContent = productDesc;
-            
-            // Reset quantity to 1 when opening modal
-            document.getElementById('quantity').value = 1;
-            
-            modal.style.display = 'block';
-        }
-        
-        // Close modal when clicking X
-        modalClose.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-        
-        // Handle Add to Cart button clicks on product cards
-        addToCartButtons.forEach(button => {
-            if (!button.closest('.gift-modal-actions')) {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const productElement = this.closest('.gift-item');
-                    openModal(productElement);
+        // Load gift data
+        function loadGiftData() {
+            fetch('gift.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    displayGiftListing(data.gifts);
+                    setupEventListeners(data);
+                })
+                .catch(error => {
+                    console.error('Error loading gift data:', error);
+                    showErrorState();
                 });
+        }
+
+        // Display gift listing
+        function displayGiftListing(gifts) {
+            productsContainer.innerHTML = '';
+
+            if (gifts.length === 0) {
+                productsContainer.innerHTML = `
+                <div class="no-products">
+                    <i class="fas fa-gift" style="font-size: 50px; color: #8b7355; margin-bottom: 20px;"></i>
+                    <h3>No gift products available at the moment</h3>
+                    <p>Please check back later or contact us for more information.</p>
+                </div>
+                `;
+                return;
             }
-        });
-        
-        // Handle Add to Cart button in modal
-        const modalAddToCart = document.querySelector('.gift-modal-actions .add-to-cart');
-        if (modalAddToCart) {
-            modalAddToCart.addEventListener('click', function() {
-                // Get product details from modal
-                const priceText = document.getElementById('modalGiftPrice').textContent;
-                const product = {
-                    name: document.getElementById('modalGiftTitle').textContent,
-                    price: extractPrice(priceText),
-                    priceText: priceText, // Store the formatted price text
-                    image: document.getElementById('modalGiftImage').src,
-                    quantity: parseInt(document.getElementById('quantity').value) || 1
-                };
-                
-                // Add to cart
-                addToCart(product);
-                
-                // Close modal
-                modal.style.display = 'none';
-                
-                // Show confirmation (you can customize this)
-                alert(`${product.quantity} ${product.name} has been added to your cart!`);
+
+            gifts.forEach(gift => {
+                const giftItem = createGiftItem(gift);
+                productsContainer.appendChild(giftItem);
             });
         }
-        
-        // Handle Buy Now button in modal
-        const modalBuyNow = document.querySelector('.gift-modal-actions .buy-now');
-        if (modalBuyNow) {
-            modalBuyNow.addEventListener('click', function() {
-                // Get product details from modal
-                const priceText = document.getElementById('modalGiftPrice').textContent;
-                const product = {
-                    name: document.getElementById('modalGiftTitle').textContent,
-                    price: extractPrice(priceText),
-                    priceText: priceText, // Store the formatted price text
-                    image: document.getElementById('modalGiftImage').src,
-                    quantity: parseInt(document.getElementById('quantity').value) || 1
+
+        // Create individual gift item HTML
+        function createGiftItem(gift) {
+            const giftItem = document.createElement('div');
+            giftItem.className = 'gift-item';
+            giftItem.setAttribute('data-id', gift.id);
+
+            let ribbonHTML = '';
+            if (gift.ribbon) {
+                ribbonHTML = `<div class="gift-ribbon">${gift.ribbon}</div>`;
+            }
+
+            // On gifting page, don't show dash for empty size
+            const sizeDisplay = gift.size ? `Size: ${gift.size}` : '';
+
+            giftItem.innerHTML = `
+                ${ribbonHTML}
+                <div class="gift-image">
+                    <img src="${gift.image}" alt="${gift.name}" loading="lazy">
+                </div>
+                <div class="gift-details">
+                    <h3 class="gift-title">${gift.name}</h3>
+                    <div class="gift-price">${gift.price || 'Price not available'}</div>
+                    ${sizeDisplay ? `<div class="gift-size">${sizeDisplay}</div>` : ''}
+                    <div class="gift-actions">
+                        <button class="gift-button view-details" data-id="${gift.id}">
+                            <i class="fas fa-eye gift-icon"></i> View Details
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            return giftItem;
+        }
+
+            // Setup event listeners
+            function setupEventListeners(data) {
+                // View details buttons
+                document.querySelectorAll('.view-details').forEach(button => {
+                    button.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const giftId = this.getAttribute('data-id');
+                        showGiftDetails(giftId, data);
+                    });
+                });
+
+                // Back button (if you add one)
+                document.addEventListener('click', function (e) {
+                    if (e.target.classList.contains('back-to-listing')) {
+                        giftDetailsSection.style.display = 'none';
+                        giftListingSection.style.display = 'block';
+                        window.scrollTo(0, 0);
+                    }
+                });
+            }
+
+            // Show gift details
+            function showGiftDetails(giftId, data) {
+                const gift = data.gifts.find(g => g.id == giftId);
+                if (!gift) return;
+
+                // Store current gift for cart operations
+                currentGift = gift;
+
+                // Extract numeric price from the string (if price is like "₹500" or "$50")
+                const numericPrice = gift.price.replace(/[^0-9.]/g, '');
+                const priceValue = numericPrice ? parseFloat(numericPrice) : 0;
+
+                // Set main gift details
+                document.getElementById('gift-detail-image').src = gift.image;
+                document.getElementById('gift-detail-image').alt = gift.name;
+                document.getElementById('gift-detail-name').textContent = gift.name;
+                document.getElementById('gift-detail-price').textContent = gift.price || 'Price not available';
+                document.getElementById('gift-detail-description').textContent = gift.description || 'No description available';
+
+                // Set badge if exists
+                const badgeElement = document.getElementById('gift-badge');
+                if (gift.ribbon) {
+                    badgeElement.textContent = gift.ribbon;
+                    badgeElement.style.display = 'block';
+                } else {
+                    badgeElement.style.display = 'none';
+                }
+
+                // Set features
+                const featuresContainer = document.getElementById('gift-detail-features');
+                if (gift.features && gift.features.length > 0) {
+                    featuresContainer.innerHTML = `
+                    <div class="product-features">
+                        ${gift.features.map(feature => `
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="${feature.icon || 'fas fa-check'}"></i>
+                                </div>
+                                <span class="feature-text">${feature.text || 'Feature'}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                } else {
+                    featuresContainer.innerHTML = '<div class="no-features">No features listed</div>';
+                }
+
+               
+                // Set related gifts
+                const relatedContainer = document.getElementById('related-gifts');
+                relatedContainer.innerHTML = '';
+
+                // Show up to 3 related gifts (excluding current gift)
+                const relatedGifts = data.gifts.filter(g => g.id != gift.id).slice(0, 3);
+                if (relatedGifts.length > 0) {
+                    relatedGifts.forEach(relatedGift => {
+                        const relatedItem = document.createElement('div');
+                        relatedItem.className = 'related-gift-item';
+                        relatedItem.setAttribute('data-id', relatedGift.id);
+                        relatedItem.innerHTML = `
+                        <img src="${relatedGift.image}" alt="${relatedGift.name}" loading="lazy">
+                        <h4>${relatedGift.name}</h4>
+                        <div class="price">${relatedGift.price || 'Price not available'}</div>
+                    `;
+
+                        relatedItem.addEventListener('click', function () {
+                            showGiftDetails(relatedGift.id, data);
+                        });
+
+                        relatedContainer.appendChild(relatedItem);
+                    });
+                } else {
+                    relatedContainer.innerHTML = '<p>No related gifts found.</p>';
+                }
+
+                // Update cart button event listeners
+                document.querySelector('.add-to-cart').onclick = function () {
+                    addToCart();
                 };
-                
-                // Add to cart
-                addToCart(product);
-                
+
+                document.querySelector('.buy-now').onclick = function () {
+                    buyNow();
+                };
+
+                // Show the details page and hide the listing
+                giftListingSection.style.display = 'none';
+                giftDetailsSection.style.display = 'block';
+
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+
+            function createSizeInfoElement() {
+                const sizeInfo = document.createElement('div');
+                sizeInfo.id = 'size-info';
+                document.querySelector('.gift-details-content').appendChild(sizeInfo);
+                return sizeInfo;
+            }
+
+            function addToCart() {
+                if (!currentGift) return;
+
+                const quantity = parseInt(document.getElementById('gift-quantity').value) || 1;
+
+                // Get existing cart or create new one
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                // Extract numeric price
+                const numericPrice = currentGift.price.replace(/[^0-9.]/g, '');
+                const priceValue = numericPrice ? parseFloat(numericPrice) : 0;
+
+                // Check if item already in cart
+                const existingItemIndex = cart.findIndex(item => item.id === currentGift.id);
+
+                if (existingItemIndex >= 0) {
+                    // Update quantity if already in cart
+                    cart[existingItemIndex].quantity += quantity;
+                } else {
+                    // Add new item to cart - for cart page we'll show dash if size is empty
+                    cart.push({
+                        id: currentGift.id,
+                        name: currentGift.name,
+                        price: priceValue,
+                        displayPrice: currentGift.price || 'Price not available',
+                        image: currentGift.image,
+                        quantity: quantity,
+                        size: currentGift.size || '-', // Dash only in cart
+                        displaySize: currentGift.size ? currentGift.size : '' // Empty string for gifting page
+                    });
+                }
+
+                // Save to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                // Update cart count in header
+                updateCartCount();
+
+                // Show success message
+                showToast('Item added to cart!');
+            }
+
+            function buyNow() {
+                if (!currentGift) return;
+
+                const quantity = parseInt(document.getElementById('gift-quantity').value) || 1;
+
+                // Extract numeric price
+                const numericPrice = currentGift.price.replace(/[^0-9.]/g, '');
+                const priceValue = numericPrice ? parseFloat(numericPrice) : 0;
+
+                // Create a temporary cart with just this item
+                const tempCart = [{
+                    id: currentGift.id,
+                    name: currentGift.name,
+                    price: priceValue,
+                    displayPrice: currentGift.price || 'Price not available',
+                    image: currentGift.image,
+                    quantity: quantity,
+                    size: currentGift.size || '-', // Dash only in cart
+                    displaySize: currentGift.size ? currentGift.size : '' // Empty string for gifting page
+                }];
+
+                // Save to localStorage
+                localStorage.setItem('tempCart', JSON.stringify(tempCart));
+
                 // Redirect to checkout page
-                window.location.href = 'cart.html?checkout=true';
-            });
-        }
-        
-        // Cart functionality
-        function addToCart(product) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            
-            // Check if product already exists in cart
-            const existingProductIndex = cart.findIndex(item => item.name === product.name);
-            
-            if (existingProductIndex >= 0) {
-                // Update quantity if product exists
-                cart[existingProductIndex].quantity += product.quantity;
-            } else {
-                // Add new product to cart
-                cart.push({
-                    name: product.name,
-                    price: product.price,
-                    priceText: product.priceText, // Make sure to store the formatted price
-                    image: product.image,
-                    quantity: product.quantity
+                window.location.href = 'checkout.html';
+            }
+            function buyNow() {
+                if (!currentGift) return;
+
+                const quantity = parseInt(document.getElementById('gift-quantity').value) || 1;
+
+                // Extract numeric price
+                const numericPrice = currentGift.price.replace(/[^0-9.]/g, '');
+                const priceValue = numericPrice ? parseFloat(numericPrice) : 0;
+
+                // Create a temporary cart with just this item
+                const tempCart = [{
+                    id: currentGift.id,
+                    name: currentGift.name,
+                    price: priceValue,
+                    displayPrice: currentGift.price || 'Price not available',
+                    image: currentGift.image,
+                    quantity: quantity,
+                    size: currentGift.size || '-'
+                }];
+
+                // Save to localStorage
+                localStorage.setItem('tempCart', JSON.stringify(tempCart));
+
+                // Redirect to checkout page
+                window.location.href = 'checkout.html';
+            }
+
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+                // Update cart count in both desktop and mobile headers
+                document.querySelectorAll('.cart-count').forEach(element => {
+                    element.textContent = totalItems;
                 });
             }
-            
-            // Save to localStorage
-            localStorage.setItem('cart', JSON.stringify(cart));
-            
-            // Update cart count
+
+            function showToast(message) {
+                // Create toast element if it doesn't exist
+                let toast = document.getElementById('toast-notification');
+                if (!toast) {
+                    toast = document.createElement('div');
+                    toast.id = 'toast-notification';
+                    toast.style.position = 'fixed';
+                    toast.style.bottom = '20px';
+                    toast.style.right = '20px';
+                    toast.style.backgroundColor = '#8b7355';
+                    toast.style.color = 'white';
+                    toast.style.padding = '15px 25px';
+                    toast.style.borderRadius = '4px';
+                    toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                    toast.style.zIndex = '10000';
+                    toast.style.transition = 'all 0.3s ease';
+                    toast.style.transform = 'translateY(100px)';
+                    toast.style.opacity = '0';
+                    document.body.appendChild(toast);
+                }
+
+                // Set message and show
+                toast.textContent = message;
+                toast.style.transform = 'translateY(0)';
+                toast.style.opacity = '1';
+
+                // Hide after 3 seconds
+                setTimeout(() => {
+                    toast.style.transform = 'translateY(100px)';
+                    toast.style.opacity = '0';
+                }, 3000);
+            }
+
+            // Show error state
+            function showErrorState() {
+                productsContainer.innerHTML = `
+                <div class="error-state">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 50px; color: #e74c3c; margin-bottom: 20px;"></i>
+                    <h3>Error Loading Products</h3>
+                    <p>We're having trouble loading our gift products. Please try again later or contact us for assistance.</p>
+                    <button class="retry-button" onclick="window.location.reload()">
+                        <i class="fas fa-sync-alt"></i> Try Again
+                    </button>
+                </div>
+            `;
+            }
+
+            // Initialize cart count on page load
             updateCartCount();
-        }
-        
-        function updateCartCount() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-            document.querySelectorAll('.cart-count').forEach(el => {
-                el.textContent = totalItems;
-            });
-        }
-        
-        // Initialize cart count on page load
-        updateCartCount();
-    });
-</script>
+
+            // Load gift data
+            loadGiftData();
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 

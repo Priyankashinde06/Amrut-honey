@@ -419,49 +419,6 @@
             gap: 20px;
         }
 
-        /* Search Styles */
-        .search-container {
-            position: relative;
-        }
-
-        .search-icon {
-            color: #333;
-            font-size: 18px;
-        }
-
-        .search-form {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 300px;
-            background: #fff;
-            padding: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-
-        .search-form input {
-            width: 100%;
-            padding: 8px 15px;
-            border: 1px solid #ddd;
-        }
-
-        .search-form button {
-            position: absolute;
-            right: 15px;
-            top: 15px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .search-results {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-top: 10px;
-        }
-
         /* Account Dropdown */
         .account-container {
             position: relative;
@@ -503,18 +460,6 @@
             gap: 15px;
         }
 
-        .mobile-search-form {
-            display: none;
-            padding: 15px;
-            background: #f5f5f5;
-        }
-
-        .mobile-search-form input {
-            width: 100%;
-            padding: 8px 15px;
-            border: 1px solid #ddd;
-        }
-
         /* Mobile Menu Dropdown Fix */
         .qodef-mobile-header-navigation .menu-item-has-children>.sub-menu {
             display: none;
@@ -539,16 +484,7 @@
             transform: rotate(180deg);
         }
 
-        /* Show/hide elements when needed */
-        .search-container.active .search-form {
-            display: block;
-        }
-
         .account-container.active .account-dropdown {
-            display: block;
-        }
-
-        .mobile-search-active .mobile-search-form {
             display: block;
         }
     </style>
@@ -590,14 +526,12 @@
                     </ul>
                 </nav>
                 <div class="header-actions">
-                    <!-- Search Icon and Form -->
-                    <div class="search-container">
-                        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-                        <div class="search-form">
-                            <form action="search.html" method="get">
-                                <input type="text" name="q" placeholder="Search products...">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </form>
+                    <div class="header-search">
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Search honeys...">
+                            <button class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
                             <div class="search-results"></div>
                         </div>
                     </div>
@@ -611,7 +545,7 @@
             </div>
         </header>
 
-        <header id="qodef-page-mobile-header" style="height: 97px;">
+        <header id="qodef-page-mobile-header" style="height: 97px;" class="qodef-page-mobile-header">
             <div id="qodef-page-mobile-header-inner">
                 <a itemprop="url" class="qodef-mobile-header-logo-link" href="index.html" style="height:34px"
                     rel="home">
@@ -619,41 +553,39 @@
                         alt="logo main" itemprop="image" />
                 </a>
                 <div class="mobile-header-actions">
-                    <a href="#" class="mobile-search-icon"><i class="fas fa-search"></i></a>
-                    <a href="cart.html" class="mobile-cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                    <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                    <div class="mobile-search">
+                        <input type="text" class="search-input" placeholder="Search honeys...">
+                        <button class="search-button">
+                            <i class="fas fa-search search-icon"></i>
+                        </button>
+                        <!-- Search results will be added by JavaScript -->
+                        <a href="cart.html" class="mobile-cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                    </div>
                 </div>
-
-                <!-- Mobile Search Form -->
-                <div class="mobile-search-form">
-                    <form action="search.html" method="get">
-                        <input type="text" name="q" placeholder="Search products...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-
                 <!-- Mobile Menu -->
                 <nav class="qodef-mobile-header-navigation" role="navigation" aria-label="Mobile Menu">
                     <ul id="menu-main-menu-4" class="qodef-content-grid">
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-91 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="index.html">Home</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="about.html">About</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-93 qodef-menu-item--narrow">
-                            <a href="#" class="mobile-menu-toggle">Shop <i class="fas fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
-                                <li class="menu-item-has-children">
-                                    <a href="#" class="mobile-menu-toggle">Products <i
-                                            class="fas fa-chevron-down"></i></a>
-                                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#" class="mobile-menu-toggle">
+                                <span>Shop</span>
+
+                            </a>
+                            <ul class="sub-menu subb">
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#" class="mobile-menu-toggle">
+                                        <span>Products</span>
+                                    </a>
+                                    <ul class="sub-menu menus">
                                         <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
                                         <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
                                         <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
@@ -663,18 +595,17 @@
                                 <li><a href="gifting.html">Gifting</a></li>
                             </ul>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="index.html#gallery">Gallery</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-661 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </header>
+        <div id="blur-overlay"></div>
         <div id="qodef-page-outer">
             <div id="qodef-page-inner" class="qodef-content-full-width">
                 <main id="qodef-page-content" class="qodef-grid qodef-layout--template ">
@@ -718,6 +649,7 @@
                                                                                                 class="rev-slidebg tp-rs-img rs-lazyload"
                                                                                                 data-lazyload="//mellifera.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/transparent.png"
                                                                                                 data-no-retina>
+
                                                                                             <rs-layer
                                                                                                 id="slider-1-slide-1-layer-0"
                                                                                                 data-type="image"
@@ -756,7 +688,7 @@
                                                                                                 style="z-index:9;"><img
                                                                                                     src="//mellifera.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png"
                                                                                                     alt="a"
-                                                                                                    class="tp-rs-img rs-lazyload"
+                                                                                                    class="tp-rs-img rs-lazyload leaf"
                                                                                                     width="183"
                                                                                                     height="236"
                                                                                                     data-lazyload="//mellifera.qodeinteractive.com/wp-content/uploads/2020/05/h1-rev-img-1.png"
@@ -779,7 +711,7 @@
                                                                                                 style="z-index:10;"><img
                                                                                                     src="//mellifera.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png"
                                                                                                     alt="a"
-                                                                                                    class="tp-rs-img rs-lazyload"
+                                                                                                    class="tp-rs-img rs-lazyload leaf"
                                                                                                     width="188"
                                                                                                     height="211"
                                                                                                     data-lazyload="//mellifera.qodeinteractive.com/wp-content/uploads/2020/05/h1-rev-img-7.png"
@@ -824,7 +756,7 @@
                                                                                                 style="z-index:12;"><img
                                                                                                     src="//mellifera.qodeinteractive.com/wp-content/plugins/revslider/public/assets/assets/dummy.png"
                                                                                                     alt="h1-rev"
-                                                                                                    class="tp-rs-img rs-lazyload"
+                                                                                                    class="tp-rs-img rs-lazyload leaf"
                                                                                                     width="167"
                                                                                                     height="266"
                                                                                                     data-lazyload="//mellifera.qodeinteractive.com/wp-content/uploads/2020/05/h1-rev-img-8.png"
@@ -1095,7 +1027,7 @@
                                         </section>
 
                                         <section id="about"
-                                            class=" elementor-section  elementor-top-section elementor-element elementor-element-1b36237 qodef-elementor-content-grid elementor-section-boxed elementor-section-height-default elementor-section-height-default qodef-bees-holder-no qodef-section-backgrounds-animation-no"
+                                            class="about-section elementor-section  elementor-top-section elementor-element elementor-element-1b36237 qodef-elementor-content-grid elementor-section-boxed elementor-section-height-default elementor-section-height-default qodef-bees-holder-no qodef-section-backgrounds-animation-no"
                                             data-id="1b36237" data-element_type="section">
                                             <div class="elementor-container elementor-column-gap-default">
                                                 <div class="elementor-row">
@@ -1705,7 +1637,7 @@
                                                                                                 <div
                                                                                                     class="qodef-shortcode qodef-m  qodef-section-title qodef-alignment--center ">
                                                                                                     <h2
-                                                                                                        class="qodef-m-title">
+                                                                                                        class="qodef-m-titles ">
                                                                                                         Our Gallery
                                                                                                     </h2>
                                                                                                     <p class="qodef-m-text"
@@ -1926,6 +1858,7 @@
                                 <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
                                 <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
                                 <li><a href="raw-honey.html?type=tulsi">Tulsi Honey</a></li>
+                                <li><a href="gifting.html">Gitting</a></li>
                             </ul>
                         </div>
 
@@ -1943,7 +1876,7 @@
                     </div>
 
                     <div class="footer-bottom">
-                        <p>&copy; 2023 Amrut Honey. All rights reserved.</p>
+                        <p>&copy; 2025 Amrut Honey. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -2167,61 +2100,6 @@
             });
         });
         document.addEventListener('DOMContentLoaded', function () {
-            // Desktop Search Toggle
-            const searchIcon = document.querySelector('.search-icon');
-            const searchContainer = document.querySelector('.search-container');
-
-            if (searchIcon) {
-                searchIcon.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    searchContainer.classList.toggle('active');
-                    document.querySelector('.account-container').classList.remove('active');
-                });
-            }
-
-            // Account Dropdown Toggle
-            const accountIcon = document.querySelector('.account-icon');
-            const accountContainer = document.querySelector('.account-container');
-
-            if (accountIcon) {
-                accountIcon.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    accountContainer.classList.toggle('active');
-                    searchContainer.classList.remove('active');
-                });
-            }
-
-            // Close dropdowns when clicking outside
-            document.addEventListener('click', function (e) {
-                if (!searchContainer.contains(e.target) && !searchIcon.contains(e.target)) {
-                    searchContainer.classList.remove('active');
-                }
-                if (!accountContainer.contains(e.target) && !accountIcon.contains(e.target)) {
-                    accountContainer.classList.remove('active');
-                }
-            });
-
-            // Mobile Search Toggle
-            const mobileSearchIcon = document.querySelector('.mobile-search-icon');
-            const mobileHeader = document.querySelector('#qodef-page-mobile-header');
-
-            if (mobileSearchIcon) {
-                mobileSearchIcon.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    mobileHeader.classList.toggle('mobile-search-active');
-                });
-            }
-
-            // Mobile Menu Dropdown Toggle
-            const mobileMenuToggles = document.querySelectorAll('.mobile-menu-toggle');
-
-            mobileMenuToggles.forEach(toggle => {
-                toggle.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const parentItem = this.closest('.menu-item-has-children');
-                    parentItem.classList.toggle('active');
-                });
-            });
 
             // Update cart count
             function updateCartCount() {
@@ -2235,52 +2113,6 @@
             // Initialize cart count
             updateCartCount();
         });
-
-        // Search functionality
-        function performSearch(query) {
-            // This would be replaced with actual search logic
-            const products = [
-                { name: 'Multiflora Honey', url: 'raw-honey.html?type=multiflora' },
-                { name: 'Jamun Honey', url: 'raw-honey.html?type=jamun' },
-                { name: 'Ajwain Honey', url: 'raw-honey.html?type=ajwain' },
-                { name: 'Tulsi Honey', url: 'raw-honey.html?type=tulsi' }
-            ];
-
-            const results = products.filter(product =>
-                product.name.toLowerCase().includes(query.toLowerCase())
-            );
-
-            return results;
-        }
-
-        // Handle search form submission
-        document.querySelectorAll('form').forEach(form => {
-            if (form.action.includes('search.html')) {
-                form.addEventListener('submit', function (e) {
-                    const input = this.querySelector('input[name="q"]');
-                    if (input.value.trim() === '') {
-                        e.preventDefault();
-                        return false;
-                    }
-                });
-            }
-        });
-
-        // Live search for desktop
-        const searchInput = document.querySelector('.search-form input');
-        if (searchInput) {
-            searchInput.addEventListener('input', function () {
-                const query = this.value.trim();
-                const resultsContainer = this.closest('.search-form').querySelector('.search-results');
-
-                if (query.length > 2) {
-                    const results = performSearch(query);
-                    showSearchResults(results, resultsContainer);
-                } else {
-                    resultsContainer.innerHTML = '';
-                }
-            });
-        }
 
         function showSearchResults(results, container) {
             container.innerHTML = '';

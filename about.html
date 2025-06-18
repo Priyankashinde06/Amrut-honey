@@ -411,155 +411,14 @@
             padding-bottom: 60px !important;
         }
     </style>
-    <style>
-        /* Header Actions */
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Search Styles */
-        .search-container {
-            position: relative;
-        }
-
-        .search-icon {
-            color: #333;
-            font-size: 18px;
-        }
-
-        .search-form {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 300px;
-            background: #fff;
-            padding: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-
-        .search-form input {
-            width: 100%;
-            padding: 8px 15px;
-            border: 1px solid #ddd;
-        }
-
-        .search-form button {
-            position: absolute;
-            right: 15px;
-            top: 15px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .search-results {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-top: 10px;
-        }
-
-        /* Account Dropdown */
-        .account-container {
-            position: relative;
-        }
-
-        .account-icon {
-            color: #333;
-            font-size: 18px;
-        }
-
-        .account-dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 200px;
-            background: #fff;
-            padding: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-
-        .account-dropdown ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .account-dropdown li a {
-            display: block;
-            padding: 5px 0;
-            color: #333;
-        }
-
-        /* Mobile Header Styles */
-        .mobile-header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .mobile-search-form {
-            display: none;
-            padding: 15px;
-            background: #f5f5f5;
-        }
-
-        .mobile-search-form input {
-            width: 100%;
-            padding: 8px 15px;
-            border: 1px solid #ddd;
-        }
-
-        /* Mobile Menu Dropdown Fix */
-        .qodef-mobile-header-navigation .menu-item-has-children>.sub-menu {
-            display: none;
-        }
-
-        .qodef-mobile-header-navigation .menu-item-has-children.active>.sub-menu {
-            display: block;
-        }
-
-        .mobile-menu-toggle {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .mobile-menu-toggle i {
-            transition: transform 0.3s ease;
-        }
-
-        .menu-item-has-children.active .mobile-menu-toggle i {
-            transform: rotate(180deg);
-        }
-
-        /* Show/hide elements when needed */
-        .search-container.active .search-form {
-            display: block;
-        }
-
-        .account-container.active .account-dropdown {
-            display: block;
-        }
-
-        .mobile-search-active .mobile-search-form {
-            display: block;
-        }
-    </style>
-
+    
 </head>
 
 <body
     class="home page-template page-template-page-full-width page-template-page-full-width-php page page-id-23 theme-mellifera qode-framework-1.1.3 woocommerce-no-js qodef-qi--no-touch qi-addons-for-elementor-1.5.4 qodef-back-to-top--enabled  qodef-content-grid-1300 qodef-content-behind-header qodef-main-home qodef-header--standard qodef-header-appearance--sticky qodef-mobile-header--standard qodef-drop-down-second--full-width qodef-drop-down-second--default mellifera-core-1.0.3 mellifera-1.0.4 qodef-header-standard--right qodef-search--covers-header elementor-default elementor-kit-17 elementor-page elementor-page-23"
     itemscope itemtype="https://schema.org/WebPage">
     <div id="qodef-page-wrapper" class="">
-        <header id="qodef-page-header">
+               <header id="qodef-page-header">
             <div id="qodef-page-header-inner" class="container">
                 <div class="header-logo">
                     <a href="index.html">
@@ -590,14 +449,12 @@
                     </ul>
                 </nav>
                 <div class="header-actions">
-                    <!-- Search Icon and Form -->
-                    <div class="search-container">
-                        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-                        <div class="search-form">
-                            <form action="search.html" method="get">
-                                <input type="text" name="q" placeholder="Search products...">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </form>
+                    <div class="header-search">
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Search honeys...">
+                            <button class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
                             <div class="search-results"></div>
                         </div>
                     </div>
@@ -611,7 +468,7 @@
             </div>
         </header>
 
-        <header id="qodef-page-mobile-header" style="height: 97px;">
+        <header id="qodef-page-mobile-header" style="height: 97px;" class="qodef-page-mobile-header">
             <div id="qodef-page-mobile-header-inner">
                 <a itemprop="url" class="qodef-mobile-header-logo-link" href="index.html" style="height:34px"
                     rel="home">
@@ -619,41 +476,39 @@
                         alt="logo main" itemprop="image" />
                 </a>
                 <div class="mobile-header-actions">
-                    <a href="#" class="mobile-search-icon"><i class="fas fa-search"></i></a>
-                    <a href="cart.html" class="mobile-cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                    <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                    <div class="mobile-search">
+                        <input type="text" class="search-input" placeholder="Search honeys...">
+                        <button class="search-button">
+                            <i class="fas fa-search search-icon"></i>
+                        </button>
+                        <!-- Search results will be added by JavaScript -->
+                        <a href="cart.html" class="mobile-cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                    </div>
                 </div>
-
-                <!-- Mobile Search Form -->
-                <div class="mobile-search-form">
-                    <form action="search.html" method="get">
-                        <input type="text" name="q" placeholder="Search products...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-
                 <!-- Mobile Menu -->
                 <nav class="qodef-mobile-header-navigation" role="navigation" aria-label="Mobile Menu">
                     <ul id="menu-main-menu-4" class="qodef-content-grid">
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-91 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="index.html">Home</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="about.html">About</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-93 qodef-menu-item--narrow">
-                            <a href="#" class="mobile-menu-toggle">Shop <i class="fas fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
-                                <li class="menu-item-has-children">
-                                    <a href="#" class="mobile-menu-toggle">Products <i
-                                            class="fas fa-chevron-down"></i></a>
-                                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#" class="mobile-menu-toggle">
+                                <span>Shop</span>
+
+                            </a>
+                            <ul class="sub-menu subb">
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#" class="mobile-menu-toggle">
+                                        <span>Products</span>
+                                    </a>
+                                    <ul class="sub-menu menus">
                                         <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
                                         <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
                                         <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
@@ -663,18 +518,17 @@
                                 <li><a href="gifting.html">Gifting</a></li>
                             </ul>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="index.html#gallery">Gallery</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-661 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </header>
+        <div id="blur-overlay"></div>
         <div id="qodef-page-outer">
             <div id="qodef-page-inner" class="qodef-content-full-width">
                 <main id="qodef-page-content" class="qodef-grid qodef-layout--template ">
@@ -684,7 +538,7 @@
                                 <div class="elementor-inner">
                                     <div class="elementor-section-wrap">
                                         <section
-                                            class="about-section elementor-section elementor-top-section elementor-element elementor-element-4cf1242 elementor-section-stretched ws-about elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                            class="aboutt elementor-section elementor-top-section elementor-element elementor-element-4cf1242 elementor-section-stretched ws-about elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                             data-id="4cf1242" data-element_type="section"
                                             data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}"
                                             style="width: 1521px; left: 0px;">
@@ -703,17 +557,20 @@
                                                         <div class="elementor-element elementor-element-2247c09 ws-about-title elementor-widget elementor-widget-heading"
                                                             data-id="2247c09" data-element_type="widget"
                                                             data-widget_type="heading.default">
-                                                            <div class="elementor-widget-container">
+                                                            <div class="elementor-widget-container contact-icon">
                                                                 <h2
-                                                                    class="elementor-heading-title elementor-size-default">
-                                                                    About honey</h2>
+                                                                    class="elementor-heading-title elementor-size-default ">
+                                                                    <span class="about-title">
+                                                                        About honey</span>
+                                                                </h2>
                                                             </div>
                                                         </div>
                                                         <div class="elementor-element elementor-element-d989113 elementor-widget elementor-widget-text-editor"
                                                             data-id="d989113" data-element_type="widget"
                                                             data-widget_type="text-editor.default">
                                                             <div class="elementor-widget-container">
-                                                                <p>At Amrut Honey, we bring you the world’s finest, raw,
+                                                                <p style="text-align: justify; word-spacing: 3px;">At
+                                                                    Amrut Honey, we bring you the world’s finest, raw,
                                                                     and unprocessed honey sourced from untouched forests
                                                                     and trusted beekeepers. Every drop is packed with
                                                                     natural goodness, free from additives, ensuring
@@ -1008,8 +865,8 @@
                             <ul class="footer-links">
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="about.html">About Us</a></li>
-                                <li><a href="#product">Our Products</a></li>
-                                <li><a href="#gallery">Gallery</a></li>
+                                <li><a href="index.html#product">Our Products</a></li>
+                                <li><a href="index.html#gallery">Gallery</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
                             </ul>
                         </div>
@@ -1022,6 +879,7 @@
                                 <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
                                 <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
                                 <li><a href="raw-honey.html?type=tulsi">Tulsi Honey</a></li>
+                                <li><a href="gifting.html">Gitting</a></li>
                             </ul>
                         </div>
 
@@ -1039,7 +897,7 @@
                     </div>
 
                     <div class="footer-bottom">
-                        <p>&copy; 2023 Amrut Honey. All rights reserved.</p>
+                        <p>&copy; 2025 Amrut Honey. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -1261,62 +1119,7 @@
             });
         });
         document.addEventListener('DOMContentLoaded', function () {
-            // Desktop Search Toggle
-            const searchIcon = document.querySelector('.search-icon');
-            const searchContainer = document.querySelector('.search-container');
-
-            if (searchIcon) {
-                searchIcon.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    searchContainer.classList.toggle('active');
-                    document.querySelector('.account-container').classList.remove('active');
-                });
-            }
-
-            // Account Dropdown Toggle
-            const accountIcon = document.querySelector('.account-icon');
-            const accountContainer = document.querySelector('.account-container');
-
-            if (accountIcon) {
-                accountIcon.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    accountContainer.classList.toggle('active');
-                    searchContainer.classList.remove('active');
-                });
-            }
-
-            // Close dropdowns when clicking outside
-            document.addEventListener('click', function (e) {
-                if (!searchContainer.contains(e.target) && !searchIcon.contains(e.target)) {
-                    searchContainer.classList.remove('active');
-                }
-                if (!accountContainer.contains(e.target) && !accountIcon.contains(e.target)) {
-                    accountContainer.classList.remove('active');
-                }
-            });
-
-            // Mobile Search Toggle
-            const mobileSearchIcon = document.querySelector('.mobile-search-icon');
-            const mobileHeader = document.querySelector('#qodef-page-mobile-header');
-
-            if (mobileSearchIcon) {
-                mobileSearchIcon.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    mobileHeader.classList.toggle('mobile-search-active');
-                });
-            }
-
-            // Mobile Menu Dropdown Toggle
-            const mobileMenuToggles = document.querySelectorAll('.mobile-menu-toggle');
-
-            mobileMenuToggles.forEach(toggle => {
-                toggle.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const parentItem = this.closest('.menu-item-has-children');
-                    parentItem.classList.toggle('active');
-                });
-            });
-
+           
             // Update cart count
             function updateCartCount() {
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -1325,78 +1128,12 @@
                     el.textContent = totalItems;
                 });
             }
-
             // Initialize cart count
             updateCartCount();
         });
 
-        // Search functionality
-        function performSearch(query) {
-            // This would be replaced with actual search logic
-            const products = [
-                { name: 'Multiflora Honey', url: 'raw-honey.html?type=multiflora' },
-                { name: 'Jamun Honey', url: 'raw-honey.html?type=jamun' },
-                { name: 'Ajwain Honey', url: 'raw-honey.html?type=ajwain' },
-                { name: 'Tulsi Honey', url: 'raw-honey.html?type=tulsi' }
-            ];
-
-            const results = products.filter(product =>
-                product.name.toLowerCase().includes(query.toLowerCase())
-            );
-
-            return results;
-        }
-
-        // Handle search form submission
-        document.querySelectorAll('form').forEach(form => {
-            if (form.action.includes('search.html')) {
-                form.addEventListener('submit', function (e) {
-                    const input = this.querySelector('input[name="q"]');
-                    if (input.value.trim() === '') {
-                        e.preventDefault();
-                        return false;
-                    }
-                });
-            }
-        });
-
-        // Live search for desktop
-        const searchInput = document.querySelector('.search-form input');
-        if (searchInput) {
-            searchInput.addEventListener('input', function () {
-                const query = this.value.trim();
-                const resultsContainer = this.closest('.search-form').querySelector('.search-results');
-
-                if (query.length > 2) {
-                    const results = performSearch(query);
-                    showSearchResults(results, resultsContainer);
-                } else {
-                    resultsContainer.innerHTML = '';
-                }
-            });
-        }
-
-        function showSearchResults(results, container) {
-            container.innerHTML = '';
-
-            if (results.length === 0) {
-                container.innerHTML = '<p>No products found</p>';
-                return;
-            }
-
-            const ul = document.createElement('ul');
-            results.forEach(result => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.href = result.url;
-                a.textContent = result.name;
-                li.appendChild(a);
-                ul.appendChild(li);
-            });
-
-            container.appendChild(ul);
-        }
     </script>
+ 
     <script src="script.js"></script>
 </body>
 

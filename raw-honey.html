@@ -553,283 +553,6 @@
         }
     </style>
 
-    <style>
-        /* Updated Product Container Styles */
-        .product-section {
-            padding: 60px 0;
-            background-color: #f8f5f0;
-            /* Light beige background */
-        }
-
-        .product-container {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            border: 1px solid #eae0d5;
-        }
-
-        .product-image-container {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #faf7f2;
-        }
-
-        .product-image {
-            width: 100%;
-            max-height: 500px;
-            object-fit: none;
-            transition: transform 0.3s ease;
-            border-radius: 8px;
-        }
-
-        .product-image:hover {
-            transform: scale(1.02);
-        }
-
-
-        .product-title {
-            font-size: 32px;
-            margin-bottom: 15px;
-            color: #2c2723;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 700;
-        }
-
-        .product-price {
-            font-size: 28px;
-            font-weight: bold;
-            color: #d4a656;
-            margin-bottom: 25px;
-            display: inline-block;
-            background: #f8f5f0;
-            padding: 8px 15px;
-            border-radius: 6px;
-        }
-
-        .product-variations {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eae0d5;
-        }
-
-        .variation-title {
-            font-weight: 600;
-            margin-bottom: 15px;
-            display: block;
-            color: #5a534a;
-            font-size: 16px;
-        }
-
-        .variation-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .variation-option {
-            padding: 10px 20px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 14px;
-            background: #f9f9f9;
-        }
-
-        .variation-option:hover {
-            border-color: #d4a656;
-            background: #f8f5f0;
-        }
-
-        .variation-option.selected {
-            background-color: #d4a656;
-            color: white;
-            border-color: #d4a656;
-            font-weight: 500;
-        }
-
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eae0d5;
-        }
-
-        .quantity-btn {
-            width: 40px;
-            height: 40px;
-            background: #f5f5f5;
-            border: 1px solid #ddd;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-
-        .quantity-btn:hover {
-            background: #eae0d5;
-        }
-
-        .quantity-input {
-            width: 60px;
-            height: 40px;
-            text-align: center;
-            margin: 0 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .add-to-cart,
-        .buy-now {
-            flex: 1;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .add-to-cart {
-            background-color: #d4a656;
-            color: white;
-        }
-
-        .add-to-cart:hover {
-            background-color: #c2954a;
-            transform: translateY(-2px);
-        }
-
-        .buy-now {
-            background-color: #2c2723;
-            color: white;
-        }
-
-        .buy-now:hover {
-            background-color: #1a1612;
-            transform: translateY(-2px);
-        }
-
-        .product-description {
-            margin-bottom: 30px;
-            line-height: 1.8;
-            color: #5a534a;
-            font-size: 15px;
-        }
-
-        .product-features {
-            margin-bottom: 30px;
-            display: flex;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .feature-icon {
-            margin-right: 15px;
-            color: #d4a656;
-            font-size: 18px;
-            margin-top: 3px;
-        }
-
-        .feature-item span {
-            color: #5a534a;
-            font-size: 15px;
-        }
-
-        /* Honeycomb decoration */
-        .product-details:before {
-            content: "";
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background-size: contain;
-            opacity: 0.3;
-            z-index: 0;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .product-container {
-                flex-direction: column;
-                max-width: 600px;
-            }
-
-            .product-image-container {
-                max-width: 100%;
-                padding: 30px;
-            }
-
-            .product-details {
-                padding: 30px;
-            }
-
-            .product-title {
-                font-size: 28px;
-            }
-
-            .product-price {
-                font-size: 24px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .product-section {
-                padding: 30px 0;
-            }
-
-            .product-image-container,
-            .product-details {
-                padding: 20px;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .add-to-cart,
-            .buy-now {
-                width: 100%;
-            }
-
-            .product-title {
-                font-size: 24px;
-            }
-
-            .product-price {
-                font-size: 20px;
-            }
-        }
-    </style>
 </head>
 
 <body
@@ -867,14 +590,12 @@
                     </ul>
                 </nav>
                 <div class="header-actions">
-                    <!-- Search Icon and Form -->
-                    <div class="search-container">
-                        <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
-                        <div class="search-form">
-                            <form action="search.html" method="get">
-                                <input type="text" name="q" placeholder="Search products...">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </form>
+                    <div class="header-search">
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Search honeys...">
+                            <button class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
                             <div class="search-results"></div>
                         </div>
                     </div>
@@ -888,7 +609,7 @@
             </div>
         </header>
 
-        <header id="qodef-page-mobile-header" style="height: 97px;">
+        <header id="qodef-page-mobile-header" style="height: 97px;" class="qodef-page-mobile-header">
             <div id="qodef-page-mobile-header-inner">
                 <a itemprop="url" class="qodef-mobile-header-logo-link" href="index.html" style="height:34px"
                     rel="home">
@@ -896,41 +617,39 @@
                         alt="logo main" itemprop="image" />
                 </a>
                 <div class="mobile-header-actions">
-                    <a href="#" class="mobile-search-icon"><i class="fas fa-search"></i></a>
-                    <a href="cart.html" class="mobile-cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                    <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                    <div class="mobile-search">
+                        <input type="text" class="search-input" placeholder="Search honeys...">
+                        <button class="search-button">
+                            <i class="fas fa-search search-icon"></i>
+                        </button>
+                        <!-- Search results will be added by JavaScript -->
+                        <a href="cart.html" class="mobile-cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                    </div>
                 </div>
-
-                <!-- Mobile Search Form -->
-                <div class="mobile-search-form">
-                    <form action="search.html" method="get">
-                        <input type="text" name="q" placeholder="Search products...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-
                 <!-- Mobile Menu -->
                 <nav class="qodef-mobile-header-navigation" role="navigation" aria-label="Mobile Menu">
                     <ul id="menu-main-menu-4" class="qodef-content-grid">
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-91 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="index.html">Home</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="about.html">About</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-93 qodef-menu-item--narrow">
-                            <a href="#" class="mobile-menu-toggle">Shop <i class="fas fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
-                                <li class="menu-item-has-children">
-                                    <a href="#" class="mobile-menu-toggle">Products <i
-                                            class="fas fa-chevron-down"></i></a>
-                                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#" class="mobile-menu-toggle">
+                                <span>Shop</span>
+
+                            </a>
+                            <ul class="sub-menu subb">
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#" class="mobile-menu-toggle">
+                                        <span>Products</span>
+                                    </a>
+                                    <ul class="sub-menu menus">
                                         <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
                                         <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
                                         <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
@@ -940,18 +659,17 @@
                                 <li><a href="gifting.html">Gifting</a></li>
                             </ul>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="index.html#gallery">Gallery</a>
                         </li>
-                        <li
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-661 qodef-menu-item--narrow">
+                        <li class="menu-item">
                             <a href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </header>
+        <div id="blur-overlay"></div>
         <div id="qodef-page-inner">
             <main id="qodef-page-content">
                 <section class="product-section">
@@ -1016,6 +734,7 @@
                                 <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
                                 <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
                                 <li><a href="raw-honey.html?type=tulsi">Tulsi Honey</a></li>
+                                <li><a href="gifting.html">Gitting</a></li>
                             </ul>
                         </div>
 
@@ -1033,7 +752,7 @@
                     </div>
 
                     <div class="footer-bottom">
-                        <p>&copy; 2023 Amrut Honey. All rights reserved.</p>
+                        <p>&copy; 2025 Amrut Honey. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -1408,51 +1127,65 @@
 
             // Create product HTML
             container.innerHTML = `
-            <div class="product-container">
-                <div class="product-image-container">
-                    <img src="${defaultVariation.image}" alt="${product.name}" class="product-image">
-                </div>
-                <div class="product-details">
-                    <h1 class="product-title">${product.name}</h1>
-                    <div class="product-price">₹${defaultVariation.price}</div>
-                    
-                    <div class="product-variations">
-                        <span class="variation-title">Size:</span>
-                        <div class="variation-options">
-                            ${product.variations.map(variation => `
-                                <div class="variation-option ${variation.size === defaultVariation.size ? 'selected' : ''}" 
-                                     data-size="${variation.size}" 
-                                     data-price="${variation.price}"
-                                     data-image="${variation.image}">
-                                    ${variation.size}
-                                </div>
-                            `).join('')}
+    <div class="product-container">
+        <div class="product-image-container">
+            <img src="${defaultVariation.image}" alt="${product.name}" class="product-image">
+        </div>
+        <div class="product-details">
+            <div class="product-info">
+                <h1 class="product-title">${product.name}</h1>
+                <div class="product-price">₹${defaultVariation.price}</div>
+            </div>
+
+            <div class="product-variations">
+                <span class="variation-title">Size:</span>
+                <div class="variation-options">
+                    ${product.variations.map(variation => `
+                        <div class="variation-option ${variation.size === defaultVariation.size ? 'selected' : ''}" 
+                             data-size="${variation.size}" 
+                             data-price="${variation.price}"
+                             data-image="${variation.image}">
+                            ${variation.size}
                         </div>
-                    </div>
-                    
-                    <div class="quantity-selector">
-                        <span class="variation-title">Quantity:</span>
-                        <button class="quantity-btn minus">-</button>
-                        <input type="text" class="quantity-input" value="1" min="1" max="10">
-                        <button class="quantity-btn plus">+</button>
-                    </div>
-                    
-                    <div class="action-buttons">
-                        <button class="add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                        <button class="buy-now">
-                            <i class="fas fa-bolt"></i> Buy Now
-                        </button>
-                    </div>
-                    
-                    <div class="product-description">
-                        <p>${product.description}</p>
-                    </div>
-                    
+                    `).join('')}
                 </div>
             </div>
-        `;
+            
+            <div class="quantity-selector">
+                <span class="variation-title">Quantity:</span>
+                <button class="quantity-btn minus">-</button>
+                <input type="text" class="quantity-input" value="1" min="1" max="10">
+                <button class="quantity-btn plus">+</button>
+            </div>
+            
+            <div class="product-description">
+                <p>${product.description}</p>
+            </div>
+            
+            ${product.features ? `
+            <div class="product-features">
+                ${product.features.map(feature => `
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="${feature.icon}"></i>
+                        </div>
+                        <span class="feature-text">${feature.text}</span>
+                    </div>
+                `).join('')}
+            </div>
+            ` : ''}
+            
+            <div class="action-buttons">
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+                <button class="buy-now">
+                    <i class="fas fa-bolt"></i> Buy Now
+                </button>
+            </div>
+        </div>
+    </div>
+    `;
         }
 
         function displayRelatedProducts(products, currentProductId) {

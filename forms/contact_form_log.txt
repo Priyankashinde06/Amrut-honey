@@ -1,0 +1,236 @@
+Received data: Array
+(
+    [name] => Priyanka Shinde
+    [email] => priyushinde662001@gmail.com
+    [phone] => 01234567892
+    [subject] => sdfg
+    [message] => sd
+)
+
+SMTP Debug: 2: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP d9443c01a7336-23506cd34dfsm101360715ad.147 - gsmtp
+
+SMTP Debug: 1: CLIENT -> SERVER: EHLO localhost
+
+SMTP Debug: 2: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2401:4900:1c42:4a26:4415:5a2b:ebd2:92f7]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+SMTP Debug: 1: CLIENT -> SERVER: STARTTLS
+
+SMTP Debug: 2: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+SMTP Debug: 1: CLIENT -> SERVER: EHLO localhost
+
+SMTP Debug: 2: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2401:4900:1c42:4a26:4415:5a2b:ebd2:92f7]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+SMTP Debug: 1: CLIENT -> SERVER: AUTH LOGIN
+
+SMTP Debug: 2: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+SMTP Debug: 1: CLIENT -> SERVER: [credentials hidden]
+SMTP Debug: 2: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+SMTP Debug: 1: CLIENT -> SERVER: [credentials hidden]
+SMTP Debug: 2: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+SMTP Debug: 1: CLIENT -> SERVER: MAIL FROM:<priyushinde662001@gmail.com>
+
+SMTP Debug: 2: SERVER -> CLIENT: 250 2.1.0 OK d9443c01a7336-23506cd34dfsm101360715ad.147 - gsmtp
+
+SMTP Debug: 1: CLIENT -> SERVER: RCPT TO:<priyanka.jijausoftwares@gmail.com>
+
+SMTP Debug: 2: SERVER -> CLIENT: 250 2.1.5 OK d9443c01a7336-23506cd34dfsm101360715ad.147 - gsmtp
+
+SMTP Debug: 1: CLIENT -> SERVER: DATA
+
+SMTP Debug: 2: SERVER -> CLIENT: 354 Go ahead d9443c01a7336-23506cd34dfsm101360715ad.147 - gsmtp
+
+SMTP Debug: 1: CLIENT -> SERVER: Date: Wed, 4 Jun 2025 12:45:04 +0200
+
+SMTP Debug: 1: CLIENT -> SERVER: To: Jijau Software HR <priyanka.jijausoftwares@gmail.com>
+
+SMTP Debug: 1: CLIENT -> SERVER: From: Priyanka Shinde <priyushinde662001@gmail.com>
+
+SMTP Debug: 1: CLIENT -> SERVER: Reply-To: Priyanka Shinde <priyushinde662001@gmail.com>
+
+SMTP Debug: 1: CLIENT -> SERVER: Subject: sdfg
+
+SMTP Debug: 1: CLIENT -> SERVER: Message-ID: <MSmTsk0RhiTLmwNe7Gj96pj07Vjcpsc8wtZLfkcYDI@localhost>
+
+SMTP Debug: 1: CLIENT -> SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: 1: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: 1: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: 1: CLIENT -> SERVER:  boundary="b1=_MSmTsk0RhiTLmwNe7Gj96pj07Vjcpsc8wtZLfkcYDI"
+
+SMTP Debug: 1: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: --b1=_MSmTsk0RhiTLmwNe7Gj96pj07Vjcpsc8wtZLfkcYDI
+
+SMTP Debug: 1: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: New Contact Form SubmissionName: Priyanka ShindeEmail: priyushinde662001@gmail.comPhone: 01234567892Subject: sdfgMessagesd
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: --b1=_MSmTsk0RhiTLmwNe7Gj96pj07Vjcpsc8wtZLfkcYDI
+
+SMTP Debug: 1: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: <h2>New Contact Form Submission</h2><p><strong>Name:</strong> Priyanka Shinde</p><p><strong>Email:</strong> <a href="mailto:priyushinde662001@gmail.com">priyushinde662001@gmail.com</a></p><p><strong>Phone:</strong> 01234567892</p><p><strong>Subject:</strong> sdfg</p><h3>Message</h3><div style="white-space: pre-wrap;">sd</div>
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: --b1=_MSmTsk0RhiTLmwNe7Gj96pj07Vjcpsc8wtZLfkcYDI--
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: .
+
+SMTP Debug: 2: SERVER -> CLIENT: 250 2.0.0 OK  1749033909 d9443c01a7336-23506cd34dfsm101360715ad.147 - gsmtp
+
+SMTP Debug: 1: CLIENT -> SERVER: QUIT
+
+SMTP Debug: 2: SERVER -> CLIENT: 221 2.0.0 closing connection d9443c01a7336-23506cd34dfsm101360715ad.147 - gsmtp
+
+Email sent successfully
+Received data: Array
+(
+    [name] => Priyanka Shinde
+    [email] => priyushinde662001@gmail.com
+    [phone] => 01234567892
+    [subject] => sdfg
+    [message] => fgg
+)
+
+SMTP Debug: 2: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 41be03b00d2f7-b2ecebbc010sm7289309a12.77 - gsmtp
+
+SMTP Debug: 1: CLIENT -> SERVER: EHLO localhost
+
+SMTP Debug: 2: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2401:4900:1c42:4a26:4415:5a2b:ebd2:92f7]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+SMTP Debug: 1: CLIENT -> SERVER: STARTTLS
+
+SMTP Debug: 2: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+SMTP Debug: 1: CLIENT -> SERVER: EHLO localhost
+
+SMTP Debug: 2: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [2401:4900:1c42:4a26:4415:5a2b:ebd2:92f7]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+SMTP Debug: 1: CLIENT -> SERVER: AUTH LOGIN
+
+SMTP Debug: 2: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+SMTP Debug: 1: CLIENT -> SERVER: [credentials hidden]
+SMTP Debug: 2: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+SMTP Debug: 1: CLIENT -> SERVER: [credentials hidden]
+SMTP Debug: 2: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+SMTP Debug: 1: CLIENT -> SERVER: MAIL FROM:<priyushinde662001@gmail.com>
+
+SMTP Debug: 2: SERVER -> CLIENT: 250 2.1.0 OK 41be03b00d2f7-b2ecebbc010sm7289309a12.77 - gsmtp
+
+SMTP Debug: 1: CLIENT -> SERVER: RCPT TO:<priyanka.jijausoftwares@gmail.com>
+
+SMTP Debug: 2: SERVER -> CLIENT: 250 2.1.5 OK 41be03b00d2f7-b2ecebbc010sm7289309a12.77 - gsmtp
+
+SMTP Debug: 1: CLIENT -> SERVER: DATA
+
+SMTP Debug: 2: SERVER -> CLIENT: 354 Go ahead 41be03b00d2f7-b2ecebbc010sm7289309a12.77 - gsmtp
+
+SMTP Debug: 1: CLIENT -> SERVER: Date: Wed, 4 Jun 2025 12:49:03 +0200
+
+SMTP Debug: 1: CLIENT -> SERVER: To: Jijau Software HR <priyanka.jijausoftwares@gmail.com>
+
+SMTP Debug: 1: CLIENT -> SERVER: From: Priyanka Shinde <priyushinde662001@gmail.com>
+
+SMTP Debug: 1: CLIENT -> SERVER: Reply-To: Priyanka Shinde <priyushinde662001@gmail.com>
+
+SMTP Debug: 1: CLIENT -> SERVER: Subject: sdfg
+
+SMTP Debug: 1: CLIENT -> SERVER: Message-ID: <AlFXZZdTsdkoWIH9XjWS1DewO7Ecql6kAOXUXUzLy0Q@localhost>
+
+SMTP Debug: 1: CLIENT -> SERVER: X-Mailer: PHPMailer 6.9.3 (https://github.com/PHPMailer/PHPMailer)
+
+SMTP Debug: 1: CLIENT -> SERVER: MIME-Version: 1.0
+
+SMTP Debug: 1: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+SMTP Debug: 1: CLIENT -> SERVER:  boundary="b1=_AlFXZZdTsdkoWIH9XjWS1DewO7Ecql6kAOXUXUzLy0Q"
+
+SMTP Debug: 1: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: --b1=_AlFXZZdTsdkoWIH9XjWS1DewO7Ecql6kAOXUXUzLy0Q
+
+SMTP Debug: 1: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: New Contact Form SubmissionName: Priyanka ShindeEmail: priyushinde662001@gmail.comPhone: 01234567892Subject: sdfgMessagefgg
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: --b1=_AlFXZZdTsdkoWIH9XjWS1DewO7Ecql6kAOXUXUzLy0Q
+
+SMTP Debug: 1: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: <h2>New Contact Form Submission</h2><p><strong>Name:</strong> Priyanka Shinde</p><p><strong>Email:</strong> <a href="mailto:priyushinde662001@gmail.com">priyushinde662001@gmail.com</a></p><p><strong>Phone:</strong> 01234567892</p><p><strong>Subject:</strong> sdfg</p><h3>Message</h3><div style="white-space: pre-wrap;">fgg</div>
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: --b1=_AlFXZZdTsdkoWIH9XjWS1DewO7Ecql6kAOXUXUzLy0Q--
+
+SMTP Debug: 1: CLIENT -> SERVER: 
+
+SMTP Debug: 1: CLIENT -> SERVER: .
+
+SMTP Debug: 2: SERVER -> CLIENT: 250 2.0.0 OK  1749034148 41be03b00d2f7-b2ecebbc010sm7289309a12.77 - gsmtp
+
+SMTP Debug: 1: CLIENT -> SERVER: QUIT
+
+SMTP Debug: 2: SERVER -> CLIENT: 221 2.0.0 closing connection 41be03b00d2f7-b2ecebbc010sm7289309a12.77 - gsmtp
+
+Email sent successfully

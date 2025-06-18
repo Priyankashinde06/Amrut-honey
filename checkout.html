@@ -297,7 +297,7 @@
         #qodef-page-footer {
             background-color: rgba(0, 0, 0, 0);
             background-size: contain;
-            background-position: center bottom !important;
+            background-position: center bottom;
             background-image: url(https://mellifera.qodeinteractive.com/wp-content/uploads/2020/05/Footer-home1-img1.jpg);
         }
 
@@ -509,6 +509,12 @@
             background: #f5f5f5;
         }
 
+        .mobile-search-form input {
+            width: 100%;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+        }
+
         /* Mobile Menu Dropdown Fix */
         .qodef-mobile-header-navigation .menu-item-has-children>.sub-menu {
             display: none;
@@ -546,8 +552,6 @@
             display: block;
         }
     </style>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Honeycomb Inspired Checkout Design */
         :root {
@@ -583,7 +587,7 @@
 
         /* Header Styles */
         #qodef-page-header {
-            background-color: var(--honey-white);
+            /* background-color: var(--honey-white); */
             box-shadow: 0 2px 15px rgba(139, 90, 43, 0.1);
             border-bottom: 1px solid var(--honey-border);
         }
@@ -765,7 +769,7 @@
         .order-summary-item {
             display: flex;
             justify-content: space-between;
-            padding: 15px 0;
+            /* padding: 15px 0; */
             border-bottom: 1px dashed var(--honey-border);
         }
 
@@ -783,10 +787,9 @@
         /* Product in Order */
         .order-product {
             display: flex;
-            margin-bottom: 15px;
+            /* margin-bottom: 15px; */
             padding-bottom: 15px;
             border-bottom: 1px solid var(--honey-border);
-            align-items: center;
         }
 
         .order-product-image {
@@ -802,6 +805,9 @@
 
         .order-product-details {
             flex: 1;
+            display: flex;
+            gap: 11px;
+            align-items: baseline;
         }
 
         .order-product-name {
@@ -818,6 +824,7 @@
 
         .order-product-price {
             font-weight: 600;
+            font-size: 24px;
             color: var(--honey-gold);
         }
 
@@ -1180,7 +1187,7 @@
 
         .payment-modal-content {
             background-color: var(--honey-white);
-            padding: 30px;
+            padding: 8px;
             border-radius: 12px;
             width: 90%;
             max-width: 500px;
@@ -1216,7 +1223,7 @@
         }
 
         .modal-title {
-            margin-bottom: 20px;
+            margin-bottom: 8px;
             color: var(--honey-dark);
             font-size: 22px;
             text-align: center;
@@ -1246,17 +1253,7 @@
             justify-content: center;
         }
 
-        .payment-modal-content {
-            background-color: var(--honey-white);
-            padding: 30px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 400px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            animation: modalFadeIn 0.3s ease-out;
-            text-align: center;
-        }
+
 
         @keyframes modalFadeIn {
             from {
@@ -1284,13 +1281,6 @@
             color: var(--honey-gold);
         }
 
-        .modal-title {
-            margin-bottom: 20px;
-            color: var(--honey-dark);
-            font-size: 22px;
-            text-align: center;
-        }
-
         .qr-code-container {
             margin: 20px 0;
             padding: 15px;
@@ -1302,7 +1292,7 @@
         .qr-code {
             width: 200px;
             height: 200px;
-            margin-left: 23%;
+            margin-left: 29%;
             background-color: #fff;
             padding: 10px;
             border: 1px solid var(--honey-border);
@@ -1318,7 +1308,9 @@
         .payment-instructions {
             font-size: 14px;
             color: var(--honey-text);
-            margin-bottom: 20px;
+            margin-bottom: 17px;
+            text-align: center;
+            margin-top: 4px;
         }
 
         .payment-success {
@@ -1385,8 +1377,10 @@
     </style>
 </head>
 
-<body>
-    <div id="qodef-page-wrapper">
+<body
+    class="home page-template page-template-page-full-width page-template-page-full-width-php page page-id-23 theme-mellifera qode-framework-1.1.3 woocommerce-no-js qodef-qi--no-touch qi-addons-for-elementor-1.5.4 qodef-back-to-top--enabled  qodef-content-grid-1300 qodef-content-behind-header qodef-main-home qodef-header--standard qodef-header-appearance--sticky qodef-mobile-header--standard qodef-drop-down-second--full-width qodef-drop-down-second--default mellifera-core-1.0.3 mellifera-1.0.4 qodef-header-standard--right qodef-search--covers-header elementor-default elementor-kit-17 elementor-page elementor-page-23"
+    itemscope itemtype="https://schema.org/WebPage">
+    <div id="qodef-page-wrapper" class="">
         <header id="qodef-page-header">
             <div id="qodef-page-header-inner" class="container">
                 <div class="header-logo">
@@ -1418,6 +1412,15 @@
                     </ul>
                 </nav>
                 <div class="header-actions">
+                    <div class="header-search">
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Search honeys...">
+                            <button class="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <div class="search-results"></div>
+                        </div>
+                    </div>
                     <div class="header-cart">
                         <a href="cart.html" class="cart-contents">
                             <i class="fas fa-shopping-cart"></i>
@@ -1428,7 +1431,67 @@
             </div>
         </header>
 
+        <header id="qodef-page-mobile-header" style="height: 97px;" class="qodef-page-mobile-header">
+            <div id="qodef-page-mobile-header-inner">
+                <a itemprop="url" class="qodef-mobile-header-logo-link" href="index.html" style="height:34px"
+                    rel="home">
+                    <img width="150" height="80" src="image/Amrut Honey.png" class="qodef-header-logo-image qodef--main"
+                        alt="logo main" itemprop="image" />
+                </a>
+                <div class="mobile-header-actions">
+                    <div class="mobile-search">
+                        <input type="text" class="search-input" placeholder="Search honeys...">
+                        <button class="search-button">
+                            <i class="fas fa-search search-icon"></i>
+                        </button>
+                        <!-- Search results will be added by JavaScript -->
+                        <a href="cart.html" class="mobile-cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <a class="qodef-mobile-header-opener" href="#"><i class="fa-solid fa-bars"></i></a>
+                    </div>
+                </div>
+                <!-- Mobile Menu -->
+                <nav class="qodef-mobile-header-navigation" role="navigation" aria-label="Mobile Menu">
+                    <ul id="menu-main-menu-4" class="qodef-content-grid">
+                        <li class="menu-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="about.html">About</a>
+                        </li>
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#" class="mobile-menu-toggle">
+                                <span>Shop</span>
 
+                            </a>
+                            <ul class="sub-menu subb">
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#" class="mobile-menu-toggle">
+                                        <span>Products</span>
+                                    </a>
+                                    <ul class="sub-menu menus">
+                                        <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
+                                        <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
+                                        <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
+                                        <li><a href="raw-honey.html?type=tulsi">Tulsi Honey</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="gifting.html">Gifting</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="index.html#gallery">Gallery</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="blur-overlay"></div>
         <div id="qodef-page-inner">
             <main id="qodef-page-content">
                 <div class="checkout-container">
@@ -1447,35 +1510,38 @@
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label for="first-name">First Name</label>
-                                        <input type="text" id="first-name" name="first-name" required
-                                            placeholder="First Name">
+                                        <input type="text" id="first-name" name="first-name" placeholder="First Name"
+                                            required>
                                     </div>
                                     <div class="form-group">
                                         <label for="last-name">Last Name</label>
-                                        <input type="text" id="last-name" name="last-name" required
-                                            placeholder="Last Name">
+                                        <input type="text" id="last-name" name="last-name" placeholder="Last Name"
+                                            required>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="email">Email Address</label>
-                                    <input type="email" id="email" name="email" required placeholder="Email Address">
-                                    <div class="error-message" id="email-error">Please enter a valid email address</div>
-                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" name="email" placeholder="Email Address"
+                                            required>
+                                        <div class="error-message" id="email-error">Please enter a valid email address
+                                        </div>
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="address">Delivery Address</label>
-                                    <input type="text" id="address" name="address" required
-                                        placeholder="Street Address">
+                                    <div class="form-group">
+                                        <label for="address">Delivery Address</label>
+                                        <input type="text" id="address" name="address" placeholder="Street Address"
+                                            required>
+                                    </div>
                                 </div>
-
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label for="city">City</label>
-                                        <input type="text" id="city" name="city" required placeholder="City">
+                                        <input type="text" id="city" name="city" placeholder="City">
                                     </div>
                                     <div class="form-group">
                                         <label for="state">State</label>
-                                        <select id="state" name="state" required>
+                                        <select id="state" name="state">
                                             <option value="">Select State</option>
                                             <option value="MH">Maharashtra</option>
                                             <option value="DL">Delhi</option>
@@ -1484,18 +1550,17 @@
                                         </select>
                                     </div>
                                 </div>
-
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label for="phone">Phone Number</label>
-                                        <input type="tel" id="phone" name="phone" required placeholder="Phone Number">
+                                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                                         <div class="error-message" id="phone-error">Please enter a valid 10-digit phone
                                             number
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="zip">ZIP Code</label>
-                                        <input type="text" id="zip" name="zip" required placeholder="ZIP Code">
+                                        <input type="text" id="zip" name="zip" placeholder="ZIP Code" required>
                                     </div>
                                 </div>
                             </form>
@@ -1518,20 +1583,27 @@
                         </div>
                     </div>
                     <!-- Right Column - Order Summary and Payment -->
-                    <div class="checkout-column">
+                    <div class="checkout-columns">
                         <div class="checkout-box">
                             <h2 class="checkout-title"><i class="fas fa-box-open"></i> Your Order</h2>
                             <div id="order-products">
                                 <!-- Products will be loaded here dynamically -->
                             </div>
-
+                            <div class="order-summary-item">
+                                <span>Qty</span>
+                                <span id="order-qty"></span>
+                            </div>
+                            <div class="order-summary-item">
+                                <span>Size</span>
+                                <span id="order-Size"></span>
+                            </div>
                             <div class="order-summary-item">
                                 <span>Subtotal</span>
                                 <span id="order-subtotal">₹0.00</span>
                             </div>
                             <div class="order-summary-item">
                                 <span>Shipping</span>
-                                <span id="order-shipping">₹50.00</span>
+                                <span id="order-shipping">₹50</span>
                             </div>
                             <div class="order-summary-item">
                                 <span>Tax (5%)</span>
@@ -1572,44 +1644,29 @@
                             <span class="close-modal">&times;</span>
                             <h3 class="modal-title"><i class="fas fa-qrcode"></i> Scan to Pay</h3>
 
-
                             <div class="qr-code">
-                                <!-- QR code will be generated here -->
                                 <div id="upi-qr-code"></div>
-
                             </div>
 
                             <div class="payment-instructions">
-                                Scan this QR code with any UPI app to complete your payment
+                                Scan this QR code with any UPI app <br> to complete your payment
                             </div>
 
-                            <div class="upi-apps">
-                                <div class="upi-app" title="Google Pay">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/2504/2504739.png" alt="Google Pay">
-                                </div>
-                                <div class="upi-app" title="PhonePe">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/2504/2504903.png" alt="PhonePe">
-                                </div>
-                                <div class="upi-app" title="Paytm">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/2504/2504907.png" alt="Paytm">
-                                </div>
-                                <div class="upi-app" title="BHIM">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/2504/2504920.png" alt="BHIM">
-                                </div>
+                            <div class="form-group">
+                                <label for="transaction-id" style="margin-left: 33%; font-size: 17px;">UPI transaction
+                                    ID</label>
+                                <input type="text" id="transaction-id" placeholder="Enter UPI transaction ID">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="payment-proof" style="margin-left: 26%; font-size: 16px;">Upload Payment
+                                    Screenshot</label>
+                                <input type="file" id="payment-proof" accept="image/*">
                             </div>
 
                             <button type="button" id="payment-done-btn" class="checkout-btn">
-                                <i class="fas fa-check"></i> I've Made the Payment
+                                <i class="fas fa-check"></i> Confirm Payment
                             </button>
-
-                            <div class="payment-success" id="payment-success">
-                                <i class="fas fa-check-circle"></i>
-                                <h3>Payment Successful!</h3>
-                                <p>Your order has been placed successfully.</p>
-                                <button type="button" id="continue-after-payment" class="checkout-btn">
-                                    Continue
-                                </button>
-                            </div>
                         </div>
                     </div>
 
@@ -1633,397 +1690,828 @@
                     <div class="loading-overlay">
                         <div class="loading-spinner"></div>
                     </div>
-                    <!-- Your existing footer remains unchanged -->
-                    <div class="back-to-top">
-                        <i class="fas fa-arrow-up"></i>
-                    </div>
-                    <footer id="qodef-page-footer">
-                        <div id="qodef-page-footer-inner" class="container">
-                            <div class="footer-content">
-                                <div class="footer-columns">
-                                    <!-- Column 1: Logo and Info -->
-                                    <div class="footer-column">
-                                        <div class="footer-logo">
-                                            <a href="index.html">
-                                                <img src="image/Amrut Honey.png" alt="Amrut Honey Logo">
-                                            </a>
-                                        </div>
-                                        <div class="footer-info">
-                                            <p>Pure, natural honey harvested with care for the highest quality and rich
-                                                flavors.</p>
-                                        </div>
-                                        <div class="footer-social">
-                                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                                            <a href="https://www.instagram.com/amruthoney/" class="social-icon"><i
-                                                    class="fab fa-instagram"></i></a>
-                                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Column 2: Quick Links -->
-                                    <div class="footer-column">
-                                        <h4 class="footer-title">Quick Links</h4>
-                                        <ul class="footer-links">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="#product">Our Products</a></li>
-                                            <li><a href="#gallery">Gallery</a></li>
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <!-- Column 3: Products -->
-                                    <div class="footer-column">
-                                        <h4 class="footer-title">Our Products</h4>
-                                        <ul class="footer-links">
-                                            <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
-                                            <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
-                                            <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
-                                            <li><a href="raw-honey.html?type=tulsi">Tulsi Honey</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <!-- Column 4: Contact Info -->
-                                    <div class="footer-column">
-                                        <h4 class="footer-title">Contact Us</h4>
-                                        <ul class="footer-contact">
-                                            <li><i class="fas fa-map-marker-alt"></i>Amrut Honey, Koragaon, Satararoad
-                                                road,
-                                                Khed,Maharashtra 415010</li>
-                                            <li><i class="fas fa-phone"></i> +91 96659 66577</li>
-                                            <li><i class="fas fa-envelope"></i> info@amruthoney.com</li>
-                                            <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
-                                        </ul>
-                                    </div>
+                </div>
+            </main>
+            <div class="back-to-top">
+                <i class="fas fa-arrow-up"></i>
+            </div>
+            <footer id="qodef-page-footer">
+                <div id="qodef-page-footer-inner" class="container">
+                    <div class="footer-content">
+                        <div class="footer-columns">
+                            <!-- Column 1: Logo and Info -->
+                            <div class="footer-column">
+                                <div class="footer-logo">
+                                    <a href="index.html">
+                                        <img src="image/Amrut Honey.png" alt="Amrut Honey Logo">
+                                    </a>
                                 </div>
-
-                                <div class="footer-bottom">
-                                    <p>&copy; 2023 Amrut Honey. All rights reserved.</p>
+                                <div class="footer-info">
+                                    <p>Pure, natural honey harvested with care for the highest quality and rich
+                                        flavors.</p>
+                                </div>
+                                <div class="footer-social">
+                                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://www.instagram.com/amruthoney/" class="social-icon"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                                 </div>
                             </div>
+
+                            <!-- Column 2: Quick Links -->
+                            <div class="footer-column">
+                                <h4 class="footer-title">Quick Links</h4>
+                                <ul class="footer-links">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="#product">Our Products</a></li>
+                                    <li><a href="#gallery">Gallery</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Column 3: Products -->
+                            <div class="footer-column">
+                                <h4 class="footer-title">Our Products</h4>
+                                <ul class="footer-links">
+                                    <li><a href="raw-honey.html?type=multiflora">Multiflora Honey</a></li>
+                                    <li><a href="raw-honey.html?type=jamun">Jamun Honey</a></li>
+                                    <li><a href="raw-honey.html?type=ajwain">Ajwain Honey</a></li>
+                                    <li><a href="raw-honey.html?type=tulsi">Tulsi Honey</a></li>
+                                    <li><a href="gifting.html">Gitting</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Column 4: Contact Info -->
+                            <div class="footer-column">
+                                <h4 class="footer-title">Contact Us</h4>
+                                <ul class="footer-contact">
+                                    <li><i class="fas fa-map-marker-alt"></i>Amrut Honey, Koragaon, Satararoad
+                                        road,
+                                        Khed,Maharashtra 415010</li>
+                                    <li><i class="fas fa-phone"></i> +91 96659 66577</li>
+                                    <li><i class="fas fa-envelope"></i> info@amruthoney.com</li>
+                                    <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
+                                </ul>
+                            </div>
                         </div>
-                    </footer>
+
+                        <div class="footer-bottom">
+                            <p>&copy; 2025 Amrut Honey. All rights reserved.</p>
+                        </div>
+                    </div>
                 </div>
+            </footer>
+        </div>
 
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                        // Update cart count in header
-                        function updateCartCount() {
-                            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                            const totalItems = cart.reduce((total, item) => total + parseInt(item.quantity), 0);
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400%7COpen+Sans:400&display=swap" rel="stylesheet"
+            property="stylesheet" media="all" type="text/css">
 
-                            // Update cart count in desktop header
-                            const desktopCartCounts = document.querySelectorAll('.header-cart .cart-count');
-                            desktopCartCounts.forEach(el => el.textContent = totalItems);
+        <script type="text/javascript">
+            (function () {
+                var c = document.body.className;
+                c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+                document.body.className = c;
+            })();
+        </script>
 
-                            // Update cart count in mobile header
-                            const mobileCartCounts = document.querySelectorAll('.mobile-cart-icon .cart-count');
-                            mobileCartCounts.forEach(el => el.textContent = totalItems);
+        <link rel='stylesheet' id='e-animations-css'
+            href='https://mellifera.qodeinteractive.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.7.8'
+            type='text/css' media='all' />
+        <link rel='stylesheet' id='rs-plugin-settings-css'
+            href='https://mellifera.qodeinteractive.com/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.6.5'
+            type='text/css' media='all' />
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.6.4'
+            id='swv-js'></script>
+        <script type='text/javascript' src='https://export.qodethemes.com/_toolbar/assets/js/rbt-modules.js?ver=6.0.9'
+            id='rabbit_js-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.7.0.0'
+            id='jquery-blockui-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=7.0.0'
+            id='wc-add-to-cart-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.7.0.0'
+            id='js-cookie-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=7.0.0'
+            id='woocommerce-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=7.0.0'
+            id='wc-cart-fragments-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js?ver=4.3.0'
+            id='ppress-frontend-script-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.16.1'
+            id='gtm4wp-form-move-tracker-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1'
+            id='jquery-ui-core-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/qi-addons-for-elementor/assets/js/main.min.js?ver=6.0.9'
+            id='qi-addons-for-elementor-script-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-includes/js/hoverIntent.min.js?ver=1.10.2'
+            id='hoverIntent-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/assets/plugins/jquery/jquery.easing.1.3.js?ver=6.0.9'
+            id='jquery-easing-1.3-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/assets/plugins/modernizr/modernizr.js?ver=6.0.9'
+            id='modernizr-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/assets/plugins/tweenmax/tweenmax.min.js?ver=6.0.9'
+            id='tweenmax-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/themes/mellifera/assets/js/main.min.js?ver=6.0.9'
+            id='mellifera-main-js-js'></script>
+        <script type='text/javascript'
+            src='//maps.googleapis.com/maps/api/js?key=AIzaSyAnAl99IuIWlllvSLSFVuD9LFfEyTi5k5A&#038;ver=6.0.9'
+            id='google-map-api-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-includes/js/underscore.min.js?ver=1.13.3'
+            id='underscore-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/maps/assets/js/custom-marker.js?ver=6.0.9'
+            id='mellifera-core-map-custom-marker-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/maps/assets/js/markerclusterer.js?ver=6.0.9'
+            id='markerclusterer-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/maps/assets/js/google-map.js?ver=6.0.9'
+            id='mellifera-core-google-map-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/assets/js/mellifera-core.min.js?ver=6.0.9'
+            id='mellifera-core-script-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/themes/mellifera/assets/plugins/waitforimages/jquery.waitforimages.js?ver=6.0.9'
+            id='jquery-waitforimages-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/themes/mellifera/assets/plugins/appear/jquery.appear.js?ver=6.0.9'
+            id='jquery-appear-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6'
+            id='swiper-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/themes/mellifera/assets/plugins/magnific-popup/jquery.magnific-popup.min.js?ver=6.0.9'
+            id='jquery-magnific-popup-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/woocommerce/assets/js/select2/select2.full.min.js?ver=4.0.3-wc.7.0.0'
+            id='select2-js'></script>
+        <script type="text/javascript"
+            src="https://static.zdassets.com/ekr/snippet.js?key=af3078fd-a5ae-40da-bee0-e589b98c8603&#038;ver=6.0.9"
+            id="ze-snippet"></script>
+        <script type='text/javascript' id='mediaelement-core-js-before'>
+            var mejsL10n = { "language": "en", "strings": { "mejs.download-file": "Download File", "mejs.install-flash": "You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/", "mejs.fullscreen": "Fullscreen", "mejs.play": "Play", "mejs.pause": "Pause", "mejs.time-slider": "Time Slider", "mejs.time-help-text": "Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.", "mejs.live-broadcast": "Live Broadcast", "mejs.volume-help-text": "Use Up\/Down Arrow keys to increase or decrease volume.", "mejs.unmute": "Unmute", "mejs.mute": "Mute", "mejs.volume-slider": "Volume Slider", "mejs.video-player": "Video Player", "mejs.audio-player": "Audio Player", "mejs.captions-subtitles": "Captions\/Subtitles", "mejs.captions-chapters": "Chapters", "mejs.none": "None", "mejs.afrikaans": "Afrikaans", "mejs.albanian": "Albanian", "mejs.arabic": "Arabic", "mejs.belarusian": "Belarusian", "mejs.bulgarian": "Bulgarian", "mejs.catalan": "Catalan", "mejs.chinese": "Chinese", "mejs.chinese-simplified": "Chinese (Simplified)", "mejs.chinese-traditional": "Chinese (Traditional)", "mejs.croatian": "Croatian", "mejs.czech": "Czech", "mejs.danish": "Danish", "mejs.dutch": "Dutch", "mejs.english": "English", "mejs.estonian": "Estonian", "mejs.filipino": "Filipino", "mejs.finnish": "Finnish", "mejs.french": "French", "mejs.galician": "Galician", "mejs.german": "German", "mejs.greek": "Greek", "mejs.haitian-creole": "Haitian Creole", "mejs.hebrew": "Hebrew", "mejs.hindi": "Hindi", "mejs.hungarian": "Hungarian", "mejs.icelandic": "Icelandic", "mejs.indonesian": "Indonesian", "mejs.irish": "Irish", "mejs.italian": "Italian", "mejs.japanese": "Japanese", "mejs.korean": "Korean", "mejs.latvian": "Latvian", "mejs.lithuanian": "Lithuanian", "mejs.macedonian": "Macedonian", "mejs.malay": "Malay", "mejs.maltese": "Maltese", "mejs.norwegian": "Norwegian", "mejs.persian": "Persian", "mejs.polish": "Polish", "mejs.portuguese": "Portuguese", "mejs.romanian": "Romanian", "mejs.russian": "Russian", "mejs.serbian": "Serbian", "mejs.slovak": "Slovak", "mejs.slovenian": "Slovenian", "mejs.spanish": "Spanish", "mejs.swahili": "Swahili", "mejs.swedish": "Swedish", "mejs.tagalog": "Tagalog", "mejs.thai": "Thai", "mejs.turkish": "Turkish", "mejs.ukrainian": "Ukrainian", "mejs.vietnamese": "Vietnamese", "mejs.welsh": "Welsh", "mejs.yiddish": "Yiddish" } };
+        </script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.16'
+            id='mediaelement-core-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=6.0.9'
+            id='mediaelement-migrate-js'></script>
+        <script type='text/javascript' id='mediaelement-js-extra'>
+            /* <![CDATA[ */
+            var _wpmejsSettings = { "pluginPath": "\/wp-includes\/js\/mediaelement\/", "classPrefix": "mejs-", "stretching": "responsive" };
+            /* ]]> */
+        </script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-includes/js/mediaelement/renderers/vimeo.min.js?ver=4.2.16'
+            id='mediaelement-vimeo-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.7.8'
+            id='elementor-webpack-runtime-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.7.8'
+            id='elementor-frontend-modules-js'></script>
+        <script type='text/javascript' id='elementor-frontend-js-before'>
+            var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false, "isScriptDebug": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "download": "Download", "downloadImage": "Download image", "fullscreen": "Fullscreen", "zoom": "Zoom", "share": "Share", "playVideo": "Play Video", "previous": "Previous", "next": "Next", "close": "Close" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "responsive": { "breakpoints": { "mobile": { "label": "Mobile", "value": 767, "default_value": 767, "direction": "max", "is_enabled": true }, "mobile_extra": { "label": "Mobile Extra", "value": 880, "default_value": 880, "direction": "max", "is_enabled": false }, "tablet": { "label": "Tablet", "value": 1024, "default_value": 1024, "direction": "max", "is_enabled": true }, "tablet_extra": { "label": "Tablet Extra", "value": 1200, "default_value": 1200, "direction": "max", "is_enabled": false }, "laptop": { "label": "Laptop", "value": 1366, "default_value": 1366, "direction": "max", "is_enabled": false }, "widescreen": { "label": "Widescreen", "value": 2400, "default_value": 2400, "direction": "min", "is_enabled": false } } }, "version": "3.7.8", "is_static": false, "experimentalFeatures": { "e_import_export": true, "e_hidden_wordpress_widgets": true, "landing-pages": true, "elements-color-picker": true, "favorite-widgets": true, "admin-top-bar": true }, "urls": { "assets": "https:\/\/mellifera.qodeinteractive.com\/wp-content\/plugins\/elementor\/assets\/" }, "settings": { "page": [], "editorPreferences": [] }, "kit": { "active_breakpoints": ["viewport_mobile", "viewport_tablet"], "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description" }, "post": { "id": 23, "title": "Mellifera%20%E2%80%93%20Beekeping%20and%20Honey%20Shop%20Theme", "excerpt": "", "featuredImage": false } };
+        </script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.7.8'
+            id='elementor-frontend-js'></script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/qi-addons-for-elementor/inc/plugins/elementor/assets/js/elementor.js?ver=6.0.9'
+            id='qi-addons-for-elementor-elementor-js'></script>
+        <script type='text/javascript' id='mellifera-core-elementor-js-extra'>
+            /* <![CDATA[ */
+            var qodefElementorGlobal = { "vars": { "elementorSectionHandler": [], "elementorBeeAnimationSection": { "5649146": [] } } };
+            /* ]]> */
+        </script>
+        <script type='text/javascript'
+            src='https://mellifera.qodeinteractive.com/wp-content/plugins/mellifera-core/inc/plugins/elementor/assets/js/elementor.js?ver=6.0.9'
+            id='mellifera-core-elementor-js'></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Desktop Search Toggle
+                const searchIcon = document.querySelector('.search-icon');
+                const searchContainer = document.querySelector('.search-container');
+                const modal = document.querySelector('.payment-modal');
+                const closeBtn = document.querySelector('.close-modal');
+
+                // Close on button click
+                closeBtn.addEventListener('click', function () {
+                    modal.style.display = 'none';
+                });
+
+                // Optional: Close if user clicks outside modal content
+                window.addEventListener('click', function (e) {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+
+                if (searchIcon && searchContainer) {
+                    searchIcon.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        searchContainer.classList.toggle('active');
+                    });
+                }
+
+                // Close dropdowns when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (searchContainer && !searchContainer.contains(e.target)) {
+                        searchContainer.classList.remove('active');
+                    }
+                });
+
+                // Mobile Search Toggle
+                const mobileSearchIcon = document.querySelector('.mobile-search-icon');
+                const mobileHeader = document.querySelector('#qodef-page-mobile-header');
+
+                if (mobileSearchIcon && mobileHeader) {
+                    mobileSearchIcon.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        mobileHeader.classList.toggle('mobile-search-active');
+                    });
+                }
+
+                // Mobile Menu Dropdown Toggle
+                const mobileMenuToggles = document.querySelectorAll('.mobile-menu-toggle');
+
+                mobileMenuToggles.forEach(toggle => {
+                    toggle.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const parentItem = this.closest('.menu-item-has-children');
+                        parentItem.classList.toggle('active');
+                    });
+                });
+
+                // Update cart count
+                function updateCartCount() {
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                    document.querySelectorAll('.cart-count').forEach(el => {
+                        el.textContent = totalItems;
+                    });
+                }
+
+                // Initialize cart count
+                updateCartCount();
+            });
+
+            // Search functionality
+            function performSearch(query) {
+                // This would be replaced with actual search logic
+                const products = [
+                    { name: 'Multiflora Honey', url: 'raw-honey.html?type=multiflora' },
+                    { name: 'Jamun Honey', url: 'raw-honey.html?type=jamun' },
+                    { name: 'Ajwain Honey', url: 'raw-honey.html?type=ajwain' },
+                    { name: 'Tulsi Honey', url: 'raw-honey.html?type=tulsi' }
+                ];
+
+                const results = products.filter(product =>
+                    product.name.toLowerCase().includes(query.toLowerCase())
+                );
+
+                return results;
+            }
+
+            // Handle search form submission
+            document.querySelectorAll('form').forEach(form => {
+                if (form.action.includes('search.html')) {
+                    form.addEventListener('submit', function (e) {
+                        const input = this.querySelector('input[name="q"]');
+                        if (input.value.trim() === '') {
+                            e.preventDefault();
+                            return false;
                         }
+                    });
+                }
+            });
 
-                        // Load cart items from localStorage
-                        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                        const orderProductsContainer = document.getElementById('order-products');
+            // Live search for desktop
+            const searchInput = document.querySelector('.search-form input');
+            if (searchInput) {
+                searchInput.addEventListener('input', function () {
+                    const query = this.value.trim();
+                    const resultsContainer = this.closest('.search-form').querySelector('.search-results');
 
-                        // Update cart count initially
-                        updateCartCount();
+                    if (query.length > 2) {
+                        const results = performSearch(query);
+                        showSearchResults(results, resultsContainer);
+                    } else {
+                        resultsContainer.innerHTML = '';
+                    }
+                });
+            }
 
-                        if (cart.length === 0) {
-                            // Redirect to cart if empty
-                            window.location.href = 'cart.html';
-                            return;
+            function showSearchResults(results, container) {
+                container.innerHTML = '';
+
+                if (results.length === 0) {
+                    container.innerHTML = '<p>No products found</p>';
+                    return;
+                }
+
+                const ul = document.createElement('ul');
+                results.forEach(result => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = result.url;
+                    a.textContent = result.name;
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                });
+
+                container.appendChild(ul);
+            }
+        </script>
+        <script id="rs-initialisation-scripts">
+            var tpj = jQuery;
+
+            var revapi1;
+
+            if (window.RS_MODULES === undefined) window.RS_MODULES = {};
+            if (RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+            RS_MODULES.modules["revslider11"] = {
+                once: RS_MODULES.modules["revslider11"] !== undefined ? RS_MODULES.modules["revslider11"].once : undefined, init: function () {
+                    window.revapi1 = window.revapi1 === undefined || window.revapi1 === null || window.revapi1.length === 0 ? document.getElementById("rev_slider_1_1") : window.revapi1;
+                    if (window.revapi1 === null || window.revapi1 === undefined || window.revapi1.length == 0) { window.revapi1initTry = window.revapi1initTry === undefined ? 0 : window.revapi1initTry + 1; if (window.revapi1initTry < 20) requestAnimationFrame(function () { RS_MODULES.modules["revslider11"].init() }); return; }
+                    window.revapi1 = jQuery(window.revapi1);
+                    if (window.revapi1.revolution == undefined) { revslider_showDoubleJqueryError("rev_slider_1_1"); return; }
+                    revapi1.revolutionInit({
+                        revapi: "revapi1",
+                        sliderType: "hero",
+                        sliderLayout: "fullscreen",
+                        visibilityLevels: "1920,1710,1025,760",
+                        gridwidth: "1300,1100,768,300",
+                        gridheight: "900,640,700,560",
+                        lazyType: "smart",
+                        perspective: 600,
+                        perspectiveType: "local",
+                        editorheight: "900,640,700,560",
+                        responsiveLevels: "1920,1710,1025,760",
+                        progressBar: { disableProgressBar: true },
+                        navigation: {
+                            onHoverStop: false
+                        },
+                        viewPort: {
+                            global: true,
+                            globalDist: "-200px",
+                            enable: false
+                        },
+                        fallbacks: {
+                            allowHTML5AutoPlayOnAndroid: true
+                        },
+                    });
+                }
+            } // End of RevInitScript
+            if (window.RS_MODULES.checkMinimal !== undefined) { window.RS_MODULES.checkMinimal(); };
+        </script>
+        <script>
+            // Mobile menu toggle functionality
+            document.addEventListener('DOMContentLoaded', function () {
+                const mobileToggle = document.querySelector('.mobile-menu-toggle');
+                const mobileClose = document.querySelector('.mobile-menu-close');
+                const headerNav = document.querySelector('.header-navigation');
+
+                mobileToggle.addEventListener('click', function () {
+                    headerNav.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                mobileClose.addEventListener('click', function () {
+                    headerNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+
+                // Close menu when clicking on a link (for single page applications)
+                document.querySelectorAll('.header-navigation a').forEach(link => {
+                    link.addEventListener('click', function () {
+                        if (window.innerWidth <= 992) {
+                            headerNav.classList.remove('active');
+                            document.body.style.overflow = '';
                         }
+                    });
+                });
 
-                        // Shipping method selection
-                        const shippingMethods = document.querySelectorAll('.shipping-methods .payment-method');
+                // Dropdown toggle for mobile
+                document.querySelectorAll('.menu-item-has-children > a').forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        if (window.innerWidth <= 992) {
+                            e.preventDefault();
+                            const subMenu = this.nextElementSibling;
+                            if (subMenu.style.display === 'block') {
+                                subMenu.style.display = 'none';
+                                this.querySelector('i').classList.remove('fa-chevron-up');
+                                this.querySelector('i').classList.add('fa-chevron-down');
+                            } else {
+                                subMenu.style.display = 'block';
+                                this.querySelector('i').classList.remove('fa-chevron-down');
+                                this.querySelector('i').classList.add('fa-chevron-up');
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Update cart count in header
+                function updateCartCount() {
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    const totalItems = cart.reduce((total, item) => total + parseInt(item.quantity), 0);
 
-                        shippingMethods.forEach(method => {
-                            method.addEventListener('click', function (e) {
-                                // Don't proceed if clicking on the radio input directly
-                                if (e.target.tagName === 'INPUT') return;
+                    // Update cart count in desktop header
+                    const desktopCartCounts = document.querySelectorAll('.header-cart .cart-count');
+                    desktopCartCounts.forEach(el => el.textContent = totalItems);
 
-                                // Get the radio input inside this method
-                                const radio = this.querySelector('input[type="radio"]');
-                                radio.checked = true;
+                    // Update cart count in mobile header
+                    const mobileCartCounts = document.querySelectorAll('.mobile-cart-icon .cart-count');
+                    mobileCartCounts.forEach(el => el.textContent = totalItems);
+                }
 
-                                // Remove 'active' class from all shipping methods
-                                document.querySelectorAll('.shipping-methods .payment-method').forEach(sm => {
-                                    sm.classList.remove('active');
-                                });
+                // Load cart items from localStorage
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const orderProductsContainer = document.getElementById('order-products');
 
-                                // Add 'active' class to the selected shipping method
-                                this.classList.add('active');
+                // Update cart count initially
+                updateCartCount();
 
-                                // Update shipping cost and totals
-                                updateOrderTotals();
-                            });
+                if (cart.length === 0) {
+                    // Redirect to cart if empty
+                    window.location.href = 'cart.html';
+                    return;
+                }
+
+                // Shipping method selection
+                const shippingMethods = document.querySelectorAll('.shipping-methods .payment-method');
+
+                shippingMethods.forEach(method => {
+                    method.addEventListener('click', function (e) {
+                        // Don't proceed if clicking on the radio input directly
+                        if (e.target.tagName === 'INPUT') return;
+
+                        // Get the radio input inside this method
+                        const radio = this.querySelector('input[type="radio"]');
+                        radio.checked = true;
+
+                        // Remove 'active' class from all shipping methods
+                        document.querySelectorAll('.shipping-methods .payment-method').forEach(sm => {
+                            sm.classList.remove('active');
                         });
 
-                        // Function to update order totals based on selected shipping
-                        function updateOrderTotals() {
-                            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                            let subtotal = 0;
+                        // Add 'active' class to the selected shipping method
+                        this.classList.add('active');
 
-                            // Calculate subtotal
-                            cart.forEach(item => {
-                                subtotal += parseFloat(item.price) * parseInt(item.quantity);
-                            });
+                        // Update shipping cost and totals
+                        updateOrderTotals();
+                    });
+                });
 
-                            // Get selected shipping method cost
-                            const selectedShipping = document.querySelector('.shipping-methods input[type="radio"]:checked');
-                            let shippingCost = 50; // default to standard shipping
+                // Function to update order totals based on selected shipping
+                function updateOrderTotals() {
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    let subtotal = 0;
 
-                            if (selectedShipping && selectedShipping.id === 'express-shipping') {
-                                shippingCost = 120;
-                            }
+                    // Calculate subtotal
+                    cart.forEach(item => {
+                        subtotal += parseFloat(item.price) * parseInt(item.quantity);
+                    });
 
-                            const tax = subtotal * 0.05; // 5% tax
-                            const total = subtotal + shippingCost + tax;
+                    // Get selected shipping method cost
+                    const selectedShipping = document.querySelector('.shipping-methods input[type="radio"]:checked');
+                    let shippingCost = 50; // default to standard shipping
 
-                            // Update summary
-                            document.getElementById('order-subtotal').textContent = `₹${subtotal.toFixed(2)}`;
-                            document.getElementById('order-shipping').textContent = `₹${shippingCost.toFixed(2)}`;
-                            document.getElementById('order-tax').textContent = `₹${tax.toFixed(2)}`;
-                            document.getElementById('order-total').textContent = `₹${total.toFixed(2)}`;
+                    if (selectedShipping && selectedShipping.id === 'express-shipping') {
+                        shippingCost = 120;
+                    }
 
-                            // Update payment amount in QR modal
-                            document.getElementById('cod-total-amount').textContent = `₹${total.toFixed(2)}`;
-                        }
+                    const tax = subtotal * 0.05; // 5% tax
+                    const total = subtotal + shippingCost + tax;
 
-                        // Display order products
-                        let orderProductsHTML = '';
-                        let subtotal = 0;
+                    // Update summary
+                    document.getElementById('order-subtotal').textContent = `₹${subtotal.toFixed(2)}`;
+                    document.getElementById('order-shipping').textContent = `₹${shippingCost.toFixed(2)}`;
+                    document.getElementById('order-tax').textContent = `₹${tax.toFixed(2)}`;
+                    document.getElementById('order-total').textContent = `₹${total.toFixed(2)}`;
 
-                        cart.forEach(item => {
-                            const price = parseFloat(item.price);
-                            const quantity = parseInt(item.quantity);
-                            const itemTotal = price * quantity;
-                            subtotal += itemTotal;
+                    // Update payment amount in QR modal
+                    document.getElementById('cod-total-amount').textContent = `₹${total.toFixed(2)}`;
+                }
 
-                            orderProductsHTML += `
+                // Display order products
+                let orderProductsHTML = '';
+                let subtotal = 0;
+                let totalQuantity = 0;
+
+                cart.forEach(item => {
+                    const price = parseFloat(item.price);
+                    const quantity = parseInt(item.quantity);
+                    const size = item.size || 'N/A'; // Default to 'N/A' if size is not specified
+                    const itemTotal = price * quantity;
+                    subtotal += itemTotal;
+                    totalQuantity += quantity;
+
+                    orderProductsHTML += `
                     <div class="order-product">
                         <img src="${item.image}" alt="${item.name}" class="order-product-image">
                         <div class="order-product-details">
                             <h4 class="order-product-name">${item.name}</h4>
-                            <p class="order-product-meta">Size: ${item.size} • Qty: ${quantity}</p>
+                            <div class="order-product-price">₹${itemTotal.toFixed(2)}</div>
                         </div>
-                        <div class="order-product-price">₹${itemTotal.toFixed(2)}</div>
                     </div>
-                `;
+                    `;
+                });
+
+                orderProductsContainer.innerHTML = orderProductsHTML;
+
+                // Update the summary section with total quantity and size (if single product)
+                document.getElementById('order-qty').textContent = totalQuantity;
+                if (cart.length === 1) {
+                    document.getElementById('order-Size').textContent = cart[0].size || 'N/A';
+                } else {
+                    document.getElementById('order-Size').textContent = 'Multiple';
+                }
+                // Calculate initial order totals
+                updateOrderTotals();
+
+                // Payment method selection
+                const paymentMethods = document.querySelectorAll('.payment-methods .payment-method');
+                const onlinePaymentMethod = document.getElementById('online-payment-method');
+                const codPaymentMethod = document.getElementById('cod-payment-method');
+                const onlinePaymentModal = document.getElementById('online-payment-modal');
+                const codConfirmationModal = document.getElementById('cod-confirmation-modal');
+
+                paymentMethods.forEach(method => {
+                    method.addEventListener('click', function (e) {
+                        // Don't proceed if clicking on the radio input directly
+                        if (e.target.tagName === 'INPUT') return;
+
+                        // Get the radio input inside this method
+                        const radio = this.querySelector('input[type="radio"]');
+                        radio.checked = true;
+
+                        // Remove 'active' class from all payment methods
+                        document.querySelectorAll('.payment-method').forEach(pm => {
+                            pm.classList.remove('active');
                         });
 
-                        orderProductsContainer.innerHTML = orderProductsHTML;
+                        // Add 'active' class to the selected payment method
+                        this.classList.add('active');
+                    });
+                });
 
-                        // Calculate initial order totals
-                        updateOrderTotals();
+                // Complete order button
+                document.getElementById('complete-order-btn').addEventListener('click', function () {
+                    // Validate forms
+                    let isValid = true;
 
-                        // Payment method selection
-                        const paymentMethods = document.querySelectorAll('.payment-methods .payment-method');
-                        const onlinePaymentMethod = document.getElementById('online-payment-method');
-                        const codPaymentMethod = document.getElementById('cod-payment-method');
-                        const onlinePaymentModal = document.getElementById('online-payment-modal');
-                        const codConfirmationModal = document.getElementById('cod-confirmation-modal');
-
-                        paymentMethods.forEach(method => {
-                            method.addEventListener('click', function (e) {
-                                // Don't proceed if clicking on the radio input directly
-                                if (e.target.tagName === 'INPUT') return;
-
-                                // Get the radio input inside this method
-                                const radio = this.querySelector('input[type="radio"]');
-                                radio.checked = true;
-
-                                // Remove 'active' class from all payment methods
-                                document.querySelectorAll('.payment-method').forEach(pm => {
-                                    pm.classList.remove('active');
-                                });
-
-                                // Add 'active' class to the selected payment method
-                                this.classList.add('active');
-                            });
-                        });
-
-                        // Complete order button
-                        document.getElementById('complete-order-btn').addEventListener('click', function () {
-                            // Validate forms
-                            let isValid = true;
-
-                            // Check required fields
-                            const requiredFields = document.querySelectorAll('input[required], select[required]');
-                            requiredFields.forEach(field => {
-                                if (!field.value.trim()) {
-                                    field.style.borderColor = '#e74c3c';
-                                    isValid = false;
-                                }
-                            });
-                            // Validate email
-                            const emailInput = document.getElementById('email');
-                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                            if (!emailRegex.test(emailInput.value)) {
-                                document.getElementById('email-error').style.display = 'block';
-                                emailInput.classList.add('error');
-                                isValid = false;
-                            } else {
-                                document.getElementById('email-error').style.display = 'none';
-                                emailInput.classList.remove('error');
-                            }
-                            // Check phone format
-                            const phoneInput = document.getElementById('phone');
-                            const phoneRegex = /^[0-9]{10}$/;
-                            if (!phoneRegex.test(phoneInput.value)) {
-                                document.getElementById('phone-error').style.display = 'block';
-                                phoneInput.style.borderColor = '#e74c3c';
-                                isValid = false;
-                            }
-
-                            if (isValid) {
-                                // Check which payment method is selected
-                                const selectedPayment = document.querySelector('input[name="payment-method"]:checked');
-
-                                if (selectedPayment.id === 'online-payment') {
-                                    // Show online payment modal
-                                    onlinePaymentModal.style.display = 'flex';
-                                    // Generate QR code for online payment
-                                    const totalText = document.getElementById("order-total").innerText.replace(/[₹,]/g, '');
-                                    const amount = parseFloat(totalText).toFixed(2);
-                                    generateUpiQR(amount);
-                                } else if (selectedPayment.id === 'cod') {
-                                    // Show COD confirmation modal
-                                    codConfirmationModal.style.display = 'flex';
-                                    // Send COD order details via email
-                                    sendOrderEmail('cash on delivery');
-                                }
-                            } else {
-                                // Scroll to first error
-                                const firstError = document.querySelector('.error-message[style="display: block;"]') ||
-                                    document.querySelector('input[style="border-color: rgb(231, 76, 60);"]');
-                                if (firstError) {
-                                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                                }
-                            }
-                        });
-
-                        // Function to send order details via email
-                        // Function to send order details via email
-                        function sendOrderEmail(paymentMethod) {
-                            const loadingOverlay = document.querySelector('.loading-overlay');
-                            loadingOverlay.style.display = 'flex';
-
-                            // Collect all order details
-                            const orderDetails = {
-                                customer: {
-                                    firstName: document.getElementById('first-name').value,
-                                    lastName: document.getElementById('last-name').value,
-                                    email: document.getElementById('email').value,
-                                    phone: document.getElementById('phone').value,
-                                    address: document.getElementById('address').value,
-                                    city: document.getElementById('city').value,
-                                    state: document.getElementById('state').value,
-                                    zip: document.getElementById('zip').value
-                                },
-                                order: {
-                                    items: JSON.parse(localStorage.getItem('cart')) || [],
-                                    subtotal: document.getElementById('order-subtotal').textContent,
-                                    shipping: document.getElementById('order-shipping').textContent,
-                                    tax: document.getElementById('order-tax').textContent,
-                                    total: document.getElementById('order-total').textContent,
-                                    paymentMethod: paymentMethod,
-                                    shippingMethod: document.querySelector('.shipping-methods input[type="radio"]:checked').id
-                                }
-                            };
-
-                            // Send to PHP endpoint
-                            fetch('send_order_email.php', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                },
-                                body: JSON.stringify(orderDetails)
-                            })
-                                .then(response => response.json())
-                                .then(data => {
-                                    loadingOverlay.style.display = 'none';
-                                    if (data.success) {
-                                        // Show success message
-                                        if (paymentMethod === 'online') {
-                                            document.getElementById('payment-success').style.display = 'block';
-                                            document.getElementById('payment-done-btn').style.display = 'none';
-                                        }
-                                        console.log('Email sent successfully');
-                                    } else {
-                                        alert('Order placed but email confirmation failed. Please contact support.');
-                                        console.error('Email failed:', data.message);
-                                    }
-                                })
-                                .catch(error => {
-                                    loadingOverlay.style.display = 'none';
-                                    console.error('Error:', error);
-                                    alert('Order placed but email confirmation failed. Please contact support.');
-                                });
+                    // Check required fields
+                    const requiredFields = document.querySelectorAll('input[required], select[required]');
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            field.style.borderColor = '#e74c3c';
+                            isValid = false;
                         }
-
-                        // Payment done button in online payment modal
-                        document.getElementById('payment-done-btn').addEventListener('click', function () {
-                            // Show payment success message
-                            document.getElementById('payment-success').style.display = 'block';
-                            this.style.display = 'none';
-
-                            // Send order details via email for online payment
-                            sendOrderEmail('online');
-                        });
-
-                        // Continue button after payment success
-                        document.getElementById('continue-after-payment').addEventListener('click', function () {
-                            // Clear cart
-                            localStorage.removeItem('cart');
-
-                            // Redirect to thank you page
-                            window.location.href = 'thank-you.html';
-                        });
-
-                        // Continue button after COD confirmation
-                        document.getElementById('continue-after-cod').addEventListener('click', function () {
-                            // Clear cart
-                            localStorage.removeItem('cart');
-
-                            // Redirect to thank you page
-                            window.location.href = 'thank-you.html';
-                        });
-
-                        // Close modals when clicking X
-                        document.querySelectorAll('.close-modal').forEach(closeBtn => {
-                            closeBtn.addEventListener('click', function () {
-                                this.closest('.payment-modal').style.display = 'none';
-                            });
-                        });
-
-                        // Close modals when clicking outside
-                        document.querySelectorAll('.payment-modal').forEach(modal => {
-                            modal.addEventListener('click', function (e) {
-                                if (e.target === this) {
-                                    this.style.display = 'none';
-                                }
-                            });
-                        });
                     });
 
-                    // UPI QR Code generation
-                    const upiId = "ps662001@okicici"; // Replace with your UPI ID
-                    const payeeName = "Amrut Honey"; // Your shop name
-
-                    function generateUpiQR(amount) {
-                        const upiURL = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR`;
-                        document.getElementById("upi-qr-code").innerHTML = ""; // Clear old QR
-                        new QRCode(document.getElementById("upi-qr-code"), {
-                            text: upiURL,
-                            width: 200,
-                            height: 200
-                        });
+                    // Validate email
+                    const emailInput = document.getElementById('email');
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(emailInput.value)) {
+                        document.getElementById('email-error').style.display = 'block';
+                        emailInput.classList.add('error');
+                        isValid = false;
+                    } else {
+                        document.getElementById('email-error').style.display = 'none';
+                        emailInput.classList.remove('error');
                     }
-                </script>
-                <script src="script.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
+                    // Check phone format
+                    const phoneInput = document.getElementById('phone');
+                    const phoneRegex = /^[0-9]{10}$/;
+                    if (!phoneRegex.test(phoneInput.value)) {
+                        document.getElementById('phone-error').style.display = 'block';
+                        phoneInput.style.borderColor = '#e74c3c';
+                        isValid = false;
+                    }
+                    // Continue button after COD confirmation
+                    document.getElementById('continue-after-cod').addEventListener('click', function () {
+                        // Show loading overlay
+                        const loadingOverlay = document.querySelector('.loading-overlay');
+                        loadingOverlay.innerHTML = `
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Processing your order...</div>
+        `;
+                        loadingOverlay.style.display = 'flex';
+
+                        // Hide the COD confirmation modal
+                        document.getElementById('cod-confirmation-modal').style.display = 'none';
+
+                        // Simulate processing delay (1.5 seconds)
+                        setTimeout(() => {
+                            // Clear cart
+                            localStorage.removeItem('cart');
+
+                            // Redirect to thank you page
+                            window.location.href = 'thank-you.html';
+                        }, 1500);
+                    });
+                    if (isValid) {
+                        // Show loading overlay with processing message
+                        const loadingOverlay = document.querySelector('.loading-overlay');
+                        loadingOverlay.innerHTML = `
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Processing your payment...</div>
+        `;
+                        loadingOverlay.style.display = 'flex';
+
+                        // Check which payment method is selected
+                        const selectedPayment = document.querySelector('input[name="payment-method"]:checked');
+
+                        if (selectedPayment.id === 'online-payment') {
+                            // Show online payment modal after a brief delay to show processing
+                            setTimeout(() => {
+                                loadingOverlay.style.display = 'none';
+                                onlinePaymentModal.style.display = 'flex';
+                                // Generate QR code for online payment
+                                const totalText = document.getElementById("order-total").innerText.replace(/[₹,]/g, '');
+                                const amount = parseFloat(totalText).toFixed(2);
+                                generateUpiQR(amount);
+                            }, 1500);
+                        } else if (selectedPayment.id === 'cod') {
+                            loadingOverlay.innerHTML = `
+                        <div class="loading-spinner"></div>
+                        <div class="loading-text">Confirming your order...</div>
+                    `;
+                            // Simulate processing time (2 seconds)
+                            setTimeout(() => {
+                                loadingOverlay.style.display = 'none';
+                                codConfirmationModal.style.display = 'flex';
+                                // Send COD order details via email
+                                sendOrderEmail('cash on delivery');
+                            }, 1500);
+                        }
+                    } else {
+                        // Scroll to first error
+                        const firstError = document.querySelector('.error-message[style="display: block;"]') ||
+                            document.querySelector('input[style="border-color: rgb(231, 76, 60);"]');
+                        if (firstError) {
+                            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }
+                });
+
+                // Payment done button in online payment modal
+                document.getElementById('payment-done-btn').addEventListener('click', function () {
+                    const transactionId = document.getElementById('transaction-id').value.trim();
+
+                    if (!transactionId) {
+                        alert('Please enter your transaction ID/reference number');
+                        return;
+                    }
+
+                    // Show processing overlay
+                    const loadingOverlay = document.querySelector('.loading-overlay');
+                    loadingOverlay.innerHTML = `
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Verifying your payment...</div>
+    `;
+                    loadingOverlay.style.display = 'flex';
+
+                    // Close payment modal
+                    onlinePaymentModal.style.display = 'none';
+
+                    // Simulate payment verification delay (3 seconds)
+                    setTimeout(() => {
+                        // Send order with online payment details
+                        sendOrderEmail('online', transactionId);
+                    }, 3000);
+                });
+
+                // Function to send order details for both payment methods
+                function sendOrderEmail(paymentMethod, transactionId = '') {
+                    // Update loading text
+                    const loadingOverlay = document.querySelector('.loading-overlay');
+                    loadingOverlay.innerHTML = `
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Completing your order...</div>
+    `;
+
+                    // Prepare form data
+                    const formData = new FormData();
+                    formData.append('payment_method', paymentMethod);
+                    formData.append('transaction_id', transactionId);
+
+                    // Handle file upload for online payments
+                    if (paymentMethod === 'online') {
+                        const paymentProofInput = document.getElementById('payment-proof');
+                        if (paymentProofInput.files.length > 0) {
+                            formData.append('payment_proof', paymentProofInput.files[0]);
+                        }
+                    }
+
+                    // Add order details to form data
+                    const orderDetails = {
+                        customer: {
+                            firstName: document.getElementById('first-name').value,
+                            lastName: document.getElementById('last-name').value,
+                            email: document.getElementById('email').value,
+                            phone: document.getElementById('phone').value,
+                            address: document.getElementById('address').value,
+                            city: document.getElementById('city').value,
+                            state: document.getElementById('state').value,
+                            zip: document.getElementById('zip').value
+                        },
+                        order: {
+                            items: JSON.parse(localStorage.getItem('cart')) || [],
+                            subtotal: document.getElementById('order-subtotal').textContent,
+                            shipping: document.getElementById('order-shipping').textContent,
+                            tax: document.getElementById('order-tax').textContent,
+                            total: document.getElementById('order-total').textContent,
+                            paymentMethod: paymentMethod,
+                            shippingMethod: document.querySelector('.shipping-methods input[type="radio"]:checked').id
+                        }
+                    };
+
+                    formData.append('order_details', JSON.stringify(orderDetails));
+
+                    // Send to PHP endpoint
+                    fetch('send_order_email.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            loadingOverlay.style.display = 'none';
+                            if (data.success) {
+                                // Clear cart
+                                localStorage.removeItem('cart');
+
+                                // Redirect to thank you page
+                                window.location.href = 'thank-you.html';
+                            } else {
+                                alert('Order confirmation failed. Please contact support.');
+                                console.error('Error:', data.message);
+                            }
+                        })
+                        .catch(error => {
+                            loadingOverlay.style.display = 'none';
+                            console.error('Error:', error);
+                            alert('An error occurred. Please contact support.');
+                        });
+                }
+                // Continue button after payment success
+                document.getElementById('continue-after-payment').addEventListener('click', function () {
+                    // Clear cart
+                    localStorage.removeItem('cart');
+
+                    // Redirect to thank you page
+                    window.location.href = 'thank-you.html';
+                });
+
+                // Continue button after COD confirmation
+                document.getElementById('continue-after-cod').addEventListener('click', function () {
+                    // Clear cart
+                    localStorage.removeItem('cart');
+
+                    // Redirect to thank you page
+                    window.location.href = 'thank-you.html';
+                });
+
+            });
+
+            // UPI QR Code generation
+            const upiId = "ps662001@okicici"; // Replace with your UPI ID
+            const payeeName = "Amrut Honey"; // Your shop name
+
+            function generateUpiQR(amount) {
+                const upiURL = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR`;
+                document.getElementById("upi-qr-code").innerHTML = ""; // Clear old QR
+                new QRCode(document.getElementById("upi-qr-code"), {
+                    text: upiURL,
+                    width: 200,
+                    height: 200
+                });
+            }
+        </script>
+        <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </body>
 
 </html>
